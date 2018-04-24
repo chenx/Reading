@@ -2,3 +2,5 @@
 
 By: Fain Yakov, 2017  
 006.76 FAIN  
+
+Code examples: https://github.com/Farata/angular2typescript
