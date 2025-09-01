@@ -68,7 +68,8 @@ Applying or removing CSS classes is often more efficient than directly manipulat
 -  [Understanding Reflow and Repaint in the browser](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
 -  [What are Reflow and Repaint? How to optimize?](https://www.explainthis.io/en/swe/repaint-and-reflow)
 
-### Appendix 1: Browser Rendering Process
+
+## 6. Appendix: Browser Rendering Process
 
 #### 1. Parsing HTML and Style Calculation:
 
