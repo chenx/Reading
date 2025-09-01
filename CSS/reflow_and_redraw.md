@@ -5,7 +5,8 @@ Reflow and Repaint are two distinct but often related processes in a web browser
 ## Reflow (or Layout)
 
 ### Definition:
-    Reflow is the process where the browser recalculates the layout and position of elements on a webpage. This involves determining the size and position of every visible element in the Document Object Model (DOM) and constructing the render tree.
+
+Reflow is the process where the browser recalculates the layout and position of elements on a webpage. This involves determining the size and position of every visible element in the Document Object Model (DOM) and constructing the render tree.
 
 ### Triggers:
     Reflow is triggered by any change that affects the geometry or position of elements, which can then cascade to other elements. Examples include:
