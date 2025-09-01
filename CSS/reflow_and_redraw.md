@@ -79,9 +79,11 @@ Parses HTML into DOM, parses CSS into CSSOM, and merges DOM and CSSOM into rende
 
 #### 2. Layout
 
-browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
+Browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
 
 #### 3. Painting
+
+Having DOM, style and layout is still not enough to display the page, the browser still needs to determine the order of element painting.
 
 #### 4. Compositing
 
