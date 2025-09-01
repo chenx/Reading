@@ -1,4 +1,4 @@
-# Reflow and Repaint
+# Reflow and Repaint (回流与重绘)
 
 Reflow and Repaint are two distinct but often related processes in a web browser's rendering engine that affect how a webpage is displayed and updated.
 
@@ -47,18 +47,18 @@ A repaint does not necessarily lead to a reflow.
 
 Minimizing unnecessary reflows and repaints is crucial for web performance. Strategies include:
 
-### Batching DOM changes:
+#### Batching DOM changes:
 
 Grouping multiple DOM manipulations together to trigger a single reflow/repaint.
 
-### Using CSS transforms and opacity for animations:
+#### Using CSS transforms and opacity for animations:
 
 These properties are often hardware-accelerated and can be animated without triggering reflows.
 
-### Avoiding layout thrashing:
+#### Avoiding layout thrashing:
 
 Reading and writing to the DOM in separate operations to prevent forced synchronous layout calculations.
 
-### Using CSS classes for style changes:
+#### Using CSS classes for style changes:
 
 Applying or removing CSS classes is often more efficient than directly manipulating inline styles.
