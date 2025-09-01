@@ -68,18 +68,19 @@ Applying or removing CSS classes is often more efficient than directly manipulat
 -  [Understanding Reflow and Repaint in the browser](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
 -  [What are Reflow and Repaint? How to optimize?](https://www.explainthis.io/en/swe/repaint-and-reflow)
 
-#### Browser Rendering Process
+### Appendix Browser Rendering Process
 
 1. Parsing HTML and Style Calculation: parses HTML into DOM, parses CSS into CSSOM, and merges DOM and CSSOM into render tree.
-   - DOM - Document Object Model
-   - CSSOM - CSS Object Model
 
-1. Layout
+- DOM - Document Object Model
+- CSSOM - CSS Object Model
 
-browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
+2. Layout
 
-1. Painting
+- browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
 
-1. Compositing
+3. Painting
 
-Compositing is a technique of dividing the page into layers (layers), and this technique will be executed on a separate thread called compositor thread. After this process is completed, a layer tree will be generated, and finally rendered to the screen.
+4. Compositing
+
+- Compositing is a technique of dividing the page into layers (layers), and this technique will be executed on a separate thread called compositor thread. After this process is completed, a layer tree will be generated, and finally rendered to the screen.
