@@ -40,22 +40,25 @@ Repaint is generally less computationally expensive than reflow because it only 
 ## Relationship
 
 A reflow almost always leads to a repaint, as recalculating the layout necessitates re-drawing the affected elements.
+
 A repaint does not necessarily lead to a reflow.
 
 ## Optimization
 
 Minimizing unnecessary reflows and repaints is crucial for web performance. Strategies include:
 
-Batching DOM changes:
-. 
+### Batching DOM changes:
 
 Grouping multiple DOM manipulations together to trigger a single reflow/repaint.
-Using CSS transforms and opacity for animations:
-.
+
+### Using CSS transforms and opacity for animations:
+
 These properties are often hardware-accelerated and can be animated without triggering reflows.
-Avoiding layout thrashing:
-.
+
+### Avoiding layout thrashing:
+
 Reading and writing to the DOM in separate operations to prevent forced synchronous layout calculations.
-Using CSS classes for style changes:
-.
+
+### Using CSS classes for style changes:
+
 Applying or removing CSS classes is often more efficient than directly manipulating inline styles.
