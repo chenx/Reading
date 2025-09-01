@@ -79,11 +79,12 @@ Parses HTML into DOM, parses CSS into CSSOM, and merges DOM and CSSOM into rende
 
 #### 2. Layout
 
-  - browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
+browser also needs to calculate the size and position of each node on the screen. This process is called layout and produces a layout tree.
 
 #### 3. Painting
 
 #### 4. Compositing
 
-  - Compositing is a technique of dividing the page into layers (layers), and this technique will be executed on a separate thread called compositor thread.
-  - After this process is completed, a layer tree will be generated, and finally rendered to the screen.
+Compositing is a technique of dividing the page into layers (layers), and this technique will be executed on a separate thread called compositor thread.
+
+After this process is completed, a layer tree will be generated, and finally rendered to the screen.
