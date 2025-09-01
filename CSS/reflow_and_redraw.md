@@ -24,20 +24,23 @@ Reflow is computationally expensive because it requires recalculating the layout
 ## Repaint
 
 ### Definition:
-    Repaint is the process where the browser re-draws the visual appearance of elements on the screen. This involves painting pixels to reflect changes in visual properties.
+
+Repaint is the process where the browser re-draws the visual appearance of elements on the screen. This involves painting pixels to reflect changes in visual properties.
 
 ### Triggers:
-    Repaint is triggered by changes to an element's visual properties that do not affect its layout or position. Examples include:
-        Changing CSS properties like color, background-color, visibility (when visibility: hidden is used, as it doesn't remove the element from the layout flow), box-shadow, or text-decoration.
-        Changing image sources. 
+
+Repaint is triggered by changes to an element's visual properties that do not affect its layout or position. Examples include:
+- Changing CSS properties like color, background-color, visibility (when visibility: hidden is used, as it doesn't remove the element from the layout flow), box-shadow, or text-decoration.
+- Changing image sources. 
 
 ### Performance Impact:
-    Repaint is generally less computationally expensive than reflow because it only involves updating the visual representation of elements without recalculating their layout. 
+
+Repaint is generally less computationally expensive than reflow because it only involves updating the visual representation of elements without recalculating their layout. 
 
 ## Relationship
 
-    A reflow almost always leads to a repaint, as recalculating the layout necessitates re-drawing the affected elements.
-    A repaint does not necessarily lead to a reflow.
+A reflow almost always leads to a repaint, as recalculating the layout necessitates re-drawing the affected elements.
+A repaint does not necessarily lead to a reflow.
 
 ## Optimization
 
