@@ -63,10 +63,9 @@ Reading and writing to the DOM in separate operations to prevent forced synchron
 
 Applying or removing CSS classes is often more efficient than directly manipulating inline styles.
 
-## References
+## 5. References
 
 -  [Understanding Reflow and Repaint in the browser](https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg)
 -  [What are Reflow and Repaint? How to optimize?](https://www.explainthis.io/en/swe/repaint-and-reflow)
-
-DOM - Document Object Model
-CSSOM - CSS Object Model
+   - DOM - Document Object Model
+   - CSSOM - CSS Object Model
