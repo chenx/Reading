@@ -2,7 +2,7 @@
 
 Reflow and Repaint are two distinct but often related processes in a web browser's rendering engine that affect how a webpage is displayed and updated.
 
-## Reflow (or Layout)
+## 1. Reflow (or Layout)
 
 ### Definition:
 
@@ -21,7 +21,7 @@ Reflow is triggered by any change that affects the geometry or position of eleme
 
 Reflow is computationally expensive because it requires recalculating the layout of potentially a large portion of the page, or even the entire page. 
 
-## Repaint
+## 2. Repaint
 
 ### Definition:
 
@@ -37,13 +37,13 @@ Repaint is triggered by changes to an element's visual properties that do not af
 
 Repaint is generally less computationally expensive than reflow because it only involves updating the visual representation of elements without recalculating their layout. 
 
-## Relationship
+## 3. Relationship
 
 A reflow almost always leads to a repaint, as recalculating the layout necessitates re-drawing the affected elements.
 
 A repaint does not necessarily lead to a reflow.
 
-## Optimization
+## 4. Optimization
 
 Minimizing unnecessary reflows and repaints is crucial for web performance. Strategies include:
 
