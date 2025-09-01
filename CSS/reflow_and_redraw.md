@@ -9,14 +9,17 @@ Reflow and Repaint are two distinct but often related processes in a web browser
 Reflow is the process where the browser recalculates the layout and position of elements on a webpage. This involves determining the size and position of every visible element in the Document Object Model (DOM) and constructing the render tree.
 
 ### Triggers:
-    Reflow is triggered by any change that affects the geometry or position of elements, which can then cascade to other elements. Examples include:
-        Adding, removing, or updating DOM nodes.
-        Changing CSS properties that affect layout, such as width, height, margin, padding, font-size, display, or position.
-        Resizing the browser window.
-        Activating pseudo-classes like :hover that change layout-affecting properties. 
+
+Reflow is triggered by any change that affects the geometry or position of elements, which can then cascade to other elements. Examples include:
+
+- Adding, removing, or updating DOM nodes.
+- Changing CSS properties that affect layout, such as width, height, margin, padding, font-size, display, or position.
+- Resizing the browser window.
+- Activating pseudo-classes like :hover that change layout-affecting properties. 
     
 ### Performance Impact:
-    Reflow is computationally expensive because it requires recalculating the layout of potentially a large portion of the page, or even the entire page. 
+
+Reflow is computationally expensive because it requires recalculating the layout of potentially a large portion of the page, or even the entire page. 
 
 ## Repaint
 
