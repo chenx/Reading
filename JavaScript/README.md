@@ -7,7 +7,7 @@ Basics
 - Promise.all
 - Deep copy
 - Macro / Micro tasks
-- Memmory garbage collection
+- Memory garbage collection
 - async / await
 - this binding
 
