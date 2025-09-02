@@ -82,14 +82,14 @@ Promise.all([promise1, promise2, promise3])
 
 ### When to use
 
-When to use Promise.all():
+When to use `Promise.all()`:
 
 - When you need to perform multiple independent asynchronous operations and wait for all of them to complete before proceeding with further logic.
 - When you require all operations to succeed for the overall task to be considered successful.
 
 Alternative:
 
-If you need to know the outcome of every Promise in the input iterable, regardless of whether they fulfill or reject, you should use Promise.allSettled(). This method returns a Promise that resolves with an array of objects, each describing the outcome (fulfilled or rejected) of the corresponding input Promise.
+If you need to know the outcome of every Promise in the input iterable, regardless of whether they fulfill or reject, you should use `Promise.allSettled()`. This method returns a Promise that resolves with an array of objects, each describing the outcome (fulfilled or rejected) of the corresponding input Promise.
 
 
 ### Where to use
@@ -98,3 +98,8 @@ Interaction with backend API.
 
 For example, a HTTP request by axios or fetch returns a Promise object.
 
+# References
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+- https://dev.to/dperrymorrow/speed-up-your-code-with-promiseall-3d4i
+- https://www.w3schools.com/jsref/jsref_promise_all.asp
