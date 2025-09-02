@@ -69,6 +69,10 @@ Cons:
 Use SSR for:
 - Sites prioritizing fast first-load content and excellent SEO, such as blogs, news sites, or large e-commerce platforms. 
 
+
+# References
+
+- https://prismic.io/blog/client-side-vs-server-side-rendering
 Use CSR for:
 - Applications requiring dynamic, interactive, or real-time features, like dashboards, social media feeds, or chat applications. 
 
