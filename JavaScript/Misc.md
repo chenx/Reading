@@ -19,3 +19,13 @@ Other performance optimization methods:
 - virtual scrolling
 - data compression
 - SSR
+
+## Engineering tools: Webpack vs Vite
+
+- Bundle or not: Webpack uses bundle; Vite use node_modules and project source code
+- First page loading, lazy loading: not a problem for Webpack; Vite has issues
+- Start speed: Webpack is slower due to size; Vite is faster
+- Hot reload: Webpack: supports HMR (Hot Module Replacing), still slower; Vite is faster
+- Prod packaging: Webpack is more mature; Vite uses Rollup
+- Ecosystem: Webpack has a mature ecosystem
+
