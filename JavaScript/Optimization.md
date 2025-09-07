@@ -2,9 +2,7 @@
 
 ## Speed up page loading
 
-### Network
-
-- Reduce requests.
+- Network: Reduce requests.
   - Lazy loading of image; load images in the viewport only
   - Cache
   - CDN
@@ -16,7 +14,9 @@
 - Rendering
   - Use skeleton screen (https://www.nngroup.com/articles/skeleton-screens/)
   - Use loading icon animation
- 
+
+Others:
+
 - Front loading of resources
   - inline css
   - preload font: <link rel="preload" ...>
@@ -57,7 +57,7 @@
 
 CPU, RAM, Local I/O, Networking
 
-### Collaboration sides
+### Entity
 
 Frontend, Client side (Android/iOS), Data backend, Image service, Browser engine 
 
