@@ -27,3 +27,42 @@
   - load resources as needed
   - Optimize 3rd part lib and modules
   - Compress files
+
+## Html5 page loading optimization
+
+### page loading
+
+- Container start (Client)
+- Resource loading
+  - Network connection:
+    - DNS: reduce number of DNS lookup, pre-lookup
+    - HTTP: HTTP2 (https://en.wikipedia.org/wiki/HTTP/2)
+   
+  - HTML loading
+    - Content optimization: compression, simplify code and rendering
+    - Flow optimization: SSR, pre-rendering
+  - Static resource loading
+    - Content optimization: compression, tree-shaking, image resizing,
+    - Flow optimization: Cache, CDN, laze-loading, pre-loading, offline-loading
+- Code execution
+  - Reduce amount of execution: 防抖 (debounce)，节流 (throttle)
+  - speed up: worker multi-threaded, wasm
+  - flow optimization: deferred execution
+- Data loading
+  - content
+  - flow
+- Rendering: less reflow and repaint, deferred rendering, pre-loading, snapshot-loading
+
+### Resources
+
+CPU, RAM, Local I/O, Networking
+
+### Collaboration sides
+
+Frontend, Client side (Android/iOS), Data backend, Image service, Browser engine 
+
+### Flow optimization
+
+Preload, Simplification, Split
+
+### Multiple levels
