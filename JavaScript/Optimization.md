@@ -14,6 +14,8 @@
 - Rendering
   - Use skeleton screen (https://www.nngroup.com/articles/skeleton-screens/)
   - Use loading icon animation
+  - Debounce and throttle
+  - Reduce reflow / repaint
 
 Others:
 
