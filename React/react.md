@@ -242,7 +242,7 @@ E.g., Creating a Modal with Portal
 ## React CSS styling
 
 - Inline styling
-  - <h1 style=\{\{backgroundColor: "lightblue"}}>Hello Style!</h1>
+  - < h1 style=\{\{backgroundColor: "lightblue"\}\}>Hello Style!< /h1>
   - JavaScript object
 - CSS stylesheets
   - import './MyStylesheet.css';
