@@ -163,3 +163,147 @@ Updating:
 - React has the same events as HTML: click, change, mouseover etc.
 - Event handlers have access to the React event that triggered the function.
 
+## React Conditionals
+
+## React Lists
+
+## React Forms
+
+- HTML Forms vs. React Forms
+  - In standard HTML, form elements maintain their own value based on user input.
+  - In React, the value of the form element is kept in the component's state property and updated only with the setState() function.
+- Controlled Components
+  - In a controlled component, form data is handled by the React component.
+  - When the data is handled by the components, all the data is stored in the component state.
+  - We can use the useState Hook to keep track of each input value and provide a "single source of truth" for the entire application.
+
+## React Forms Submit
+
+## React Textarea
+
+## React Select
+
+## React multiple inputs
+
+## React Checkbox
+
+## React Radio
+
+## React Portals
+
+- A Portal is a React method that is included in the react-dom package.
+- It is used to render HTML outside the parent component's DOM hierarchy.
+- Using the createPortal method
+
+```
+import { createPortal } from 'react-dom';
+
+function myChild() {
+  return createPortal(
+    <div>
+      Welcome
+    </div>,
+    document.body
+  );
+}
+```
+
+Syntax:
+```
+import { createPortal } from 'react-dom';
+
+// children: any renderable React content, like elements, strings, or fragments.
+// domNode:  a DOM element where the portal should be inserted instead.
+createPortal(children, domNode)
+```
+
+Portals are particularly useful for:
+- Modals and dialogs
+- Tooltips
+- Floating menus
+- Notifications
+
+
+- E.g., Creating a Modal with Portal
+- Event Bubbling in Portals
+  - Even though a portal renders content in a different part of the DOM tree, events from the portal content still bubble up through the React component tree as if the portal wasn't there.
+ 
+## React Suspense
+
+- React Suspense lets you display an alternative HTML while waiting for code or data to load.
+  - If a component takes time to load, you can use a Suspense component, and it will display the fallback content while the component is loading.
+- The alternative HTML can be a component, text, or any valid content.
+- The most common use cases are:
+  - Data fetching with suspense-enabled frameworks
+  - Loading components dynamically with React.lazy()
+    - E.g.: const Cars = lazy(() => import('./Cars'));
+- One Suspense component can wrap multiple lazy components
+
+## React CSS styling
+
+- Inline styling
+  - <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+  - JavaScript object
+- CSS stylesheets
+  - import './MyStylesheet.css';
+- CSS Modules
+  - import styles from './my-style.module.css';
+  - The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+## React CSS modules
+
+- Composing classes
+  - CSS Modules allow you to combine classes using the composes keyword
+  - Which means that one class can inherit the styles of another class
+
+- Global Classes
+  - When using CSS Modules, the classes in the .module.css file can only be used in the component that imports them.
+  - Sometimes you want your classes to be available globally, and use them in other components. You can do this with the :global syntax.
+  - Combine Global and Local Classes: You can combine global and local classes in the same CSS Module.
+
+E.g.:
+```
+:global(.myheader) {
+  padding: 10px 20px;
+  font-size: 50px;
+  color: white;
+  background-color: dodgerblue;
+}
+```
+
+## React CSS-in-JS
+
+CSS-in-JS is a styling technique where you can write CSS directly in your JavaScript code.
+
+This approach allows you to:
+- Write CSS using JavaScript
+- Create component-scoped styles
+- Use dynamic styles based on props
+- Avoid CSS class name conflicts
+
+CSS-in-JS is not a part of the React core library, but can be installed using many React build tools, like Vite, Webpack, or Create React App.
+```
+npm install styled-components
+```
+
+E.g.:
+```
+import styled from 'styled-components';
+
+const MyHeader = styled.h1`
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+`;
+
+function App() {
+  return (
+    <>
+      <MyHeader>Welcome!</MyHeader>
+    </>
+  );
+}
+```
+
+
+
