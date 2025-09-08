@@ -329,9 +329,9 @@ const MyHeader = styled.h1`
 
 function App() {
   return (
-    <>
-      <MyHeader>Welcome!</MyHeader>
-    </>
+    < >
+      < MyHeader>Welcome!< /MyHeader>
+    < />
   );
 }
 ```
@@ -365,11 +365,11 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
+    < >
       < GlobalStyle />
       < h1>Welcome!</h1>
       < p className="myparagraph">This paragraph is styled with global styles.</p>
-    </>
+    < />
   );
 }
 ```
@@ -397,9 +397,9 @@ Your application must be wrapped with the BrowserRouter component to enable rout
 
 function App() {
   return (
-    <BrowserRouter>
+    < BrowserRouter>
       {/* Your app content */}
-    </BrowserRouter>
+    < /BrowserRouter>
   );
 }
 ···
@@ -472,7 +472,7 @@ import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom'
 
 function Info() {
   const { firstname } = useParams();
-  return <h1>Hello, {firstname}!</h1>;
+  return < h1>Hello, {firstname}!< /h1>;
 }
 
 function App() {
