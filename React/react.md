@@ -23,4 +23,11 @@ Instead of manipulating the browser's DOM directly, React creates a virtual DOM 
 - Initial release to the Public (version 0.3.0) was in July 2013.
 - React.JS was first used in 2011 for Facebook's Newsfeed feature. 
 
+## Getting started
+
+Node.js
+
+```
+node -v
+```
 
