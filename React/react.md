@@ -43,7 +43,7 @@ npm create vite@latest my-react-app -- --template react
 
 npm install --force
 
-
+npm run dev
 ```
 
 
