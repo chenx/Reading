@@ -2,7 +2,9 @@
 
 https://www.w3schools.com/REACT/react_intro.asp
 
+
 ## Introduciton
+
 
 ### What is React?
 
@@ -11,17 +13,20 @@ https://www.w3schools.com/REACT/react_intro.asp
 - React is also known as React.js or ReactJS.
 - React is a tool for building UI components.
 
+
 ### How does React Work?
 
 - React creates a VIRTUAL DOM in memory.
 
 Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
 
+
 ### React.JS History
 
 - Latest version of React.JS is 19.0.0 (December 2024).
 - Initial release to the Public (version 0.3.0) was in July 2013.
 - React.JS was first used in 2011 for Facebook's Newsfeed feature. 
+
 
 ## Getting started: First App
 
@@ -46,11 +51,13 @@ npm run dev
 
 index.html --> src/main.jsx --> src/App.jsx
 
+
 ## Render HTML
 
 - Container: <div id="root"></div> element in the index.html
 - Function: createRoot() in src/main.jsx
   - render() method
+
 
 ## React ES6
 
@@ -84,11 +91,13 @@ index.html --> src/main.jsx --> src/App.jsx
   - Template strings
     - Tagged templates
 
+
 ## JSX intro
 
 - JSX stands for JavaScript XML.
 - JSX allows us to write HTML in React (and make it easier).
 - You are not required to use JSX, but JSX makes it easier to write React applications.
+
 
 ## JSX Expressions
 
@@ -97,9 +106,12 @@ index.html --> src/main.jsx --> src/App.jsx
 - Insert function calls in JSX by wrapping it in curly braces { }
 - Access object properties within JSX
 
+
 ## JSX Attributes
 
+
 ## JSX If
+
 
 ## React Components
 
@@ -109,6 +121,7 @@ index.html --> src/main.jsx --> src/App.jsx
 - Props
 - Components in Components
 - Components in Files
+
 
 ## React Class Components
 
@@ -127,6 +140,7 @@ class Car extends React.Component {
 - React Class components have a built-in state object.
   - The state object is initialized in the constructor
   - To change a value in the state object, use the this.setState() method.
+
 
 ### Life cycle of components: Mounting, Updating, and Unmounting
 
@@ -154,18 +168,24 @@ Updating:
 - Object props
 - Array props
 
+
 ## Props Destructuring
 
+
 ## Props Children
+
 
 ## React Events
 
 - React has the same events as HTML: click, change, mouseover etc.
 - Event handlers have access to the React event that triggered the function.
 
+
 ## React Conditionals
 
+
 ## React Lists
+
 
 ## React Forms
 
@@ -177,17 +197,24 @@ Updating:
   - When the data is handled by the components, all the data is stored in the component state.
   - We can use the useState Hook to keep track of each input value and provide a "single source of truth" for the entire application.
 
+
 ## React Forms Submit
+
 
 ## React Textarea
 
+
 ## React Select
+
 
 ## React multiple inputs
 
+
 ## React Checkbox
 
+
 ## React Radio
+
 
 ## React Portals
 
@@ -227,6 +254,7 @@ Portals are particularly useful for:
 E.g., Creating a Modal with Portal
 - Event Bubbling in Portals
   - Even though a portal renders content in a different part of the DOM tree, events from the portal content still bubble up through the React component tree as if the portal wasn't there.
+
  
 ## React Suspense
 
@@ -239,6 +267,7 @@ E.g., Creating a Modal with Portal
     - E.g.: const Cars = lazy(() => import('./Cars'));
 - One Suspense component can wrap multiple lazy components
 
+
 ## React CSS styling
 
 - Inline styling
@@ -249,6 +278,7 @@ E.g., Creating a Modal with Portal
 - CSS Modules
   - import styles from './my-style.module.css';
   - The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
 
 ## React CSS modules
 
@@ -270,6 +300,7 @@ E.g.:
   background-color: dodgerblue;
 }
 ```
+
 
 ## React CSS-in-JS
 
@@ -305,5 +336,162 @@ function App() {
 }
 ```
 
+- Props in Styled Components
+  - Another powerful feature of CSS-in-JS is the ability to use props to make styles dynamic.
 
+- Extending Style
+  - Another way of letting multiple elements have the same styles is to extend existing styled components.
+ 
+- Component-Scoped Styles
+  - Just like with CSS Modules, styles created in CSS-in-JS are scoped to the component.
+
+- Global Styles
+
+```
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  h1 {
+    color: white;
+    background-color: purple;
+    font-family: Arial, sans-serif;
+  }
+
+  .myparagraph {
+    font-family: courier, monospace;
+    color: blue;
+  }
+`;
+
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <h1>Welcome!</h1>
+      <p className="myparagraph">This paragraph is styled with global styles.</p>
+    </>
+  );
+}
+```
+
+## React Router
+
+- React Router is a library that provides routing capabilities for React applications.
+- Routing means handling navigation between different views.
+
+- React Router is the standard routing library for React applications.
+  - Create multiple pages in your single-page application
+  - Handle URL parameters and query strings
+  - Manage browser history and navigation
+  - Create nested routes and layouts
+  - Implement protected routes for authentication
+
+Install React Router
+```
+npm install react-router-dom
+```
+
+Your application must be wrapped with the BrowserRouter component to enable routing:
+···
+
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* Your app content */}
+    </BrowserRouter>
+  );
+}
+···
+
+
+### Basic Routing
+
+React Router uses three main components for basic routing:
+- Link: Creates navigation links that update the URL
+- Routes: A container for all your route definitions
+- Route: Defines a mapping between a URL path and a component
+
+···
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+function Home() {
+  return <h1>Home Page</h1>;
+}
+
+function About() {
+  return <h1>About Page</h1>;
+}
+
+function Contact() {
+  return <h1>Contact Page</h1>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* Navigation */}
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link> |{" "}
+        <Link to="/contact">Contact</Link>
+      </nav>
+
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+···
+
+- Nested Routes
+  - You can have a Route inside another Route, this is called nested routes.
+  - Nested routes allow you change parts of the page when you navigate to a new URL, while other parts is not changed or reloaded, almost like having a page within a page.
+
+
+### Style Active Links
+
+There is a special version of the Link component called NavLink that knows whether the link's URL is "active" or not.
+
+The NavLink is especially useful for:
+- Navigation menus
+- Breadcrumbs
+- Tabs
+
+
+### URL Parameters
+
+React Router provides the useParams hook to access these parameters in your components.
+
+···
+import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
+
+function Info() {
+  const { firstname } = useParams();
+  return <h1>Hello, {firstname}!</h1>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/customer/Emil">Emil</Link> | 
+        <Link to="/customer/Tobias">Tobias</Link> |
+        <Link to="/customer/Linus">Linus</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/customer/:firstname" element={<Info />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+···
+
+
+## React Transitions
 
