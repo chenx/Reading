@@ -366,9 +366,9 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <h1>Welcome!</h1>
-      <p className="myparagraph">This paragraph is styled with global styles.</p>
+      < GlobalStyle />
+      < h1>Welcome!</h1>
+      < p className="myparagraph">This paragraph is styled with global styles.</p>
     </>
   );
 }
@@ -416,34 +416,34 @@ React Router uses three main components for basic routing:
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Home() {
-  return <h1>Home Page</h1>;
+  return < h1>Home Page< /h1>;
 }
 
 function About() {
-  return <h1>About Page</h1>;
+  return < h1>About Page< /h1>;
 }
 
 function Contact() {
-  return <h1>Contact Page</h1>;
+  return < h1>Contact Page< /h1>;
 }
 
 function App() {
   return (
-    <BrowserRouter>
+    < BrowserRouter>
       {/* Navigation */}
-      <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/about">About</Link> |{" "}
-        <Link to="/contact">Contact</Link>
-      </nav>
+      < nav>
+        < Link to="/">Home</Link> |{" "}
+        < Link to="/about">About</Link> |{" "}
+        < Link to="/contact">Contact</Link>
+      < /nav>
 
       {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </BrowserRouter>
+      < Routes>
+        < Route path="/" element={<Home />} />
+        < Route path="/about" element={<About />} />
+        < Route path="/contact" element={<Contact />} />
+      < /Routes>
+    < /BrowserRouter>
   );
 }
 ···
@@ -477,17 +477,17 @@ function Info() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <nav>
-        <Link to="/customer/Emil">Emil</Link> | 
-        <Link to="/customer/Tobias">Tobias</Link> |
-        <Link to="/customer/Linus">Linus</Link>
-      </nav>
+    < BrowserRouter>
+      < nav>
+        < Link to="/customer/Emil">Emil</Link> | 
+        < Link to="/customer/Tobias">Tobias</Link> |
+        < Link to="/customer/Linus">Linus</Link>
+      < /nav>
 
-      <Routes>
-        <Route path="/customer/:firstname" element={<Info />} />
-      </Routes>
-    </BrowserRouter>
+      < Routes>
+        < Route path="/customer/:firstname" element={<Info />} />
+      < /Routes>
+    < /BrowserRouter>
   );
 }
 ···
