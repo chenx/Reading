@@ -65,4 +65,23 @@ index.html --> src/main.jsx --> src/App.jsx
     - this:
       - In regular functions the this keyword represented the object that called the function
       - With arrow functions, the this keyword always represents the object that defined the arrow function
-  - 
+  - Variables
+    - Before: var (function scope, not block scope)
+    - ES6: var, let (block scoped versino of var), const (block scope)
+      - const: defines constant reference to a value, not constant value; cannot reassign,
+        - but can change elements of a const array, or properties of a constant object
+  - map() method on list / array
+    - map(currentValue, index, array)
+  - Destructuring
+    - array
+    - object
+    - react components: props
+    - useState hook 
+  - Spread operator
+  - Modules: import, export
+    - named, or default
+  - Ternary operator: ? :
+  - Template strings
+    - Tagged templates
+
+ - JSX intro
