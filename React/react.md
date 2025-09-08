@@ -392,9 +392,7 @@ npm install react-router-dom
 ```
 
 Your application must be wrapped with the BrowserRouter component to enable routing:
-···
-
-
+```
 function App() {
   return (
     < BrowserRouter>
@@ -402,7 +400,7 @@ function App() {
     < /BrowserRouter>
   );
 }
-···
+```
 
 
 ### Basic Routing
@@ -412,7 +410,7 @@ React Router uses three main components for basic routing:
 - Routes: A container for all your route definitions
 - Route: Defines a mapping between a URL path and a component
 
-···
+```
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Home() {
@@ -446,7 +444,7 @@ function App() {
     < /BrowserRouter>
   );
 }
-···
+```
 
 - Nested Routes
   - You can have a Route inside another Route, this is called nested routes.
@@ -467,7 +465,7 @@ The NavLink is especially useful for:
 
 React Router provides the useParams hook to access these parameters in your components.
 
-···
+```
 import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
 
 function Info() {
@@ -477,20 +475,20 @@ function Info() {
 
 function App() {
   return (
-    < BrowserRouter>
-      < nav>
-        < Link to="/customer/Emil">Emil</Link> | 
-        < Link to="/customer/Tobias">Tobias</Link> |
-        < Link to="/customer/Linus">Linus</Link>
-      < /nav>
+    <BrowserRouter>
+      <nav>
+        <Link to="/customer/Emil">Emil</Link> | 
+        <Link to="/customer/Tobias">Tobias</Link> |
+        <Link to="/customer/Linus">Linus</Link>
+      </nav>
 
-      < Routes>
-        < Route path="/customer/:firstname" element={<Info />} />
-      < /Routes>
-    < /BrowserRouter>
+      <Routes>
+        <Route path="/customer/:firstname" element={<Info />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-···
+```
 
 
 ## React Transitions
