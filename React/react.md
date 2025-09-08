@@ -144,5 +144,22 @@ Updating:
 - componentDidUpdate()
 
 
-## React Props
+## React Props (Properties)
+
+- Props are arguments passed into React components.
+- Props are passed to components via HTML attributes.
+
+- multiple props
+- types
+- Object props
+- Array props
+
+## Props Destructuring
+
+## Props Children
+
+## React Events
+
+- React has the same events as HTML: click, change, mouseover etc.
+- Event handlers have access to the React event that triggered the function.
 
