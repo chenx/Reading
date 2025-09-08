@@ -84,4 +84,65 @@ index.html --> src/main.jsx --> src/App.jsx
   - Template strings
     - Tagged templates
 
- - JSX intro
+## JSX intro
+
+- JSX stands for JavaScript XML.
+- JSX allows us to write HTML in React (and make it easier).
+- You are not required to use JSX, but JSX makes it easier to write React applications.
+
+## JSX Expressions
+
+- You can insert any valid JavaScript expression inside JSX by wrapping it in curly braces { }
+- Insert variables in JSX by wrapping it in curly braces { }
+- Insert function calls in JSX by wrapping it in curly braces { }
+- Access object properties within JSX
+
+## JSX Attributes
+
+## JSX If
+
+## React Components
+
+- Components are like functions that return HTML elements.
+- 2 types, Class components and Function components
+- Ccomponent's name MUST start with an upper case letter
+- Props
+- Components in Components
+- Components in Files
+
+## React Class Components
+
+- Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
+- With the addition of Hooks, Function components are now almost equivalent to Class components.
+- The differences are so minor that you will probably never need to use a Class component in React.
+
+```
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+```
+
+- React Class components have a built-in state object.
+  - The state object is initialized in the constructor
+  - To change a value in the state object, use the this.setState() method.
+
+### Life cycle of components: Mounting, Updating, and Unmounting
+
+Mountinig:
+- constructor()
+- getDerivedStateFromProps()
+- render()
+- componentDidMount()
+
+Updating:
+- getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
+
+## React Props
+
