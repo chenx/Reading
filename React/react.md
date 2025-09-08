@@ -31,3 +31,19 @@ Node.js
 node -v
 ```
 
+Install build tool Vite:
+
+```
+npm install -g create-vite
+```
+
+Create a React application
+```
+npm create vite@latest my-react-app -- --template react
+
+npm install --force
+
+
+```
+
+
