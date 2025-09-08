@@ -224,7 +224,7 @@ Portals are particularly useful for:
 - Notifications
 
 
-- E.g., Creating a Modal with Portal
+E.g., Creating a Modal with Portal
 - Event Bubbling in Portals
   - Even though a portal renders content in a different part of the DOM tree, events from the portal content still bubble up through the React component tree as if the portal wasn't there.
  
@@ -242,7 +242,7 @@ Portals are particularly useful for:
 ## React CSS styling
 
 - Inline styling
-  - <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+  - <h1 style=\{\{backgroundColor: "lightblue"}}>Hello Style!</h1>
   - JavaScript object
 - CSS stylesheets
   - import './MyStylesheet.css';
