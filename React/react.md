@@ -802,6 +802,7 @@ Custom Hooks start with "use". Example: useFetch.
 
 # React Quiz questions
 
+```
 Question 1:
 
 What is React?
@@ -1007,7 +1008,7 @@ console.log(car);
 {car: 'Ford', car: 'Mustang'}}
 {make: 'Ford', model: 'Mustang'}    Correct answer  
 {car: {make: 'Ford', model: 'Mustang'}}
-
+```
 Question 25:
 
 Why should you avoid copying the values of props into a component's state?
