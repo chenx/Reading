@@ -662,3 +662,141 @@ Sass Modules
 - Sass has many Built-in Modules that you can use to manipulate colors, math, strings, etc.
 - One example is the sass:color module.
 
+
+# React Hooks
+
+- Hooks allow functions to have access to state and other React features without using classes.
+- They provide a more direct API to React concepts like props, state, context, refs, and lifecycle.
+
+### What is a Hook?
+
+Hooks are functions that let you "hook into" React state and lifecycle features from functional components.
+
+### Hook Rules
+
+There are 3 rules for hooks:
+- Hooks can only be called inside React function components.
+- Hooks can only be called at the top level of a component.
+- Hooks cannot be conditional
+
+## React useState Hook
+
+- The React useState Hook allows us to track state in a function component.
+- State generally refers to data or properties that need to be tracking in an application.
+
+## React useEffect Hooks
+
+- The useEffect Hook allows you to perform side effects in your components.
+- Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+- useEffect accepts two arguments. The second argument is optional.
+  - useEffect(<function>, <dependency>)
+
+### Effect Cleanup
+
+Some effects require cleanup to reduce memory leaks.
+
+Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.
+
+We do this by including a return function at the end of the useEffect Hook.
+
+
+## React useContext Hook
+
+React Context is a way to manage state globally.
+
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+### Create Context
+
+To create context, you must Import createContext and initialize it:
+
+### Context Provider
+
+Wrap child components in the Context Provider and supply the state value.
+
+
+## React useRef Hook
+
+The useRef Hook allows you to persist values between renders.
+- It can be used to store a mutable value that does not cause a re-render when updated.
+- It can be used to access a DOM element directly.
+
+### Does Not Cause Re-renders
+
+If we tried to count how many times our application renders using the useState Hook, we would be caught in an infinite loop since this Hook itself causes a re-render.
+
+To avoid this, we can use the useRef Hook.
+
+### Accessing DOM Elements
+
+The useRef Hook is often used to access DOM elements directly.
+- First, we create a ref using the useRef Hook: const inputElement = useRef();.
+- Then, we attach the ref to a DOM element using the ref attribute in JSX: <input type="text" ref={inputElement} />.
+- Finally, we can access the DOM element using the current property: inputElement.current.
+
+### Tracking State Changes
+
+The useRef Hook can also be used to keep track of previous state values.
+
+This is because we are able to persist useRef values between renders.
+
+
+## React useReducer Hook
+
+The useReducer Hook is similar to the useState Hook.
+
+It allows for custom state logic.
+
+If you find yourself keeping track of multiple pieces of state that rely on complex logic, useReducer may be useful.
+
+### Syntax
+
+The useReducer Hook accepts three arguments.
+```
+useReducer(reducer, initialState, init)
+```
+
+## React useCallback Hook
+
+The useCallback Hook is used to memoize a callback function.
+
+Memoizing a function means caching the result of a function so that it does not need to be recalculated.
+
+The useCallback function only re-executes when one of its dependencies changes value.
+
+This allows us to isolate resource intensive functions so that they will not automatically run on every render.
+
+### Syntax
+```
+useCallback(callback, dependencies)
+```
+
+The useCallback and useMemo Hooks are similar:
+
+useMemo returns a memoized value.
+
+useCallback returns a memoized function.
+
+
+## React useMemo Hook
+
+The React useMemo Hook returns a memoized value.
+
+The useMemo Hook only runs when one of its dependencies update.
+
+This can improve performance.
+
+The useMemo Hook can be used to keep expensive, resource intensive functions from needlessly running.
+
+
+## React Custom Hooks
+
+You can make your own Hooks!
+
+When you have components that can be used by multiple components, we can extract that component into a custom Hook.
+
+Custom Hooks start with "use". Example: useFetch.
+
+### Build a Hook
+
+
