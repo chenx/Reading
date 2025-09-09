@@ -1008,7 +1008,7 @@ console.log(car);
 {car: 'Ford', car: 'Mustang'}}
 {make: 'Ford', model: 'Mustang'}    Correct answer  
 {car: {make: 'Ford', model: 'Mustang'}}
-```
+
 Question 25:
 
 Why should you avoid copying the values of props into a component's state?
@@ -1016,6 +1016,6 @@ Because that would create two instances of the same state that could become out 
 Because you want to allow data to flow back up to the parent
 Because you should never mutate state
 Because prop values cannot be stored in state
-
+```
 
 
