@@ -1,6 +1,6 @@
 # React
 
-https://www.w3schools.com/REACT/react_intro.asp
+From: https://www.w3schools.com/REACT/
 
 
 ## Introduciton
@@ -800,7 +800,7 @@ Custom Hooks start with "use". Example: useFetch.
 ### Build a Hook
 
 
-# React Quiz questions
+# React Quiz
 
 ```
 Question 1:
