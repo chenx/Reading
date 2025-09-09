@@ -329,9 +329,9 @@ const MyHeader = styled.h1`
 
 function App() {
   return (
-    < >
-      < MyHeader>Welcome!< /MyHeader>
-    < />
+    <>
+      <MyHeader>Welcome!< /MyHeader>
+    </>
   );
 }
 ```
@@ -365,11 +365,11 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    < >
-      < GlobalStyle />
-      < h1>Welcome!</h1>
-      < p className="myparagraph">This paragraph is styled with global styles.</p>
-    < />
+    <>
+      <GlobalStyle />
+      <h1>Welcome!</h1>
+      <p className="myparagraph">This paragraph is styled with global styles.</p>
+    </>
   );
 }
 ```
@@ -395,9 +395,9 @@ Your application must be wrapped with the BrowserRouter component to enable rout
 ```
 function App() {
   return (
-    < BrowserRouter>
+    <BrowserRouter>
       {/* Your app content */}
-    < /BrowserRouter>
+    </BrowserRouter>
   );
 }
 ```
@@ -414,34 +414,34 @@ React Router uses three main components for basic routing:
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Home() {
-  return < h1>Home Page< /h1>;
+  return <h1>Home Page< /h1>;
 }
 
 function About() {
-  return < h1>About Page< /h1>;
+  return <h1>About Page< /h1>;
 }
 
 function Contact() {
-  return < h1>Contact Page< /h1>;
+  return <h1>Contact Page< /h1>;
 }
 
 function App() {
   return (
-    < BrowserRouter>
+    <BrowserRouter>
       {/* Navigation */}
-      < nav>
-        < Link to="/">Home</Link> |{" "}
-        < Link to="/about">About</Link> |{" "}
-        < Link to="/contact">Contact</Link>
-      < /nav>
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link> |{" "}
+        <Link to="/contact">Contact</Link>
+      </nav>
 
       {/* Routes */}
-      < Routes>
-        < Route path="/" element={<Home />} />
-        < Route path="/about" element={<About />} />
-        < Route path="/contact" element={<Contact />} />
-      < /Routes>
-    < /BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 ```
