@@ -800,3 +800,221 @@ Custom Hooks start with "use". Example: useFetch.
 ### Build a Hook
 
 
+# React Quiz questions
+
+Question 1:
+
+What is React?
+React is a JavaScript library for building user interfaces.    Your answer  
+React is a database engine.
+React is a programming language.
+
+Question 2:
+
+What does my-react-app refer to in the following command?
+npm create vite@latest my-react-app -- --template react
+
+The name you want to use for the new app    Your answer  
+The type of app to create
+A reference to an existing app
+
+Question 3:
+
+What command is used to start the React local development server?
+npm run dev    Your answer  
+npm build
+npm serve
+npm start
+
+Question 4:
+
+What is the default local host port that Vite uses for a React development server?
+5173    Your answer  
+5000
+3000
+8080
+
+Question 5:
+
+To develop and run React code, Node.js is required.
+True    Your answer  
+False
+
+Question 6:
+
+What type of element will be rendered from the following code?
+function Car() {
+  return <h1>Ford Mustang</h1>;
+}
+
+createRoot(document.getElementById('root')).render(
+  <Car />
+)
+
+h1    Your answer  
+Component
+div
+ReactDom
+
+Question 7:
+
+What is the children prop?
+A property that lets you pass data to child components    Your answer  
+A property that adds child values to state
+A property that lets you nest components in other components    Correct answer  
+A property that lets you set an object as a property
+
+Question 8:
+
+Which keyword creates a constant in JavaScript?
+const    Your answer  
+let
+var
+constant
+
+Question 9:
+
+A copy of the 'real' DOM that is kept in memory is called what?
+Virtual DOM    Your answer  
+DOM
+React DOM
+Shadow DOM
+
+Question 10:
+
+React component names must begin with an uppercase letter.
+True    Your answer  
+False
+
+Question 11:
+
+Which operator can be used to conditionally render a React component?
+&&    Your answer  
+::
+||
+??
+
+Question 12:
+
+When rendering a list using the JavaScript map() method, what is required for each element rendered?
+key    Your answer  
+id
+index
+data
+
+Question 13:
+
+What does JSX stand for?
+JavaScript XML    Your answer  
+JavaScript X-factor
+JavaScript Extreme
+JavaScript Expressions
+
+Question 14:
+
+How can you optimize performance for a function component that always renders the same way?
+Use the useMemo Hook.    Your answer  
+Use the useReducer Hook.
+Use the shouldComponentUpdate lifecycle method.
+Wrap it in the React.memo higher-order component.    Correct answer 
+
+Question 15:
+
+What props will be available to the following component?
+<Car {...props} />
+
+all of them    Your answer  
+children
+only updated ones
+only static ones
+
+Question 16:
+
+What is a common use case for ref?
+To directly access a DOM node    Your answer  
+To refer to another JavaScript file
+To bind the function
+To refer to a function
+
+Question 17:
+
+How can you combine the following arrays using the spread operator?
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+
+const combined = [...array1, ...array2];    Your answer  
+const combined = [array1, array2];
+const combined = array1 + array2;
+const combined = ...array1 + ...array2;
+
+Question 18:
+
+React can only render elements in the root document element.
+False    Your answer  
+True
+
+Question 19:
+
+What is the correct syntax to export a component named Car from a file?
+export default Car;    Your answer  
+export Car as Component;
+export internal Car;
+export Component.Car;
+
+Question 20:
+
+Find the bug in this code:
+function car({make, model}) {
+  return <h1>{make} {model}</h1>;
+};
+
+The first letter of the function must be capitalized    Your answer  
+Remove the return statement
+Wrap the return in a fragment
+Add parenthesis around the return value
+
+Question 21:
+
+React separates the user interface into components. How are components combinded to create a user interface?
+By nesting components    Your answer  
+By putting them in a folder structure
+With code splitting
+With webpack
+
+Question 22:
+
+Although React Hooks generally replace class components, there are no plans to remove classes from React.
+True    Your answer  
+False
+
+Question 23:
+
+Which of the following is NOT a rule for React Hooks?
+Hooks can be called in Class or Function components    Your answer  
+Hooks can only be called at the top level of a component
+Hooks can only be called inside React Function components
+Hooks cannot be conditional
+
+Question 24:
+
+What is the output of the following code?
+const make = 'Ford';
+const model = 'Mustang';
+const car = { make, model };
+console.log(car);
+
+{{make: 'Ford', model: 'Mustang'}}    Your answer  
+{car: 'Ford', car: 'Mustang'}}
+{make: 'Ford', model: 'Mustang'}    Correct answer  
+{car: {make: 'Ford', model: 'Mustang'}}
+
+Question 25:
+
+Why should you avoid copying the values of props into a component's state?
+Because that would create two instances of the same state that could become out of sync    Your answer  
+Because you want to allow data to flow back up to the parent
+Because you should never mutate state
+Because prop values cannot be stored in state
+
+
+
