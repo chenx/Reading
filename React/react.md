@@ -493,3 +493,172 @@ function App() {
 
 ## React Transitions
 
+### What is useTransition?
+
+- The useTransition hook helps you keep your React app responsive during heavy updates.
+- It lets you mark some state updates as "non-urgent", allowing other, more urgent updates to happen first.
+
+### When to Use Transitions?
+
+Use transitions when you have:
+- A slow operation that might freeze the UI
+- Updates that aren't immediately critical
+- Search results that take time to display
+
+```
+import { useState, useTransition } from 'react';
+
+function SearchBar() {
+  const [text, setText] = useState('');
+  const [results, setResults] = useState('');
+  const [isPending, startTransition] = useTransition();
+
+  const handleChange = (e) => {
+    // Urgent: Update input right away
+    setText(e.target.value);
+
+    // Non-urgent: Update search results
+    startTransition(() => {
+      setResults(e.target.value);
+    });
+  };
+
+  return (
+    <div>
+      <input value={text} onChange={handleChange} />
+      {isPending ? (
+        <p>Loading...</p>
+      ) : (
+        <p>Search results for: {results}</p>
+      )}
+    </div>
+  );
+}
+```
+
+### useTransition Hook
+
+The useTransition hook returns two items:
+- isPending: tells you if a transition is active
+- startTransition: function to mark updates as transitions
+
+## React Forward Ref
+
+### What is forwardRef?
+
+forwardRef lets your component pass a reference to one of its children. It's like giving a direct reference to a DOM element inside your component.
+
+Common uses for forwardRef:
+- Focusing input elements
+- Triggering animations
+- Measuring DOM elements
+- Integrating with third-party libraries
+
+```
+import { forwardRef, useRef } from 'react';
+
+const MyInput = forwardRef((props, ref) => (
+  <input ref={ref} {...props} />
+));
+
+function App() {
+  const inputRef = useRef();
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <MyInput ref={inputRef} placeholder="Type here..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+```
+
+
+## React HOC (High Order Components)
+
+### What is a Higher Order Component?
+
+A Higher Order Component (HOC) is like a wrapper that adds extra features to your React components. Think of it like putting a case on your phone - the case adds new features (like water protection) without changing the phone itself.
+
+Note: HOCs are functions that take a component and return an enhanced version of that component.
+
+Note: Often, HOC's can be replaced with React Hooks, but HOC's are still useful for certain cross-cutting concerns like authentication or data fetching patterns.
+
+```
+// This is our HOC - it adds a border to any component
+function withBorder(WrappedComponent) {
+  return function NewComponent(props) {
+    return (
+      <div style={{ border: '2px solid blue', padding: '10px' }}>
+        <WrappedComponent {...props} />
+      </div>
+    );
+  };
+}
+
+// Simple component without border
+function Greeting({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
+
+// Create a new component with border
+const GreetingWithBorder = withBorder(Greeting);
+
+function App() {
+  return (
+    <div>
+      <Greeting name="John" />
+      <GreetingWithBorder name="Jane" />
+    </div>
+  );
+}
+```
+
+
+## React Sass (SASS styling)
+
+### What is Sass?
+- Sass is a CSS pre-processor.
+- Sass files are executed on the server and sends CSS to the browser.
+- Sass adds extra features to CSS like variables, nesting, mixins, and more.
+
+[Sass Tutorial(https://www.w3schools.com/sass/default.asp)
+
+Adding Sass to React:
+```
+npm install sass
+```
+
+Create a Sass file MyStyle.scss:
+```
+$myColor: red;
+
+h1 {
+  color: $myColor;
+}
+```
+
+Import the Sass file
+```
+import { createRoot } from 'react-dom/client';
+import './MyStyle.scss';
+
+function MyHeader() {
+  return (
+    <h1>My Header</h1>
+  );
+}
+
+createRoot(document.getElementById('root')).render(
+  <MyHeader />
+);
+```
+
+Sass Modules
+- Sass has many Built-in Modules that you can use to manipulate colors, math, strings, etc.
+- One example is the sass:color module.
+
