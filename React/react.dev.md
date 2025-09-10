@@ -284,7 +284,8 @@ Since the build tool you select only supports single page apps (SPAs), you’ll 
 
 #### Using React Native in an existing native mobile app
 
-<br/>
+<br />
+
 ## 3. Setup 
 
 ### Editor Setup
@@ -345,7 +346,8 @@ React Developer Tools browser extension
 #### Mobile (React Native)
 
 
-<br/>
+<br />
+
 ## 4. React Compiler
 
 ### Introduction
