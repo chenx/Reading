@@ -132,10 +132,8 @@ Here is a list of some JavaScript libraries to use for both Machine Learning gra
 
 ### WebGL API
 
-WebGL is a JavaScript API for rendering 2d and 3D graphics in any browser.
-
-WebGL can run on both integrated and standalone graphic cards in any PC.
-
-WebGL brings 3D graphics to the web browser. Major browser vendors Apple (Safari), Google (Chrome), Microsoft (Edge), and Mozilla (Firefox) are members of the WebGL Working Group.
+- WebGL is a JavaScript API for rendering 2d and 3D graphics in any browser.
+- WebGL can run on both integrated and standalone graphic cards in any PC.
+- WebGL brings 3D graphics to the web browser. Major browser vendors Apple (Safari), Google (Chrome), Microsoft (Edge), and Mozilla (Firefox) are members of the WebGL Working Group.
 
 E.g.: https://akirodic.com/p/jellyfish/
