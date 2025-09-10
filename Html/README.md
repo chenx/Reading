@@ -1,3 +1,10 @@
+# List of All HTML Web APIs and Interfaces
+
+https://developer.mozilla.org/en-US/docs/Web/API
+
+Web APIs are typically used with JavaScript, although this doesn't always have to be the case.
+
+
 # HTML5 vs HTML
 
 - https://www.hostinger.com/tutorials/html-vs-html5
