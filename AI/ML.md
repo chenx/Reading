@@ -167,5 +167,56 @@ Backpropagation
 - Learning is looping.
 - Gradient Descent
 - Cost function (Error function)
+- The Train Function
 
 <img src="https://www.w3schools.com/ai/img_linear_regression_error.jpg" />
+
+    E is the error (cost)
+    N is the total number of observations (points)
+    y is the value (label) of each observation
+    x is the value (feature) of each observation
+    m is the slope (weight)
+    b is intercept (bias)
+    mx + b is the prediction
+    1/N * N∑1 is the squared mean value
+
+### Terminology
+
+- Label: label is the thing we want to predict.
+- Features: the input
+- Models: relationship between the label (y) and the features (x)
+- Training
+- Inference: the trained model is used to infer (predict) values using live data
+- Phases:
+  - Training: Input data are used to calculate the parameters of the model.
+  - Inference: The "trained" model outputs correct data from any input.
+
+<br/>
+
+- Supervised Learning
+- Unsupervised Learning
+- Reinforcement Learning
+  - non-supervised learning but receives feedback from the user whether the decision is good or bad
+- Self-Supervised Learning
+  - similar to unsupervised learning because it works with data without human added labels.
+  - The difference is that unsupervised learning uses clustering, grouping, and dimensionality reduction, while self-supervised learning draw its own conclusions for regression and classification tasks.
+
+### Data
+
+Sampling Terms
+- Population
+- Census
+- Sample
+  - Random samples
+  - Sampling bias
+
+Census vs Sample
+- A Census is when we collect data for every member of a group.
+- A Sample is when we collect data for some members of a group.
+- A census is Accurate, but hard to do. A sample is Inaccurate, but is easier to do.
+
+Big Data, Data mining
+
+### Clustering
+
+### Regressions
