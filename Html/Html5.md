@@ -21,6 +21,6 @@ Here are some of the main HTML5 APIs (See https://www.w3schools.com/html/html5_a
 
 4. Web Workers API - This API allows a JavaScript to run in the background, without affecting the performance of the page. Users can continue to do whatever they want: clicking, selecting things, etc., while the web worker runs in the background.
 
-5. Server-Sent Events API - This API allows a web page to automatically get updates from a server.
+5. Server-Sent Events (SSE) API - This API allows a web page to automatically get updates from a server.
 
 6. Canvas API - This API lets you draw graphics, on the fly, via JavaScript.
