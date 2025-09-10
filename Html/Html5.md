@@ -10,7 +10,8 @@
 - Provided localStorage / sessionStorage API, and SQL database (indexDB)
 - Enable websites to access users' geographical location
 
-See https://www.w3schools.com/html/html5_api_whatis.asp
+
+Here are some of the main HTML5 APIs (See https://www.w3schools.com/html/html5_api_whatis.asp):
 
 1. Geolocation API - This API is used to access the current location of a user (with latitude and longitude).
 
