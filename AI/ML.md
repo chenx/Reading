@@ -270,3 +270,119 @@ Smart chess playing programs take years to build, while Giraffe was built in 72 
 
 ### Brain.js
 
+
+# TensorFlow.js
+
+https://www.w3schools.com/ai/ai_tensorflow_intro.asp
+
+A popular JavaScript library for Machine Learning.
+
+## Tensors
+
+- TensorFlow.js is a JavaScript library to define and operate on Tensors.
+- The main data type in TensorFlow.js is the Tensor.
+- A Tensor is much the same as a multidimensional array.
+- A Tensor contains values in one or more dimensions:
+
+Teasor properties:
+- dtype	The data type
+- rank	The number of dimensions
+- shape	The size of each dimension
+
+### Creating a Tensor
+
+- The main data type in TensorFlow is the Tensor.
+- A Tensor is created from any N-dimensional array with the tf.tensor() method:
+
+Tensor Shape
+
+- A Tensor can also be created from an array and a shape parameter: 
+
+### Retrieve Tensor Values
+
+- You can get the data behind a tensor using tensor.data()
+- You can get the array behind a tensor using tensor.array()
+- tensor.rank, tensor.shape, tensor.dtype
+
+### Tensor Data Types
+
+A Tensor can have the following data types:
+
+    bool
+    int32
+    float32 (default)
+    complex64
+    string
+
+## TensorFlow Operations
+
+    Add
+    Subtract
+    Multiply
+    Divide
+    Square
+    Reshape
+
+tensor.reshape()
+- The number of elements in a tensor is the product of the sizes in the shape.
+- Since there can be different shapes with the same size, it is often useful to reshape a tensor to other shapes with the same size.
+
+<br/>
+
+## TensorFlow Models
+
+Models and Layers are important building blocks in Machine Learning.
+
+- TensorFlow.js is supporting different types of Models and different types of Layers.
+- A TensorFlow Model is a Neural Network with one or more Layers.
+
+### A Tensorflow Project
+
+A Tensorflow project has this typical workflow:
+
+    Collecting Data
+    Creating a Model
+    Adding Layers to the Model
+    Compiling the Model
+    Training the Model
+    Using the Model
+
+### Tensorflow Optimizers
+
+    Adadelta -Implements the Adadelta algorithm.
+    Adagrad - Implements the Adagrad algorithm.
+    Adam - Implements the Adam algorithm.
+    Adamax - Implements the Adamax algorithm.
+    Ftrl - Implements the FTRL algorithm.
+    Nadam - Implements the NAdam algorithm.
+    Optimizer - Base class for Keras optimizers.
+    RMSprop - Implements the RMSprop algorithm.
+    SGD - Stochastic Gradient Descent Optimizer.
+
+### Training the Model
+
+```
+model.fit(xs, ys, {epochs:500}).then(() => {myFunction()});
+```
+
+### Using the Model
+
+After the model is trained, you can use it for many different purposes.
+
+<br/>
+
+## TensorFlow.js Visor
+
+    TensorFlow Visor is a graphic tools for visualizing Machine Learning
+    It contains functions for visualizing TensorFlow Models
+    Visualizations can be organized in Visors (modal browser windows)
+    Can be used with Custom Tools likes d3, Chart.js, and Plotly.js
+    Often called tfjs-vis
+
+### Using tfjs-vis
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+```
+
+
