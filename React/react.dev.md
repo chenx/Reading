@@ -1,8 +1,62 @@
 # React.dev
 
-https://react.dev/learn
+- https://react.dev/learn
+- https://ecotrust-canada.github.io/markdown-toc/
 
-https://ecotrust-canada.github.io/markdown-toc/
+- [React.dev](#reactdev)
+  * [1. Quick Start](#1-quick-start)
+    + [Creating and nesting components](#creating-and-nesting-components)
+    + [Writing markup with JSX](#writing-markup-with-jsx)
+    + [Adding styles](#adding-styles)
+    + [Displaying data](#displaying-data)
+    + [Conditional rendering](#conditional-rendering)
+    + [Rendering lists](#rendering-lists)
+    + [Responding to events](#responding-to-events)
+    + [Updating the screen](#updating-the-screen)
+    + [Using Hooks](#using-hooks)
+    + [Sharing data between components](#sharing-data-between-components)
+    + [Tutorial: Tic-Tac-Toe](#tutorial--tic-tac-toe)
+    + [Thinking in React](#thinking-in-react)
+      - [Start with the mockup](#start-with-the-mockup)
+      - [Step 1: Break the UI into a component hierarchy](#step-1--break-the-ui-into-a-component-hierarchy)
+      - [Step 2: Build a static version in React](#step-2--build-a-static-version-in-react)
+      - [Step 3: Find the minimal but complete representation of UI state](#step-3--find-the-minimal-but-complete-representation-of-ui-state)
+      - [Step 4: Identify where your state should live](#step-4--identify-where-your-state-should-live)
+      - [Step 5: Add inverse data flow](#step-5--add-inverse-data-flow)
+  * [2. Installation](#2-installation)
+    + [Creating a React App](#creating-a-react-app)
+      - [Full-stack frameworks](#full-stack-frameworks)
+      - [React Router (v7)](#react-router--v7-)
+      - [Expo (for native apps)](#expo--for-native-apps-)
+      - [Start From Scratch](#start-from-scratch)
+    + [Build a React app from Scratch](#build-a-react-app-from-scratch)
+      - [Step 1: Install a build tool](#step-1--install-a-build-tool)
+      - [Step 2: Build Common Application Patterns](#step-2--build-common-application-patterns)
+      - [Code-splitting](#code-splitting)
+      - [Improving Application Performance](#improving-application-performance)
+    + [Add React to an Existing Project](#add-react-to-an-existing-project)
+      - [Using React for an entire subroute of your existing website](#using-react-for-an-entire-subroute-of-your-existing-website)
+      - [Using React for a part of your existing page](#using-react-for-a-part-of-your-existing-page)
+      - [Using React Native in an existing native mobile app](#using-react-native-in-an-existing-native-mobile-app)
+  * [Setup](#setup)
+    + [Editor Setup](#editor-setup)
+    + [Using TypeScript](#using-typescript)
+      - [TypeScript with React Components](#typescript-with-react-components)
+      - [Example Hooks](#example-hooks)
+      - [Useful types:](#useful-types-)
+      - [DOM Events](#dom-events)
+      - [Style Props](#style-props)
+    + [React Developer Tools](#react-developer-tools)
+      - [Browser extension](#browser-extension)
+      - [Mobile (React Native)](#mobile--react-native-)
+  * [React Compiler](#react-compiler)
+    + [Introduction](#introduction)
+      - [Installation](#installation)
+      - [Incremental Adoption](#incremental-adoption)
+      - [Debugging and Troubleshooting](#debugging-and-troubleshooting)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## 1. Quick Start
 
