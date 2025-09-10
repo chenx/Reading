@@ -1,7 +1,8 @@
 # React.dev
 
-- https://react.dev/learn
-- https://ecotrust-canada.github.io/markdown-toc/
+https://react.dev/learn
+
+https://ecotrust-canada.github.io/markdown-toc/
 
 - [React.dev](#reactdev)
   * [1. Quick Start](#1-quick-start)
@@ -38,7 +39,7 @@
       - [Using React for an entire subroute of your existing website](#using-react-for-an-entire-subroute-of-your-existing-website)
       - [Using React for a part of your existing page](#using-react-for-a-part-of-your-existing-page)
       - [Using React Native in an existing native mobile app](#using-react-native-in-an-existing-native-mobile-app)
-  * [Setup](#setup)
+  * [3. Setup](#setup)
     + [Editor Setup](#editor-setup)
     + [Using TypeScript](#using-typescript)
       - [TypeScript with React Components](#typescript-with-react-components)
@@ -49,7 +50,7 @@
     + [React Developer Tools](#react-developer-tools)
       - [Browser extension](#browser-extension)
       - [Mobile (React Native)](#mobile--react-native-)
-  * [React Compiler](#react-compiler)
+  * [4. React Compiler](#react-compiler)
     + [Introduction](#introduction)
       - [Installation](#installation)
       - [Incremental Adoption](#incremental-adoption)
@@ -284,7 +285,7 @@ Since the build tool you select only supports single page apps (SPAs), you’ll 
 #### Using React Native in an existing native mobile app
 
 <br/>
-## Setup 
+## 3. Setup 
 
 ### Editor Setup
 
@@ -345,7 +346,7 @@ React Developer Tools browser extension
 
 
 <br/>
-## React Compiler
+## 4. React Compiler
 
 ### Introduction
 
