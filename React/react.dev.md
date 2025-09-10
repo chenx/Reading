@@ -2,8 +2,7 @@
 
 https://react.dev/learn
 
-[[_TOC_]]
-[TOC]
+https://ecotrust-canada.github.io/markdown-toc/
 
 ## Quick Start
 
