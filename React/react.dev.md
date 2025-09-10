@@ -125,3 +125,33 @@ function MyButton({ count, onClick }) {
 }
 ```
 
+### Tutorial: Tic-Tac-Toe
+
+https://react.dev/learn/tutorial-tic-tac-toe
+
+### Thinking in React
+
+https://react.dev/learn/thinking-in-react
+
+#### Start with the mockup
+
+#### Step 1: Break the UI into a component hierarchy
+
+#### Step 2: Build a static version in React
+
+- It’s often easier to build the static version first and add interactivity later.
+- In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
+
+#### Step 3: Find the minimal but complete representation of UI state 
+
+Props vs State
+
+- Props are like arguments you pass to a function. They let a parent component pass data to a child component and customize its appearance. For example, a Form can pass a color prop to a Button.
+- State is like a component’s memory. It lets a component keep track of some information and change it in response to interactions. For example, a Button might keep track of isHovered state.
+
+#### Step 4: Identify where your state should live
+
+#### Step 5: Add inverse data flow
+
+
+## Installation
