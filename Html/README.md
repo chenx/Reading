@@ -10,15 +10,26 @@ Web APIs are typically used with JavaScript, although this doesn't always have t
 - https://www.hostinger.com/tutorials/html-vs-html5
 - https://www.geeksforgeeks.org/html/difference-between-html-and-html5/
 
+## HTML5
+
+- https://en.wikipedia.org/wiki/HTML5
+
+First released in 2008, with major update in 2014.
+
+Reired in 2018, in favor of the HTML Living Standard. 
+
+- The "replacement" for HTML5 is not a new, distinct version, but rather the HTML Living Standard, which represents a continuous, evolving definition of HTML.
+
 ## New features of HTML5
 
 - New semantic elements. E.g., \<section>, \<article>.
 - Enhanced multimedia capabilities by native supports for audio and video
-- Provided localStorage / sessionStorage API, and SQL database (indexDB)
-- Enable websites to access users' geographical location
+- Provided Web Storage APIs: localStorage, sessionStorage, SQL database (indexDB)
+- Enabled websites to access users' geographical location: Geolocation API
 
+## Some of the main HTML5 APIs 
 
-Here are some of the main HTML5 APIs (See https://www.w3schools.com/html/html5_api_whatis.asp):
+See https://www.w3schools.com/html/html5_api_whatis.asp:
 
 1. Geolocation API - This API is used to access the current location of a user (with latitude and longitude).
 
