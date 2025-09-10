@@ -219,4 +219,54 @@ Big Data, Data mining
 
 ### Clustering
 
+Clustering is a type of Unsupervised Learning.
+
+Clustering is trying to:
+
+    Collect similar data in groups
+    Collect dissimilar data in other groups
+
+Clustering Methods
+
+    Density Method
+    Hierarchical Method
+    Partitioning Method
+    Grid-based Method
+
+Correlation Coefficient
+
+
 ### Regressions
+
+Linear Regression
+
+Polynomial Regression
+
+### Deep Learning
+
+The deep learning revolution started around 2010.
+
+Since then, Deep Learning has solved many "unsolvable" problems.
+
+#### Neurons
+
+Scientists agree that our brain has between 80 and 100 billion neurons.
+
+These neurons have hundreds of billions connections between them.
+
+#### Tom Mitchell
+
+Tom Michael Mitchell (born 1951) is an American computer scientist and University Professor at the Carnegie Mellon University (CMU).
+
+#### The Giraffe Story
+
+In 2015, Matthew Lai, a student at Imperial College in London created a neural network called Giraffe.
+
+Giraffe could be trained in 72 hours to play chess at the same level as an international master.
+
+Computers playing chess are not new, but the way this program was created was new.
+
+Smart chess playing programs take years to build, while Giraffe was built in 72 hours with a neural network.
+
+### Brain.js
+
