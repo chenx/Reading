@@ -292,3 +292,14 @@ React Developer Tools browser extension
 
 <br/>
 ## React Compiler
+
+### Introduction
+
+React Compiler automatically optimizes your React application at build time. 
+
+#### Installation
+
+#### Incremental Adoption
+
+#### Debugging and Troubleshooting
+
