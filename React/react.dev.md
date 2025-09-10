@@ -4,7 +4,7 @@ https://react.dev/learn
 
 https://ecotrust-canada.github.io/markdown-toc/
 
-## Quick Start
+## 1. Quick Start
 
 ### Creating and nesting components
 
@@ -153,5 +153,69 @@ Props vs State
 
 #### Step 5: Add inverse data flow
 
+<br />
 
-## Installation
+## 2. Installation
+
+### Creating a React App
+
+#### Full-stack frameworks
+
+Next.js (App Router)
+
+- Next.js’s App Router is a React framework that takes full advantage of React’s architecture to enable full-stack React apps.
+- Next.js is maintained by Vercel.
+
+```
+npx create-next-app@latest
+```
+
+#### React Router (v7)
+
+React Router is the most popular routing library for React and can be paired with Vite to create a full-stack React framework.
+
+```
+npx create-react-router@latest
+```
+
+#### Expo (for native apps)
+
+- Expo is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs.
+- It provides an SDK for React Native that makes the native parts easier to use.
+
+```
+npx create-expo-app@latest
+```
+
+#### Start From Scratch
+
+<br/>
+
+### Build a React app from Scratch
+
+https://react.dev/learn/build-a-react-app-from-scratch
+
+#### Step 1: Install a build tool 
+
+The first step is to install a build tool like vite, parcel, or rsbuild.
+
+#### Step 2: Build Common Application Patterns
+
+routing, data fetching, or styling
+
+If you’re fetching data from most backends or REST-style APIs, we suggest using:
+- React Query
+- SWR
+- RTK Query
+
+If you’re fetching data from a GraphQL API, we suggest using:
+- Apollo
+- Relay
+
+#### Code-splitting 
+
+#### Improving Application Performance
+
+Since the build tool you select only supports single page apps (SPAs), you’ll need to implement other rendering patterns like server-side rendering (SSR), static site generation (SSG), and/or React Server Components (RSC). 
+
+### Add React to an Existing Project
