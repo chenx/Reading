@@ -137,3 +137,35 @@ Here is a list of some JavaScript libraries to use for both Machine Learning gra
 - WebGL brings 3D graphics to the web browser. Major browser vendors Apple (Safari), Google (Chrome), Microsoft (Edge), and Mozilla (Firefox) are members of the WebGL Working Group.
 
 E.g.: https://akirodic.com/p/jellyfish/
+
+<br/>
+
+## ML Perceptrons
+
+https://www.w3schools.com/ai/ai_perceptrons.asp
+
+### Perceptron Learning
+
+- The perceptron can learn from examples through a process called training.
+- During training, the perceptron adjusts its weights based on observed errors. This is typically done using a learning algorithm such as the perceptron learning rule or a backpropagation algorithm.
+- Perceptrons are often used as the building blocks for more complex neural networks, such as multi-layer perceptrons (MLPs) or deep neural networks (DNNs).
+
+### Pattern Recognition
+
+https://www.w3schools.com/ai/ai_recognition.asp
+
+### Training
+
+https://www.w3schools.com/ai/ai_training.asp
+
+Backpropagation
+
+### Testing
+
+### Learning
+
+- Learning is looping.
+- Gradient Descent
+- Cost function (Error function)
+
+<img src="https://www.w3schools.com/ai/img_linear_regression_error.jpg" />
