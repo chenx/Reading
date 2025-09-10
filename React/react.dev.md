@@ -190,7 +190,6 @@ npx create-expo-app@latest
 #### Start From Scratch
 
 <br/>
-
 ### Build a React app from Scratch
 
 https://react.dev/learn/build-a-react-app-from-scratch
@@ -218,4 +217,78 @@ If you’re fetching data from a GraphQL API, we suggest using:
 
 Since the build tool you select only supports single page apps (SPAs), you’ll need to implement other rendering patterns like server-side rendering (SSR), static site generation (SSG), and/or React Server Components (RSC). 
 
+<br/>
 ### Add React to an Existing Project
+
+#### Using React for an entire subroute of your existing website
+
+#### Using React for a part of your existing page
+
+- Step 1: Set up a modular JavaScript environment 
+- Step 2: Render React components anywhere on the page
+
+#### Using React Native in an existing native mobile app
+
+<br/>
+## Setup 
+
+### Editor Setup
+
+- VS Code
+- WebStorm
+- Sublime Text
+- Vim
+
+Recommended text editor features
+- Linting
+- Formatting
+
+### Using TypeScript
+
+https://react.dev/learn/typescript
+
+TypeScript supports JSX and you can get full React Web support by adding @types/react and @types/react-dom to your project.
+
+```
+npm install —save-dev @types/react @types/react-dom
+```
+
+#### TypeScript with React Components
+
+Every file containing JSX must use the .tsx file extension. This is a TypeScript-specific extension that tells TypeScript that this file contains JSX.
+
+#### Example Hooks
+
+- useState
+  - Re-use the value passed in as the initial state to determine what the type of the value should be.
+- useReducer
+  - A more complex Hook that takes a reducer function and an initial state.
+  - The types for the reducer function are inferred from the initial state.
+- useContext
+  - A technique for passing data down the component tree without having to pass props through components.
+  - It is used by creating a provider component and often by creating a Hook to consume the value in a child component.
+- useMemo
+  - Create/re-access a memorized value from a function call, re-running the function only when dependencies passed as the 2nd parameter are changed.
+- useCallback
+  - Provide a stable reference to a function as long as the dependencies passed into the second parameter are the same.
+
+#### Useful types:
+
+React’s folder in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)
+
+#### DOM Events
+
+#### Style Props
+
+<br/>
+### React Developer Tools
+
+#### Browser extension
+
+React Developer Tools browser extension
+
+#### Mobile (React Native)
+
+
+<br/>
+## React Compiler
