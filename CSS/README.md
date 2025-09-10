@@ -4,7 +4,7 @@ https://en.wikipedia.org/wiki/CSS
 
 https://www.geeksforgeeks.org/css/css-history-versions/
 
-CSS was developed by the World Wide Web Consortium (W3C), with significant contributions from Håkon Wium Lie and Bert Bos. Håkon Wium Lie first proposed the concept of CSS in 1994 to address the challenges of document presentation on the web, which was previously controlled solely by HTML.
+CSS was developed by the World Wide Web Consortium (W3C), with significant contributions from **Håkon Wium Lie** and **Bert Bos**. Håkon Wium Lie first proposed the concept of CSS in 1994 to address the challenges of document presentation on the web, which was previously controlled solely by HTML.
 
 ## CSS3
 
