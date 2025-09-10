@@ -14,9 +14,9 @@ Web APIs are typically used with JavaScript, although this doesn't always have t
 
 - https://en.wikipedia.org/wiki/HTML5
 
-First released in 2008, with major update in 2014.
+**First released in 2008, with major update in 2014.**
 
-Reired in 2018, in favor of the HTML Living Standard. 
+**Retired in 2018, in favor of the HTML Living Standard.** 
 
 - The "replacement" for HTML5 is not a new, distinct version, but rather the HTML Living Standard, which represents a continuous, evolving definition of HTML.
 
