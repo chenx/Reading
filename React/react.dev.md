@@ -329,7 +329,7 @@ Every file containing JSX must use the .tsx file extension. This is a TypeScript
 
 #### Useful types:
 
-React’s folder in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)
+[React’s folder in DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)
 
 #### DOM Events
 
