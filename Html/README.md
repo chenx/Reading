@@ -22,7 +22,7 @@ Web APIs are typically used with JavaScript, although this doesn't always have t
 
 ## New features of HTML5
 
-- New semantic elements. E.g., \<section>, \<article>.
+- New semantic elements. E.g., \<header>, \<footer>, \<section>, \<article>.
 - Enhanced multimedia capabilities by native supports for audio and video
 - Provided Web Storage APIs: localStorage, sessionStorage, SQL database (indexDB)
 - Enabled websites to access users' geographical location: Geolocation API
