@@ -542,3 +542,58 @@ const tensorAdd = tensorA.add(tensorB);
 
 // Result [ [2, 1], [5, 2], [8, 3] ]
 ```
+
+<br/>
+
+# Statistics
+
+## Statistics
+
+### Inferential Statistics
+
+Inferential statistics are methods for quantifying properties of a population from a small Sample.
+
+### Descriptive Statistics
+
+Inferential statistics are methods for quantifying properties of a population from a small Sample:
+
+#### Descriptive Statistics Measurements
+
+Descriptive statistics are broken down into different measures:
+
+**Tendency (Measures of the Center)**
+
+    The Mean (the average value)value
+    The Median (the mid point value)
+    The Mode (the most common value)
+    The Outlier
+
+**Spread (Measures of Variability)**
+
+    Min and Max
+    Standard Deviation
+    Variance
+    Distribution
+    Skewness
+    Kurtosis
+
+<br/>
+
+## Descriptive Statistics (Tendancy)
+
+## Statistic Variability (Spread)
+
+## Distribution
+
+- What is Normal Distribution?
+- What is Margin of Error?
+- What is Skewness?
+  - Skewness is a distortion (an asymmetry) from the bell curve (normal distribution).
+- What is Kurtosis?
+  - Kurtosis is a also a distortion from the normal distribution (bell curve).
+  - While skewness describes a unexpected values in one tail, kurtosis describes unexpected values in both tails.
+
+## Probability
+
+Probability is about how Likely something is to occur, or how likely something is true.
+
