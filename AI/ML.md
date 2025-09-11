@@ -385,4 +385,160 @@ After the model is trained, you can use it for many different purposes.
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
 ```
 
+<br/>
 
+# JS Graphics
+
+## Graphic Libraries
+
+JavaScript libraries to use for both Artificial Intelligence graphs and other charts:
+
+    Canvas
+    Plotly.js
+    Chart.js
+    Google Chart
+    D3.js
+
+### Plotly.js
+
+Plotly.js is a charting library that comes with over 40 chart types, 3D charts, statistical graphs, and SVG maps.
+
+### Chart.js
+
+Chart.js comes with many built-in chart types:
+
+    Scatter
+    Line
+    Bar
+    Radar
+    Pie and Doughnut
+    Polar Area
+    Bubble
+
+### Google Chart
+
+From simple line charts to complex tree maps, Google Chart provides a number of built-in chart types:
+
+    Scatter Chart
+    Line Chart
+    Bar / Column Chart
+    Area Chart
+    Pie Chart
+    Donut Chart
+    Org Chart
+    Map / Geo Chart
+
+### D3.js
+```
+<script src="//d3js.org/d3.v3.min.js"></script>
+```
+
+<br/>
+
+# History
+
+## History of AI
+
+https://www.w3schools.com/ai/ai_history.asp
+
+## Theory of Mind
+
+https://www.w3schools.com/ai/ai_mind.asp
+
+<br/>
+
+# ML Mathematics
+
+## Linear functions
+
+- Linear regressions
+- Linear Least Squares
+
+## Linear Algebra
+
+- Scalars
+- Vectors
+- Matrices
+- Tensors: A Tensor is an N-dimensional Matrix.
+
+In JavaScript, a tensor is an array with multiple indices (indexes).
+
+## Vectors
+
+- Vectors are 1-dimentional Arrays
+- Vectors have a Magnitude and a Direction
+- Vectors typically describes Motion or Force 
+
+## Matrices
+
+- dimensions
+- Square Matrices
+- Diagonal Matrices
+- Scalar Matrices
+- The Identity Matrix
+- The Zero Matrix
+- Negative Matrices
+
+<br/>
+
+- Linear Algebra in JavaScript
+- JavaScript Matrix Operations
+  - Using math.js
+
+```
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.3.2/math.js"></script>
+```
+
+- Matrix operations: add, sub, multiply, transpose, factorization
+
+## Tensors
+
+A Tensor is a N-dimensional Matrix:
+
+- A Scalar is a 0-dimensional tensor
+- A Vector is a 1-dimensional tensor
+- A Matrix is a 2-dimensional tensor
+
+A Tensor is a generalization of Vectors and Matrices to higher dimensions.
+
+### Tensor Ranks
+
+The number of directions a tensor can have in a N-dimensional space, is called the Rank of the tensor.
+
+The rank is denoted R.
+
+A Scalar is a single number.
+
+    It has 0 Axes
+    It has a Rank of 0
+    It is a 0-dimensional Tensor
+
+A Vector is an array of numbers.
+
+    It has 1 Axis
+    It has a Rank of 1
+    It is a 1-dimensional Tensor
+
+A Matrix is a 2-dimensional array.
+
+    It has 2 Axis
+    It has a Rank of 2
+    It is a 2-dimensional Tensor
+
+### Real Tensors
+
+Technically, all of the above are tensors, but when we speak of tensors, we generally speak of matrices with a dimension larger than 2 (R > 2).
+
+### JavaScript Tensor Operations
+
+One of the most common libraries to use for tensor operations is called tensorflow.js.
+
+```Tensor Addition:
+const tensorA = tf.tensor([[1, 2], [3, 4], [5, 6]]);
+const tensorB = tf.tensor([[1,-1], [2,-2], [3,-3]]);
+
+// Tensor Addition
+const tensorAdd = tensorA.add(tensorB);
+
+// Result [ [2, 1], [5, 2], [8, 3] ]
+```
