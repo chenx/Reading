@@ -725,3 +725,34 @@ Checking for Peer Dependency Issues
 Fixing Broken Dependencies
 - npm rebuild
 
+<br/>
+
+## Publish a Package
+
+Publishing a package means making your Node.js module or project available for others to install and use via the npm registry.
+- This is how open-source libraries and tools are shared with the Node.js community.
+- When you publish a package, it becomes available for anyone to install using npm install your-package-name.
+
+### Steps
+
+    Preparing Your Package
+    Creating an npm Account
+    Publishing Your Package
+    Updating Your Package
+    Managing Published Packages
+
+### Best Practices
+
+    Follow Semantic Versioning - Use MAJOR.MINOR.PATCH version numbers appropriately
+    Write Good Documentation - Include clear usage examples in your README
+    Add Tests - Include unit tests and document how to run them
+    Use .npmignore - Only publish necessary files
+    Add Keywords - Help others discover your package
+    Choose the Right License - Make your terms clear to users
+    Maintain a Changelog - Document changes between versions
+    Use Continuous Integration - Automate testing and publishing
+
+<br/>
+
+# Core Modules
+
