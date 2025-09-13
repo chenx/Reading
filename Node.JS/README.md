@@ -401,3 +401,106 @@ Don't
     Swallow errors without logging them
     Continue execution after unrecoverable errors
 
+<br/>
+
+# Module Basics
+
+## What is a Module in Node.js?
+
+Modules are the building blocks of Node.js applications, allowing you to organize code into logical, reusable components. They help in:
+
+    Organizing code into manageable files
+    Encapsulating functionality
+    Preventing global namespace pollution
+    Improving code maintainability and reusability
+
+Node.js supports two module systems: CommonJS (traditional) and ES Modules (ECMAScript modules).
+
+### Creating and Exporting Modules
+
+In Node.js, any file with a .js extension is a module. You can export functionality from a module in several ways:
+
+1. Exporting Multiple Items
+
+Add properties to the exports object for multiple exports:
+
+```
+// Method 1: Exporting multiple items
+exports.getCurrentDate = getCurrentDate;
+exports.formatCurrency = formatCurrency;
+
+// Method 2: Exporting an object with multiple properties
+// module.exports = { getCurrentDate, formatCurrency };
+```
+
+2. Exporting a Single Item
+
+To export a single item (function, object, etc.), assign it to module.exports:
+
+```
+// Exporting a single class
+module.exports = Logger;
+```
+
+3. Using Your Modules
+
+Import and use your custom modules using require() with a relative or absolute path.
+
+### Module Loading and Caching
+
+Node.js caches modules after the first time they are loaded. This means that subsequent require() calls return the cached version.
+
+### Best Practices
+
+Module Organization
+
+    Keep modules focused on a single responsibility
+    Use meaningful file and directory names
+    Group related functionality together
+    Use index.js for module entry points
+
+Export Patterns
+
+    Prefer named exports for utilities
+    Use default exports for single-class modules
+    Document your module's API
+    Handle module initialization if needed
+
+### Summary
+
+Key takeaways:
+
+    Node.js uses CommonJS modules by default
+    Use require() to import and module.exports to export
+    Modules are cached after first load
+    Follow best practices for module organization and structu
+
+<br/>
+
+## ES Modules
+
+https://www.w3schools.com/nodejs/nodejs_modules_esm.asp
+
+### Introduction to ES Modules
+
+- ES Modules (ESM) is the official standard format for packaging JavaScript code for reuse.
+- It was introduced in ES6 (ES2015) and is now supported in Node.js.
+- Prior to ES Modules, Node.js exclusively used the CommonJS module format (require/exports).
+- Now developers can choose between CommonJS and ES Modules based on their project needs.
+
+### CommonJS vs ES Modules
+
+Here's how CommonJS and ES Modules differ:
+```
+Feature 	            CommonJS 	                ES Modules
+------------------------------------------------------------------------------------
+File Extension 	        .js (default) 	            .mjs (or .js with proper config)
+Import Syntax 	        require() 	                import
+Export Syntax 	        module.exports / exports 	export / export default
+Import Timing 	        Dynamic (runtime) 	        Static (parsed before execution)
+Top-level Await 	    Not supported 	            Supported
+File URL in Imports 	Not required 	            Required for local files
+```
+
+
+
