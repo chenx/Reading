@@ -1333,3 +1333,385 @@ Choose Socket.IO:
 
 - For building scalable and resilient real-time web applications with features like chat, collaborative tools, or dashboards, particularly within a JavaScript/Node.js environment, where the convenience and built-in features outweigh the slight performance overhead.
 
+<br/>
+
+# 9. Testing & Debugging
+
+## Advanced Debugging
+
+## Testing
+
+### Types of Testing in Node.js
+- Unit Testing
+- Integration Testing
+  - Integration tests verify that multiple components work together correctly, such as testing database operations, API endpoints, or third-party service interactions.
+End-to-End Testing
+  - End-to-end tests verify the entire application flow from start to finish, simulating real user scenarios and interactions.
+
+### Test-Driven Development (TDD)
+
+### Testing Best Practices
+
+### Test Runtime Considerations
+
+Mocking
+
+### Testing Asynchronous Code
+
+### Continuous Integration (CI)
+
+
+## Testing Frameworks
+
+### Popular Testing Frameworks
+
+- Jest
+- Mocha
+- Vitest
+
+## Test Runner
+
+Introduction to Node.js Test Runner
+
+The built-in node:test module provides a lightweight, no-dependency framework for writing and running JavaScript tests directly in Node.js.
+
+<br/>
+
+# 10. Deployment
+
+## Environment Variables
+
+## Development vs Production
+
+Development
+
+    Verbose logging
+    Detailed error messages
+    Hot-reloading enabled
+    Unminified code
+    Mock data/stubs
+
+Production
+
+    Minimal logging
+    Generic error messages
+    Optimized performance
+    Minified and bundled code
+    Real data/services
+
+## CI/CD
+
+https://www.w3schools.com/nodejs/nodejs_ci_cd.asp
+
+Continuous Integration (CI) and Continuous Deployment (CD) are essential practices that automates the software development lifecycle, enabling teams to deliver code changes more frequently and reliably.
+
+### CI/CD Tools for Node.js
+
+- GitHub Actions
+- GitLab CI/CD
+- Jenkins
+- CircleCI
+- Travis CI
+
+### Monitoring and Optimization
+
+Key Metrics to Monitor
+
+    Build Time: Track duration of each pipeline stage
+    Success Rate: Percentage of successful builds
+    Test Coverage: Code coverage metrics
+    Deployment Frequency: How often you deploy
+    Lead Time: Time from commit to production
+    MTTR: Mean Time To Recover from failures
+
+Optimization Techniques
+
+    Parallelize independent jobs
+    Cache dependencies and build artifacts
+    Use smaller base images
+    Implement incremental builds
+    Run only affected tests
+    Use self-hosted runners for large projects
+
+## Security
+
+### Essential Security Best Practices
+
+1. Input Validation and Sanitization
+2. Protection Against Injection Attacks
+3. Cross-Site Scripting (XSS) Prevention
+4. Keep Dependencies Up-to-Date
+5. Secure Authentication Practices
+6. Use Security Headers
+7. Use HTTPS
+8. Protect Sensitive Data
+
+### Dependency Vulnerability Management
+
+### Advanced Security Practices
+
+- Rate Limiting
+- CSRF Protection
+- Content Security Policy (CSP)
+- Security Logging and Monitoring
+
+### Secure Development Lifecycle (SDLC)
+
+### Summary
+
+Security is a continuous process, not a one-time implementation.
+
+Follow these best practices to protect your Node.js applications:
+
+    Validate and sanitize all input
+    Protect against common attacks (XSS, CSRF, injections)
+    Keep dependencies updated and regularly audit them
+    Implement secure authentication and session management
+    Use HTTPS and proper security headers
+    Store sensitive data securely
+    Implement rate limiting and monitoring
+    Follow established security guidelines (OWASP)
+
+## Deployment
+
+https://www.w3schools.com/nodejs/nodejs_deployment_modern.asp
+
+Deployment strategies focus on how to deploy and manage your Node.js applications in production.
+
+Key aspects of modern Node.js deployment include:
+
+    Containerization: Package your app and dependencies into a container that runs consistently across environments.
+    Orchestration: Automate container management with tools like Kubernetes or Docker Swarm.
+    CI/CD: Automate testing and deployment pipelines.
+    Cloud-native: Use cloud services and serverless functions.
+    IaC: Define infrastructure as code for reproducible deployments.
+    Observability: Monitor your application's performance and health.
+
+### Containerization with Docker
+
+- Dockerizing a Node.js Application
+- Building and Running Your Docker Container
+- Multi-Stage Builds for Optimized Images
+
+### Kubernetes for Orchestration
+
+https://kubernetes.io/docs/home/
+
+For production-grade orchestration of containerized applications, Kubernetes provides powerful features:
+
+    Automatic scaling of containers based on load
+    Self-healing (restarting failed containers)
+    Service discovery and load balancing
+    Rolling updates and rollbacks
+    Storage orchestration
+
+#### Basic Kubernetes Deployment for Node.js
+#### Kubernetes Service for Node.js
+
+### Cloud Platform Deployment
+
+Popular Cloud Platforms for Node.js
+- Heroku
+- AWS Elastic Beanstalk
+- Google App Engine
+- Azure App Service
+- Vercel
+- DigitalOcean App Platform
+
+### Serverless Deployment
+
+Serverless computing allows you to build and run applications without thinking about servers.
+
+It provides automatic scaling, built-in high availability, and a pay-for-use billing model.
+Benefits of Serverless for Node.js
+
+    No server management required
+    Automatic scaling based on demand
+    Only pay for what you use (no idle costs)
+    Built-in high availability and fault tolerance
+    Focus on code, not infrastructure
+
+Popular Serverless Platforms
+
+    AWS Lambda
+    Azure Functions
+    Google Cloud Functions
+    Vercel Functions
+    Netlify Functions
+
+### CI/CD for Node.js Applications
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the testing and deployment process, ensuring reliable and consistent deployments.
+
+Key Components of a CI/CD Pipeline
+
+    Source control integration (e.g., GitHub, GitLab)
+    Automated testing (unit, integration, end-to-end)
+    Static code analysis and linting
+    Security scanning
+    Build and packaging
+    Deployment to staging and production
+    Post-deployment verification
+
+### Infrastructure as Code (IaC)
+
+IaC tools allow you to define your infrastructure in code files, providing version-controlled, reproducible deployments.
+Popular IaC Tools
+
+    Terraform: Cloud-agnostic IaC tool
+    AWS CloudFormation: AWS-specific IaC service
+    Azure Resource Manager: Azure-specific IaC service
+    Pulumi: IaC using familiar programming languages
+
+### Best Practices for Modern Deployment
+
+    Zero-downtime deployments: Use blue-green or canary deployment strategies
+    Container security: Scan images, use minimal base images, and non-root users
+    Environment variables: Use environment variables for all configuration
+    Secret management: Use dedicated secret management solutions (HashiCorp Vault, AWS Secrets Manager, etc.)
+    Health checks: Implement comprehensive health and readiness checks
+    Monitoring and logging: Set up thorough monitoring and centralized logging
+    Auto-scaling: Configure appropriate scaling policies based on load metrics
+    Database migrations: Automate and version database schema changes
+    Feature flags: Use feature flags to control feature rollout
+    Backup and disaster recovery: Implement robust backup and recovery procedures
+
+### Edge Computing with Node.js
+
+Edge computing brings computation and data storage closer to the location where it's needed, improving response times and reducing bandwidth usage.
+
+Node.js is well-suited for edge computing due to its lightweight nature and non-blocking I/O model.
+
+<br/>
+
+# 11. Perfomance & Scaling
+
+## Logging
+
+Effective logging is essential for several reasons:
+
+    Debugging: Understand what's happening inside your application
+    Troubleshooting: Diagnose issues in production environments
+    Monitoring: Track application health and performance
+    Auditing: Record important events for compliance and security
+    Analytics: Gather data about application usage and behavior
+
+### Popular Node.js Logging Libraries
+
+- Winston
+- Pino
+- Bunyan
+
+### Application Logging Best Practices
+
+Log Levels
+
+Use appropriate log levels to categorize the importance and urgency of log messages:
+
+    error: Runtime errors, exceptions, and failures that require attention
+    warn: Warning conditions that don't stop the application but indicate potential issues
+    info: Informational messages about application events and milestones
+    debug: Detailed diagnostic information useful during development
+    trace: Very detailed debugging information (method entry/exit, variable values)
+
+### Log Management and Analysis
+
+#### Log Rotation
+
+Prevent log files from growing too large by implementing log rotation:
+
+#### Centralized Logging
+
+For applications running across multiple servers or containers, centralize your logs for easier analysis.
+
+#### Popular Log Management Systems
+
+    ELK Stack (Elasticsearch, Logstash, Kibana): Comprehensive logging stack
+    Graylog: Centralized log management with a focus on security
+    Fluentd/Fluent Bit: Log collection and forwarding
+    Loki: Lightweight log aggregation system
+    Commercial options: Datadog, New Relic, Splunk, LogDNA, Loggly
+
+### Logging in Production
+
+<br/>
+
+## Monitoring & Observability
+
+### Application Metrics Collection
+
+Using Prometheus Client
+
+Key Metrics to Monitor
+
+### Distributed Tracing
+
+### Logging Best Practices
+
+### Alerting and Visualization
+
+### Production Monitoring Tools
+
+### Best Practices
+
+Do's
+
+    Use structured logging with consistent formats
+    Monitor both system and application metrics
+    Set up alerts based on SLOs (Service Level Objectives)
+    Use distributed tracing for microservices
+
+Don'ts
+
+    Don't log sensitive information
+    Avoid high-cardinality labels in metrics
+    Don't rely solely on logs for debugging
+    Avoid alert fatigue - focus on actionable alerts
+
+## Performance Diagnostics
+
+### Understanding Node.js Performance
+
+Performance in Node.js applications can be affected by several factors:
+
+    CPU-intensive operations that block the event loop
+    Memory leaks and excessive garbage collection
+    I/O bottlenecks (database queries, file operations, network requests)
+    Inefficient code and algorithms
+    Event loop congestion
+
+### Built-in Diagnostic Tools
+
+console.time() and console.timeEnd()
+
+### Node.js Performance Hooks
+
+Since Node.js 8.5.0, the perf_hooks module provides tools for measuring performance.
+
+### Advanced CPU Profiling
+
+### Advanced Memory Profiling
+
+### Event Loop and Latency Analysis
+
+### Flame Graphs
+
+### Benchmarking
+
+### Node.js Inspector
+
+### Clinic.js Suite
+
+### Practical Performance Diagnosis
+
+    Step 1: Establish Baseline Metrics
+    Step 2: Identify Bottlenecks
+    Step 3: Fix and Verify
+
+### Common Performance Issues and Solutions
+
+    Memory Leaks
+    Long-Running Operations
+    Inefficient Database Queries
+
+
