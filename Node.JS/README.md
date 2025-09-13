@@ -38,11 +38,7 @@ Verify installation:
 
 ### Run node.js code
 
-```
-Run Node.js Code
-```
-
-Run a server
+Create file server.js:
 ```
 let http = require('http');
 
@@ -52,7 +48,47 @@ http.createServer(function (req, res) {
 }).listen(8080);
 ```
 
+```
+node server.js
+```
+
 ### npm
 
 npm is the package manager for Node.js.
+
+### JavaScript fundamentals
+
+    Variables
+    Functions
+    Objects
+    Arrays
+    Asynchronous programming (callbacks, promises, async/await)
+    ES6+ features
+
+Asynchromous JavaScript
+
+```
+// 1. Callbacks (traditional)
+function fetchData(callback) {
+  setTimeout(() => {
+    callback('Data received!');
+  }, 1000);
+}
+
+// 2. Promises (ES6+)
+const fetchDataPromise = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('Promise resolved!'), 1000);
+  });
+};
+
+// 3. Async/Await (ES8+)
+async function getData() {
+  const result = await fetchDataPromise();
+  console.log(result);
+}
+
+getData(); // Call the async function
+```
+
 
