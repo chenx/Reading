@@ -2,6 +2,24 @@
 
 https://www.w3schools.com/nodejs/
 
+- [1. NodeJS](#1-nodejs)
+- [2. Asynchronous](#2-asynchronous)
+- [3. Module Basics](#3-module-basics)
+- [4. Core Modules](#4-core-modules)
+- [5. JS & TS Features](#5-js-ts-features)
+- [6. Building Applications](#6-building-applications)
+- [7. Database Integration](#7-database-integration)
+- [8. Advanced Communication](#8-advanced-communication)
+- [9. Testing & Debugging](#9-testing-debugging)
+- [10. Deployment](#10-deployment)
+- [11. Performance & Scaling](#11-performance-scaling)
+- [12. Advanced](#12-advanced)
+- [13. Hardware & IoT](#13-hardware-iot)
+- [14. Node.js Reference](#14-nodejs-reference)
+- [15. Resources & Tools](#15-resources-tools)
+
+<br/>
+
 - Node.js uses an event-driven, non-blocking model.
 - It can handle many connections at once without waiting for one to finish before starting another.
 - This makes it great for real-time apps and high-traffic websites.
@@ -1584,7 +1602,7 @@ Node.js is well-suited for edge computing due to its lightweight nature and non-
 
 <br/>
 
-# 11. Perfomance & Scaling
+# 11. Performance & Scaling
 
 ## Logging
 
@@ -1769,7 +1787,7 @@ Node.js provides built-in support for WebAssembly through the global WebAssembly
 
 <br/>
 
-# 13. Hardware & IoT: Node.js and Raspberry Pi
+# 13. Hardware & IoT
 
 - Raspberry Pi is a small, multi-use computer.
 - With Node.js you can do amazing things with your Raspberry Pi.
