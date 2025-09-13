@@ -1303,32 +1303,33 @@ Socket.IO is a JavaScript library that builds on top of WebSockets, providing a 
 ### Key Differences:
 
 #### Protocol vs. Library:
-    WebSocket is a low-level communication protocol, while Socket.IO is a higher-level library that utilizes and extends WebSocket functionality.
+
+WebSocket is a low-level communication protocol, while Socket.IO is a higher-level library that utilizes and extends WebSocket functionality.
 
 #### Features:
 
 Socket.IO offers numerous features out-of-the-box that are not inherent in plain WebSockets, including:
 
-    Automatic Reconnection: Handles connection drops and attempts to re-establish the connection.
-    Event-based Communication: Simplifies message handling by allowing custom events to be emitted and listened for.
-    Fallbacks: Provides alternative transport mechanisms (like long-polling) when WebSockets are unavailable.
-        Rooms and Namespaces: Facilitates organizing and targeting specific groups of clients for message broadcasting. 
+- Automatic Reconnection: Handles connection drops and attempts to re-establish the connection.
+- Event-based Communication: Simplifies message handling by allowing custom events to be emitted and listened for.
+- Fallbacks: Provides alternative transport mechanisms (like long-polling) when WebSockets are unavailable.
+- Rooms and Namespaces: Facilitates organizing and targeting specific groups of clients for message broadcasting. 
 
 Overhead:
     
-    Socket.IO introduces some overhead due to its additional features and proprietary framing, which can slightly increase message size and latency compared to raw WebSockets in highly performance-sensitive scenarios.
+- Socket.IO introduces some overhead due to its additional features and proprietary framing, which can slightly increase message size and latency compared to raw WebSockets in highly performance-sensitive scenarios.
 
 Compatibility:
     
-    WebSocket is a standard protocol supported across various platforms and programming languages. Socket.IO primarily targets JavaScript/Node.js environments, although community-supported implementations exist for other languages.
+- WebSocket is a standard protocol supported across various platforms and programming languages. Socket.IO primarily targets JavaScript/Node.js environments, although community-supported implementations exist for other languages.
 
 #### When to choose which:
 
 Choose WebSocket:
 
-    For scenarios requiring maximum performance, minimal overhead, and fine-grained control over the communication, such as high-frequency trading or highly optimized real-time games, especially when operating outside of a JavaScript/Node.js ecosystem.
+- For scenarios requiring maximum performance, minimal overhead, and fine-grained control over the communication, such as high-frequency trading or highly optimized real-time games, especially when operating outside of a JavaScript/Node.js ecosystem.
 
 Choose Socket.IO:
 
-    For building scalable and resilient real-time web applications with features like chat, collaborative tools, or dashboards, particularly within a JavaScript/Node.js environment, where the convenience and built-in features outweigh the slight performance overhead.
+- For building scalable and resilient real-time web applications with features like chat, collaborative tools, or dashboards, particularly within a JavaScript/Node.js environment, where the convenience and built-in features outweigh the slight performance overhead.
 
