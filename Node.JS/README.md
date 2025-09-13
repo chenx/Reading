@@ -1714,4 +1714,78 @@ Since Node.js 8.5.0, the perf_hooks module provides tools for measuring performa
     Long-Running Operations
     Inefficient Database Queries
 
+<br/>
+
+## Child Process Module
+
+## Cluster Module
+
+## Worker Threads Module
+
+<br/>
+
+# 12. Advanced
+
+## Microservices
+
+Microservices is an architectural style that structures an application as a collection of small, loosely coupled services. Each service is:
+
+    Focused on a single business capability
+    Independently deployable
+    Independently scalable
+    Potentially written in different programming languages
+    Potentially using different data storage technologies
+
+Key Principles
+
+    Single Responsibility - Each microservice should focus on doing one thing well - implementing a single business capability.
+    Decentralization - Decentralize everything: governance, data management, and architecture decisions.
+    Autonomous Services - Services should be able to change and deploy independently without affecting others.
+    Domain-Driven Design - Design services around business domains rather than technical functions.
+    Resilience - Services should be designed to handle failure of other services.
+    Observability - Implement comprehensive monitoring, logging, and tracing across services.
+
+## WebAssembly
+
+### What is WebAssembly?
+
+WebAssembly (Wasm) is a binary instruction format designed as a portable compilation target for high-level languages like C, C++, and Rust.
+
+### Key characteristics of WebAssembly include:
+
+    Binary format - Compact size that loads and executes faster than JavaScript
+    Near-native performance - Executes at speeds close to native machine code
+    Platform independent - Runs on browsers, Node.js, and other environments
+    Safety - Executes in a sandboxed environment with a strong security model
+
+- Unlike JavaScript, WebAssembly is a low-level binary format that isn't meant to be written by hand.
+- Instead, you compile code from other languages into WebAssembly.
+
+### WebAssembly Support in Node.js
+
+Node.js provides built-in support for WebAssembly through the global WebAssembly object (just like in browsers).
+
+## HTTP/2 Module
+
+<br/>
+
+# 13. Hardware & IoT: Node.js and Raspberry Pi
+
+- Raspberry Pi is a small, multi-use computer.
+- With Node.js you can do amazing things with your Raspberry Pi.
+
+## Raspberry Pi and Node.js
+
+The Raspberry Pi has a row of GPIO (General Purpose input/output) pins, and these can be used to interact in amazing ways with the real world. This tutorial will focus on how to use these with Node.js.
+
+<br/>
+
+# 14. Node.js Reference
+
+# 15. Resources & Tools
+
+## Node.js Online Compiler
+
+https://www.w3schools.com/nodejs/nodejs_compiler.asp
+
 
