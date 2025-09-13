@@ -20,7 +20,7 @@ https://www.w3schools.com/nodejs/
 
 <br/>
 
-- Node.js uses an event-driven, non-blocking model.
+Node.js uses an event-driven, non-blocking model.
 - It can handle many connections at once without waiting for one to finish before starting another.
 - This makes it great for real-time apps and high-traffic websites.
 
