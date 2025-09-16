@@ -1,8 +1,8 @@
 # Event Loop
 
-[Event loop in JavaScript, microtask, macrotask, Promise, and common interview questions](https://levelup.gitconnected.com/event-loop-in-javascript-microtask-macrotask-promise-and-common-interview-questions-14b7ee57be94)
+[1] [Event loop in JavaScript, microtask, macrotask, Promise, and common interview questions](https://levelup.gitconnected.com/event-loop-in-javascript-microtask-macrotask-promise-and-common-interview-questions-14b7ee57be94)
 
-[Understanding the Event Loop in JavaScript: Microtasks, Macrotasks, and Asynchronous Execution ](https://dev.to/nishanthan-k/understanding-the-event-loop-in-javascript-microtasks-macrotasks-and-asynchronous-execution-3037)
+[2] [Understanding the Event Loop in JavaScript: Microtasks, Macrotasks, and Asynchronous Execution ](https://dev.to/nishanthan-k/understanding-the-event-loop-in-javascript-microtasks-macrotasks-and-asynchronous-execution-3037)
 
 ## Event Loop
 
@@ -17,7 +17,10 @@ Macrotasks (setTimeout, setInterval)
  V
 (loop back)
 
-## Mechanism
+
+## Mechanism [1]
+
+https://www.youtube.com/watch?v=eiC58R16hb8&t=733s
 
 Basically, the mechanism works like this:
 
@@ -40,3 +43,16 @@ Additionally, here are some things we need to know that the video didn’t cover
 - Note that each thread has its own Event Loop: for example, the Main Thread has one Event Loop, and each Web Worker has its own Event Loop. When we open each browser tab, it represents a separate environment with its own Event Loop.
 - All Microtasks must be completed before the browser handles event handling/rendering or before executing the next Microtask.
   
+
+## Summary [2]
+
+JavaScript is a single-threaded language, meaning it can handle only one task at a time in a synchronous manner. However, for tasks that take longer (like fetching data), JavaScript uses Web APIs provided by the browser to manage these tasks asynchronously, preventing the UI from being blocked.
+
+Key components in handling these tasks are:
+- Call Stack: Executes synchronous tasks in a Last-In-First-Out (LIFO) manner. If an asynchronous task is encountered, it is sent to the Web API for processing.
+- Web APIs: Used to handle asynchronous tasks such as HTTP requests, timers, and DOM events, ensuring JavaScript remains non-blocking.
+- Microtasks: High-priority tasks like handling Promises, executed before macrotasks when the call stack is empty.
+- Macrotasks (Callback Queue): Lower-priority tasks like timers (setTimeout), event listeners, and UI updates. Executed after all microtasks have finished.
+- Event Loop: The mechanism that decides the order of task execution. It continuously checks the call stack, microtask queue, and macrotask queue to manage task execution.
+
+
