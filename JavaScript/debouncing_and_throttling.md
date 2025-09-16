@@ -1,22 +1,22 @@
 # Debouncing and Throttling
 
 Debouncing
-- Combines multiple calls into one
+- Combines multiple calls into one after the user stops performing actions for a certain time.
 
 Throttling
-- Execute a function only on given time interval
+- Limits the execution of a function to only once in every specified time interval.
 
 
 ## Debounce and Throttling: What They Are and When to Use Them
 
 [Debounce and Throttling: What They Are and When to Use Them](https://medium.com/@bs903944/debounce-and-throttling-what-they-are-and-when-to-use-them-eadd272fe0be)
 
-**Debouncing** is a technique that delays the execution of a function until the user stops performing a certain action 
-for a specified amount of time. 
+**Debouncing** is a technique that **delays** the execution of a function until the **user stops** performing a certain action 
+**for a specified amount of time**.
 
-**Throttling** is a technique that limits the execution of a function to once in every specified time interval. 
+**Throttling** is a technique that **limits** the execution of a function to **once in every specified time interval**.
 
-Example of Debouncing:
+#### Example of Debouncing:
 
 ```
 // A function that makes an API call with the search query
@@ -50,7 +50,7 @@ searchBar.addEventListener("input", (event) => {
 });
 ```
 
-Example of Throttling:
+#### Example of Throttling:
 
 ```
 // A function that updates the layout of the page
