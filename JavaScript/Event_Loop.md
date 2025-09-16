@@ -6,8 +6,8 @@
 
 ## Event Loop
 
-Call stack is LIFO (stack). It takes tasks in the order of synchronous, Microtasks and Macrotasks. Some long-lasting tasks are 
-reassigned to web APIs to run in another thread.
+Call stack is LIFO (stack). It takes tasks in the order of synchronous, Microtasks and Macrotasks.
+Some long-running asynchronous tasks are reassigned to web APIs to run in another thread.
 
 ```
 Synchronous tasks (console.log())
@@ -21,6 +21,17 @@ Macrotasks (Low priority tasks: setTimeout, setInterval, event listener, UI upda
  V
 (loop back)
 ```
+
+```
+Call Stack  <-> Web API
+|
+| <---------->  Microtasks Queue
+|
+| <---------->  Macrotasks Queue
+
+Event Loop
+```
+
 
 ## Mechanism [1]
 
