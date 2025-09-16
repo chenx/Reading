@@ -7,16 +7,16 @@
 ## Event Loop
 
 Call stack is LIFO (stack). It takes tasks in the order of synchronous, Microtasks and Macrotasks. Some long-lasting tasks are 
-reassigned to web worker to run in another thread.
+reassigned to web APIs to run in another thread.
 
 ```
 Synchronous tasks (console.log())
  |
  V
-Microtasks （Promise resolve, reject)
+Microtasks （High priority tasks: Promise resolve, reject)
  |
  V
-Macrotasks (setTimeout, setInterval, event listener, UI updates)
+Macrotasks (Low priority tasks: setTimeout, setInterval, event listener, UI updates)
  |
  V
 (loop back)
@@ -59,4 +59,10 @@ Key components in handling these tasks are:
 - Macrotasks (Callback Queue): Lower-priority tasks like timers (setTimeout), event listeners, and UI updates. Executed after all microtasks have finished.
 - Event Loop: The mechanism that decides the order of task execution. It continuously checks the call stack, microtask queue, and macrotask queue to manage task execution.
 
+
+## Example questions
+
+    What is the Event Loop in JavaScript, and how does it work?
+    What are microtasks and macrotasks in JavaScript? How are they different?
+    Explain how setTimeout and Promises are handled in the Event Loop.
 
