@@ -23,11 +23,13 @@ Macrotasks (Low priority tasks: setTimeout, setInterval, event listener, UI upda
 ```
 
 ```
-Call Stack  <-> Web API
+Call Stack  <-> Web API (Asynchronous tasks)
 |
-| <---------->  Microtasks Queue
+| <---------->  Synchronous tasks
 |
-| <---------->  Macrotasks Queue
+| <---------->  Microtasks Queue (Promise)
+|
+| <---------->  Macrotasks Queue (setTimeout/setInterval, event listener, UI updates)
 
 Event Loop
 ```
