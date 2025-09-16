@@ -1,7 +1,9 @@
 # Garbage Collection in JavaScript
 
-JavaScript utilizes automatic memory management through a process called garbage collection. This means developers typically do not need to manually allocate or deallocate memory, as is required in languages like C or C++. The JavaScript engine handles this automatically in the background. 
-The core principle behind JavaScript's garbage collection is to identify and reclaim memory that is no longer reachable or "in use" by the program. The most common algorithm used for this is Mark-and-Sweep.
+JavaScript utilizes automatic memory management through a process called garbage collection. This means developers typically do not need to manually allocate or deallocate memory, as is required in languages like C or C++. The JavaScript engine handles this automatically in the background.
+
+The core principle behind JavaScript's garbage collection is to identify and reclaim memory that is no longer reachable or "in use" by the program. The most common algorithm used for this is **Mark-and-Sweep**.
+
 How Mark-and-Sweep Works:
 
 - Marking Phase:
