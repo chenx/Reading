@@ -1,4 +1,4 @@
-# Debouncing and Throttling
+# Debouncing and Throttling (防抖与节流)
 
 Debouncing
 - Combines multiple calls into one after the user stops performing actions for a certain time.
