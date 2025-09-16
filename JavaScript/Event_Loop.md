@@ -6,17 +6,21 @@
 
 ## Event Loop
 
+Call stack is LIFO (stack). It takes tasks in the order of synchronous, Microtasks and Macrotasks. Some long-lasting tasks are 
+reassigned to web worker to run in another thread.
+
+```
 Synchronous tasks (console.log())
  |
  V
 Microtasks （Promise resolve, reject)
  |
  V
-Macrotasks (setTimeout, setInterval)
+Macrotasks (setTimeout, setInterval, event listener, UI updates)
  |
  V
 (loop back)
-
+```
 
 ## Mechanism [1]
 
