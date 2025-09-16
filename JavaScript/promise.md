@@ -98,6 +98,26 @@ Interaction with backend API.
 
 For example, a HTTP request by axios or fetch returns a Promise object.
 
+### Promise Methods
+
+Instance Methods
+
+    then(onFulfilled, onRejected) : Handles fulfillment or rejection
+    catch(onRejected) : Handles rejections
+    finally(onFinally) : Runs after promise settles
+
+Static Methods
+
+    Promise.all(iterable) : Waits for all promises to resolve. It fails fast if any promise rejects.
+    Promise.race(iterable) : Waits for first promise to settle, whether it's fulfilled or rejected.
+    Promise.allSettled(iterable) : Waits for all to settle
+
+Utility Methods
+
+    Promise.resolve(value) : Creates a resolved promise
+    Promise.reject(reason) : Creates a rejected promise
+
+
 # References
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
