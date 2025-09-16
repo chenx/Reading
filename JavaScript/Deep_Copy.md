@@ -38,7 +38,7 @@ This is browser dependent. It allows the options of transferable object. It also
 
 Deep copy by recursive function. May use a library.
 
-Example from [5]:
+Example from [5]: Almost perfect deep copy:
 ```
 const deepClone = (obj, map = new WeakMap()) => {
   if (obj instanceof Date) return new Date(obj);
