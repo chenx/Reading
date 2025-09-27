@@ -8,7 +8,9 @@ Types:
 - image
 - data
 
-## React lazy loading: https://medium.com/@ignatovich.dm/optimizing-react-apps-with-code-splitting-and-lazy-loading-e8c8791006e3
+## React lazy loading
+
+https://medium.com/@ignatovich.dm/optimizing-react-apps-with-code-splitting-and-lazy-loading-e8c8791006e3
 
 Example: lazy loading a component
 
