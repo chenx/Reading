@@ -12,14 +12,71 @@ Types:
 
 https://medium.com/@ignatovich.dm/optimizing-react-apps-with-code-splitting-and-lazy-loading-e8c8791006e3
 
-Example: lazy loading a component
-
+#### Example: lazy loading a component
 ```
 import React, { Suspense } from "react";
 
 const LazyComponent = React.lazy(() => import("./LazyComponent"));
 
 function App() {
+  return (
+    <div>
+      <h1>Welcome to My App</h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+```
+
+#### Example: Lazy Loading Routes with React Router
+```
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+const Home = React.lazy(() => import("./Home"));
+const About = React.lazy(() => import("./About"));
+const Contact = React.lazy(() => import("./Contact"));
+
+function App() {
+  return (
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+#### Preloading Critical Components
+
+While lazy loading improves performance by deferring code, it may result in delays when loading critical components. Preloading can address this issue by fetching components before they’re needed, ensuring seamless transitions.
+Example: Preloading with Dynamic Imports
+```
+import React, { useEffect, Suspense } from "react";
+
+const LazyComponent = React.lazy(() => import("./LazyComponent"));
+
+// Preload the component
+const preloadComponent = () => {
+  import("./LazyComponent");
+};
+
+function App() {
+  useEffect(() => {
+    preloadComponent(); // Preload the component on app load
+  }, []);
+
   return (
     <div>
       <h1>Welcome to My App</h1>
