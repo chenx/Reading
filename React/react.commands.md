@@ -20,9 +20,17 @@ npm run dev
 
 ## Install router
 
+```
 npm install react-router-dom
+```
+
+## React-redux
+
+https://react-redux.js.org/tutorials/typescript-quick-start
 
 ## Install Express and start a server
+
+See https://www.w3schools.com/nodejs/nodejs_express.asp
 
 ```
 npm install express
