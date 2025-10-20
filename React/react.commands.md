@@ -28,6 +28,12 @@ npm install react-router-dom
 
 https://react-redux.js.org/tutorials/typescript-quick-start
 
+Install redux libraries:
+```
+npm install react-redux
+npm install @reduxjs/toolkit
+```
+
 ## Install Express and start a server
 
 See https://www.w3schools.com/nodejs/nodejs_express.asp
