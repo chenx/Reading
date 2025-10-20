@@ -34,7 +34,7 @@ npm install react-router-dom
 
 ## React-redux
 
-https://react-redux.js.org/tutorials/typescript-quick-start
+https://react-redux.js.org/tutorials/quick-start
 
 Install redux libraries:
 ```
