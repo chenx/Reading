@@ -21,7 +21,7 @@ npm run dev
 ## Create a new React project in TypeScript
 
 ```
-npm create vite@latest my-react-app -- --template react-ts
+npm create vite@latest my-react-ts-app -- --template react-ts
 npm install --force
 npm run dev
 ```
