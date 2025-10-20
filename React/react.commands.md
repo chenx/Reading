@@ -10,10 +10,18 @@ Install build tool Vite:
 npm install -g create-vite
 ```
 
-## Create a new React project in JS
+## Create a new React project in JavaScript
 
 ```
 npm create vite@latest my-react-app -- --template react
+npm install --force
+npm run dev
+```
+
+## Create a new React project in TypeScript
+
+```
+npm create vite@latest my-react-app -- --template react-ts
 npm install --force
 npm run dev
 ```
