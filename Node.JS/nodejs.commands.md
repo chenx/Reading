@@ -18,7 +18,7 @@ Start local server:
 node server.js
 ```
 
-A express server:
+An express server:
 ```
 const express = require('express');
 const app = express();
