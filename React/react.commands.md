@@ -34,6 +34,11 @@ npm install react-redux
 npm install @reduxjs/toolkit
 ```
 
+Redux provides 2 hooks: 
+- useSelector: reads a value from the store state and subscribes to updates
+- useDispatch: returns the store's dispatch method to let you dispatch actions
+
+
 ## Install Express and start a server
 
 See https://www.w3schools.com/nodejs/nodejs_express.asp
