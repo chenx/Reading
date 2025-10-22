@@ -29,17 +29,17 @@ What happens:
 
 ## Object.\_\_proto\_\_ and Object.prototype.\_\_proto\_\_
 
-In JavaScript, Object.__proto__ and Object.prototype.__proto__ refer to different aspects of the prototype chain:
+In JavaScript, Object.\_\_proto\_\_ and Object.prototype.\_\_proto\_\_ refer to different aspects of the prototype chain:
 
-- Object.__proto__:
+- Object.\_\_proto\_\_:
   - This refers to the [[Prototype]] (internal property) of the Object constructor function itself.
-  - Since Object is a function, its prototype is Function.prototype. Therefore, Object.__proto__ evaluates to Function.prototype.
-  - __proto__ is a deprecated accessor property that exposes the [[Prototype]] of an object. While it's widely supported, it's generally recommended to use Object.getPrototypeOf() for accessing an object's prototype. 
+  - Since Object is a function, its prototype is Function.prototype. Therefore, Object.\_\_proto\_\_ evaluates to Function.prototype.
+  - \_\_proto\_\_ is a deprecated accessor property that exposes the [[Prototype]] of an object. While it's widely supported, it's generally recommended to use Object.getPrototypeOf() for accessing an object's prototype. 
 
-- Object.prototype.__proto__:
+- Object.prototype.\_\_proto\_\_:
   - This refers to the [[Prototype]] of the Object.prototype object.
   - Object.prototype is the base object from which all other objects in JavaScript (unless specifically created with a null prototype) inherit properties and methods.
-  - Object.prototype itself does not inherit from any other object, meaning its [[Prototype]] is null. Therefore, Object.prototype.__proto__ evaluates to null. 
+  - Object.prototype itself does not inherit from any other object, meaning its [[Prototype]] is null. Therefore, Object.prototype.\_\_proto\_\_ evaluates to null. 
 
 In summary:
 - Object.proto points to Function.prototype and Object.prototype.proto points to null.
