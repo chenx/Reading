@@ -1,10 +1,10 @@
 # JavaScript Inheritance
 
-## prototype and __proto__
+## prototype and \_\_proto\_\_
 
 Each function / class has a prototype field.
 
-Each instance has a __proto__ field pointing to the function / class prototype.
+Each instance has a \_\_proto\_\_ field pointing to the function / class prototype.
 
 ## Prototype Chain
 
