@@ -9,7 +9,7 @@ Each instance has a \_\_proto\_\_ field pointing to the function / class prototy
 ## Prototype Chain
 
 An object looks for an attribute, if not found in current class, then looks upward 
-in __proto__.__proto__. ..., until Object.prototype or where prototype is null.
+in \_\_proto\_\_.\_\_proto\_\_. ..., until Object.prototype or where prototype is null.
 
 ## What happens when a new object is created?
 ```
@@ -24,5 +24,5 @@ console.log(Object.__proto__.__proto__.__proto__);  // output: null
 
 What happens:
 - create a new object p
-- point p.__proto__ to Person.prototype
+- point p.\_\_proto\_\_ to Person.prototype
 - execute Person and bind this
