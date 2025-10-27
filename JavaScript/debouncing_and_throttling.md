@@ -21,33 +21,65 @@ Throttling
 ```
 // A function that makes an API call with the search query
 function searchHandler(query) {
-    // Make an API call with search query
     getSearchResults(query);
 }
+
 // A debounce function that takes a function and a delay as parameters
 function debounce(func, delay) {
-    // A timer variable to track the delay period
     let timer;
-    // Return a function that takes arguments
+
     return function(…args) {
-        // Clear the previous timer if any
         clearTimeout(timer);
-        // Set a new timer that will execute the function after the delay period
         timer = setTimeout(() => {
-            // Apply the function with arguments
             func.apply(this, args);
         }, delay);
     };
 }
+
 // A debounced version of the search handler with 500ms delay
 const debouncedSearchHandler = debounce(searchHandler, 500);
+
 // Add an event listener to the search bar input
 searchBar.addEventListener("input", (event) => {
-    // Get the value of the input
     const query = event.target.value;
-    // Call the debounced search handler with the query
     debouncedSearchHandler(query);
 });
+```
+
+#### Debouncing with immediate
+
+Lodash's debounce can do both. You'll have to specify whether it's leading or trailing.
+
+https://lodash.com/docs#debounce
+
+Code below is from https://learnersbucket.com/examples/interview/debounce-function-with-immediate-flag-in-javascript/
+
+```
+const debounce = (func, wait, immediate) => {
+  let timeout;
+
+  // debounce returns a new anonymous function (closure)
+  return function(...args) {
+    // should the function be called now? If immediate is true
+    // and not already in a timeout then the answer is: Yes
+    const callNow = immediate && !timeout;
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(function() {
+      // Inside the timeout function, clear the timeout variable
+      // which will let the next execution run when in 'immediate' mode
+      timeout = null;
+
+      if (!immediate) {
+        func.apply(this, args);
+      }
+    }, wait);
+
+    // immediate mode and no wait timer? Execute the function immediately
+    if (callNow) func.apply(context, args);
+  }
+}
 ```
 
 #### Example of Throttling:
@@ -57,31 +89,29 @@ searchBar.addEventListener("input", (event) => {
 function updateLayout() {
     // Update layout logic
 }
+
 // A throttle function that takes a function and an interval as parameters
 function throttle(func, interval) {
-    // A flag variable to track whether the function is running or not
     let isRunning = false;
-    // Return a function that takes arguments
+
     return function(…args) {
-        // If the function is not running
         if (!isRunning) {
-            // Set the flag to true
             isRunning = true;
-            // Apply the function with arguments
+
             func.apply(this, args);
-            // Set a timer that will reset the flag after the interval
+
             setTimeout(() => {
-                // Set the flag to false
                 isRunning = false;
             }, interval);
         }
     };
 }
+
 // A throttled version of the update layout function with 100ms interval
 const throttledUpdateLayout = throttle(updateLayout, 100);
+
 // Add an event listener to the window resize event
 window.addEventListener("resize", () => {
-    // Call the throttled update layout function
     throttledUpdateLayout();
 });
 ```
