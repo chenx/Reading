@@ -1,3 +1,7 @@
+- https://blog.nginx.org/blog/celebrating-20-years-of-nginx
+- https://growfers.com/story/nginx/
+- https://nginx.org/
+
 Igor Sysoev is the creator and original author of the Nginx web server, which he developed to solve the C10K problem (handling 10,000+ concurrent connections). He began development in 2002 and publicly released it in October 2004. Nginx is now a widely used, high-performance web server, reverse proxy, and load balancer. 
 Key Facts About the Author:
 
