@@ -7,6 +7,14 @@ Source code: https://github.com/fastapi
 Install fastapi:
 - pip install "fastapi[standard]"
 
+Run:
+- fastapi dev main.py
+
+Visit:
+- Serving at: http://127.0.0.1:8000                  │
+- API docs: http://127.0.0.1:8000/docs
+- ReDocs: http://127.0.0.1:8000/redoc
+
 Tutorial:
 - https://fastapi.tiangolo.com/tutorial/
 - https://fastapi.tiangolo.com/learn/
