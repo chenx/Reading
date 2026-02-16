@@ -10,4 +10,4 @@
 - Python Web 开发学习实录
 - Django Web 开发指南
 - Flast Web 开发
-- FastAPI
+- [FastAPI](https://www.amazon.com/FastAPI-Modern-Python-Web-Development/dp/1098135504)
