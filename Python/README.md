@@ -11,3 +11,4 @@
 - Django Web 开发指南
 - Flast Web 开发
 - [FastAPI](https://www.amazon.com/FastAPI-Modern-Python-Web-Development/dp/1098135504)
+- [Core Python Programming](https://www.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209/)
