@@ -7,7 +7,7 @@
 - Python 基础教程 *
 - Python 知识手册 - V4.1 *
 - Python Web 开发学习实录
-- Python Web Development with Django *
+- [Python Web Development with Django](https://www.amazon.com/Python-Development-Django-Jeff-Forcier/dp/0132356139) *
 - [Flast Web Development](https://www.oreilly.com/library/view/flask-web-development/9781491991725/) *
 - [FastAPI: Modern Python Web Development](https://www.amazon.com/FastAPI-Modern-Python-Web-Development/dp/1098135504) *
 - [Fluent Python (2nd Ed)](https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/)
