@@ -4,7 +4,7 @@
 - https://github.com/leeguandong/learn_python
 - https://www.geeksforgeeks.org/python/python-web-development-django/
 - Python 编程入门经典 *
-- Python 基础教程 *
+- [Beginning Python from Novice to Professional](https://www.amazon.com/Beginning-Python-Professional-Magnus-Hetland/dp/B0CQN4L7MF/) *
 - Python 知识手册 - V4.1 *
 - Python Web 开发学习实录
 - [Python Web Development with Django](https://www.amazon.com/Python-Development-Django-Jeff-Forcier/dp/0132356139) *
