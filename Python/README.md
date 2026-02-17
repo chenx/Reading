@@ -5,8 +5,6 @@
 - https://www.geeksforgeeks.org/python/python-web-development-django/
 - [Beginning Python](https://www.amazon.com/Beginning-Python-Using-2-6-3-1-ebook/dp/B004IPPIJQ/) *
 - [Beginning Python from Novice to Professional](https://www.amazon.com/Beginning-Python-Professional-Magnus-Hetland/dp/B0CQN4L7MF/) *
-- Python 知识手册 - V4.1 *
-- Python Web 开发学习实录
 - [Python Web Development with Django](https://www.amazon.com/Python-Development-Django-Jeff-Forcier/dp/0132356139) *
 - [Flast Web Development](https://www.oreilly.com/library/view/flask-web-development/9781491991725/) *
 - [FastAPI: Modern Python Web Development](https://www.amazon.com/FastAPI-Modern-Python-Web-Development/dp/1098135504) *
