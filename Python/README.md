@@ -2,8 +2,6 @@
 
 - https://www.w3schools.com/python/
 - https://github.com/leeguandong/learn_python
-- Python 背记手册
-- 编程小白的第一本Python入门书
 - Python 编程入门经典 *
 - Python 基础教程 *
 - 简明Python教程 (A byte of Python)
