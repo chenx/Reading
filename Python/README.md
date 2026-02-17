@@ -3,7 +3,7 @@
 - https://www.w3schools.com/python/
 - https://github.com/leeguandong/learn_python
 - https://www.geeksforgeeks.org/python/python-web-development-django/
-- Python 编程入门经典 *
+- [Beginning Python](https://www.amazon.com/Beginning-Python-Using-2-6-3-1-ebook/dp/B004IPPIJQ/) *
 - [Beginning Python from Novice to Professional](https://www.amazon.com/Beginning-Python-Professional-Magnus-Hetland/dp/B0CQN4L7MF/) *
 - Python 知识手册 - V4.1 *
 - Python Web 开发学习实录
