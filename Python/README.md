@@ -4,7 +4,6 @@
 - https://github.com/leeguandong/learn_python
 - Python 编程入门经典 *
 - Python 基础教程 *
-- 简明Python教程 (A byte of Python)
 - Python 知识手册 - V4.1 *
 - Python Web 开发学习实录
 - Django Web 开发指南 *
