@@ -1,10 +1,12 @@
 # Reading
 Reading notes
 
-## Generate TOC (Table of Contents) for Markdown
+## Tools
+
+### Generate TOC (Table of Contents) for Markdown
 
 https://ecotrust-canada.github.io/markdown-toc/
 
-## Create Database schema online
+### Create Database schema online
 
 https://dbdiagram.io/
