@@ -13,3 +13,4 @@
 - [Python for Data Analysis](https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1491957662)
 - [Deep learning with Python](https://deeplearningwithpython.io/)
 - [Programming game AI by example](https://www.amazon.com/Programming-Example-Wordware-Developers-Library/dp/1556220782)
+- [High Performance Python](https://www.amazon.com/High-Performance-Python-Performant-Programming/dp/1492055026)
