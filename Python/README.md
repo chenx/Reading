@@ -10,3 +10,4 @@
 - [FastAPI: Modern Python Web Development](https://www.amazon.com/FastAPI-Modern-Python-Web-Development/dp/1098135504) *
 - [Fluent Python (2nd Ed)](https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/)
 - [Core Python Programming](https://www.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209/) *
+- [Python for Data Analysis](https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1491957662)
