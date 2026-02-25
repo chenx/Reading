@@ -73,3 +73,7 @@ Popularization
 - Theano 
 - TensorFlow
 - Keras (2015)
+
+
+### Chapter 2: Mathematics of DL
+
