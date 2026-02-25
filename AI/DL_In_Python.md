@@ -212,3 +212,45 @@ Recommended way of DL experiments.
 - Cloud: AWS EC2, AMI
 - Local Unix
 
+3.3.3 EC2
+
+3.3.4 GPU
+
+
+#### 3.4 Movie comments classification: binary-classification
+
+3.4.1 IMDB dataset
+
+3.4.2 Data preparation
+
+3.4.3 Create network
+
+- activation functions: Relu (Dense), Sigmoid, prelu, elu
+- loss function
+- optimizer
+
+3.4.4 Verify your method
+
+3.4.5 Make predictions with trained model
+
+3.4.6 Further experiments
+
+
+#### 3.5 News classification: multiclass classification
+
+#### 3.6 House price prediction: regression
+
+Note: logistic regression is a classification method, not regression method.
+
+#### Summary
+
+- Now you can process: binary-classification, multiclass classification and scalar regression
+- data pre-processing
+- feature data normalization
+- overfitting
+- if data size is small, should use small network with 1-2 hidden layers to avoid overfitting
+- if data has many classes, small middle layer may lead to inforamtion bottleneck
+- regression problems use different loss function and evaluation indicators than classification problems
+- if data is small, k-fold cross-validation can heop to evaluate model reliably
+
+
