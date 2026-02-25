@@ -77,9 +77,9 @@ Popularization
 
 ### Chapter 2: Mathematics of DL
 
-2.1 Example: digit recognition with MNist data
+#### 2.1 Example: digit recognition with MNist data
 
-2.2 Data representation of NN
+#### 2.2 Data representation of NN
 
 - tensor
 
@@ -104,7 +104,7 @@ Popularization
 - image: 3D; shape: (samples, height, width, channels)
 - vidoe: 5D; shape: (samples, frames, height, width, channels)
 
-2.3 The gears of neural networks: Tensor operations
+#### 2.3 The gears of neural networks: Tensor operations
 
 2.3.1 Element-wise operations
 
@@ -121,4 +121,42 @@ Popularization
 
 2.3.6 A geometric interpretation of deep learning
 
-2.4 The engine of neural networks: Gradient-based optimization
+#### 2.4 The engine of neural networks: Gradient-based optimization
+
+2.4.1 What’s a derivative?
+
+2.4.2 Derivative of a tensor operation: The gradient
+
+2.4.3 Stochastic gradient descent
+
+2.4.4 Chaining derivatives: The Backpropagation algorithm
+
+#### 2.5 Looking back at our first example
+
+<img width="609" height="455" alt="image" src="https://github.com/user-attachments/assets/ad9d9651-a679-439d-a394-e0c3b1595a12" />
+
+Reimplementing our first example from scratch
+
+Running one training step
+
+The full training loop
+
+Evaluating the model
+
+### Summary
+
+- Tensors form the foundation of modern machine learning systems. They come in various flavors of dtype, rank, and shape.
+
+- You can manipulate numerical tensors via tensor operations (such as addition, tensor product, or element-wise multiplication), which can be interpreted as encoding geometric transformations. In general, everything in deep learning is amenable to a geometric interpretation.
+
+- Deep learning models consist of chains of simple tensor operations, parameterized by weights, which are themselves tensors. The weights of a model are where its “knowledge” is stored.
+
+- Learning means finding a set of values for the model’s weights that minimizes a loss function for a given set of training data samples and their corresponding targets.
+
+- Learning happens by drawing random batches of data samples and their targets and computing the gradient of the model parameters with respect to the loss on the batch. The model parameters are then moved a bit (the magnitude of the move is defined by the learning rate) in the opposite direction from the gradient. This is called mini-batch gradient descent.
+
+- The entire learning process is made possible by the fact that all tensor operations in neural networks are differentiable, and thus it’s possible to apply the chain rule of derivation to find the gradient function mapping the current parameters and current batch of data to a gradient value. This is called backpropagation.
+
+- Two key concepts you’ll see frequently in future chapters are loss and optimizers. These are the two things you need to define before you begin feeding data into a model:
+  - The loss is the quantity you’ll attempt to minimize during training, so it should represent a measure of success for the task you’re trying to solve.
+  - The optimizer specifies the exact way in which the gradient of the loss will be used to update parameters: for instance, it could be the RMSProp optimizer, SGD with momentum, and so on.
