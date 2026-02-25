@@ -254,3 +254,40 @@ Note: logistic regression is a classification method, not regression method.
 - if data is small, k-fold cross-validation can heop to evaluate model reliably
 
 
+### Chapter 4. ML Basics
+
+#### 4.1 4 branches of ML
+
+4.1.1 Supervised Learning
+
+Annotation
+
+- regression
+- classification
+- sequence generation
+- syntax tree prediction
+- object detection
+- image segmentation
+
+4.1.2 Unsupervised Learning
+
+- dimensionality reduction
+- clustering
+
+4.1.3 Self-supervised learning
+
+- autoencoder
+- temporally supervised learning
+
+4.1.4 Re-enforced learning
+
+#### 4.2 Evaluate ML model
+
+4.2.1 Training set, validation set, testing set
+
+- leave part of dataset for validation
+- K-fold validation
+- iterated K-fold validation with shuffling
+
+#### 4.3 Data pre-processing, feature engineering, featurn study
+
