@@ -6,9 +6,9 @@
 
 ### Chapter 1. What is DL
 
-1.1 AI, ML and DL
+#### 1.1 AI, ML and DL
 
-1.2 Pre-DL: ML short history
+#### 1.2 Pre-DL: ML short history
 
 1.2.1 Probability modeling
 
@@ -49,7 +49,7 @@
 - GBM: structured data; XGBoost
 - DL: image perception; Keras
 
-1.3 Why DL? Why now?
+#### 1.3 Why DL? Why now?
 
 LSTM: long short-term memory
 
