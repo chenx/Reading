@@ -338,3 +338,9 @@ Choose loss function
 Many ML researches focus on this, but you need to remember the entire process.
 
 
+## Part II. DL Practice
+
+### Chapter 5. ML in Computer Vision
+
+convnet - convolutional NN
+
