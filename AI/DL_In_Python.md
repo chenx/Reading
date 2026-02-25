@@ -143,7 +143,7 @@ The full training loop
 
 Evaluating the model
 
-### Summary
+#### Summary
 
 - Tensors form the foundation of modern machine learning systems. They come in various flavors of dtype, rank, and shape.
 
@@ -160,3 +160,55 @@ Evaluating the model
 - Two key concepts you’ll see frequently in future chapters are loss and optimizers. These are the two things you need to define before you begin feeding data into a model:
   - The loss is the quantity you’ll attempt to minimize during training, so it should represent a measure of success for the task you’re trying to solve.
   - The optimizer specifies the exact way in which the gradient of the loss will be used to update parameters: for instance, it could be the RMSProp optimizer, SGD with momentum, and so on.
+
+
+### Chapter 3. NN introduction
+
+- TensorFlow (https://tensorflow.org)
+- PyTorch (https://pytorch.org/)
+- JAX (https://jax.readthedocs.io/)
+
+#### 3.1 NN
+
+- layers
+- input data, objective
+- loss function
+- optimizer
+
+<img width="446" height="383" alt="image" src="https://github.com/user-attachments/assets/c244d269-5796-4b5e-999e-be9db6a3a4bd" />
+
+3.1.1 Layers
+
+3.1.2 Model
+
+- 2 branch
+- multihead
+- inception
+
+3.1.3 loss function, optimizer (variation of SGD, Stochastic Gradient Descent)
+
+#### 3.2 Keras introduction
+
+<img width="609" height="363" alt="image" src="https://github.com/user-attachments/assets/b9c50ef6-4330-4276-ab36-910ef7d1ad83" />
+
+3.2.1 Keras、TensorFlow、Theano and CNTK
+
+<img width="349" height="224" alt="image" src="https://github.com/user-attachments/assets/d6ce4c07-fb84-4c3a-9103-ed3a407dcd38" />
+
+- Tensor: Google
+- Theano: Montreal University, MILA lab
+- CNTK: Microsoft cognitive toolkit
+
+3.2.2 Dev with Keras
+
+#### 3.3 Establish DL workstation
+
+3.3.1 Jupyter notebook
+
+Recommended way of DL experiments.
+
+3.3.2 Options running Keras
+
+- Cloud: AWS EC2, AMI
+- Local Unix
+
