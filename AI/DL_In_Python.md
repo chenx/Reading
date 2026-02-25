@@ -285,9 +285,56 @@ Annotation
 
 4.2.1 Training set, validation set, testing set
 
-- leave part of dataset for validation
+- hold-out method
 - K-fold validation
 - iterated K-fold validation with shuffling
 
 #### 4.3 Data pre-processing, feature engineering, featurn study
+
+4.3.1 NN Data pre-processing
+
+- data vectorization
+- normalization
+- default/missing data
+
+4.3.2 feature engineering
+
+#### 4.4 Overfitting and underfitting
+
+- ML core problem: tradeoff between optimization and generalization
+- regularization
+
+4.4.1 reduce network size (to avoid overfit)
+
+4.4.2 Add weighted regularization
+
+4.4.3 Add dropout regularization
+
+#### 4.5 General workflow of ML
+
+4.5.1 Define the problem, collect data
+
+4.5.2 Choose evalution indicators
+
+Choose loss function
+- balanced classification: area under the receiver operating characteristic curve，ROC AUC
+- unbalanced classification: precision, recall
+- sorting, multi-label classification: mean average precision
+
+4.5.3 Decide evaluation method
+
+- hold-out method (good in most cases)
+- K-fold validation
+- iterated K-fold validation with shuffling
+
+4.5.4 prepare data
+
+4.5.5 develop methods better than dumb baseline
+
+4.5.6 expand model size, develop models that overfit
+
+4.5.7 model regularization and tune super-parameters
+
+Many ML researches focus on this, but you need to remember the entire process.
+
 
