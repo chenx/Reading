@@ -1,6 +1,7 @@
 # Deep Learning with Python
 
-- [Deep learning with Python](https://deeplearningwithpython.io/)
+- Deep learning with Python: https://deeplearningwithpython.io/
+- https://blog.keras.io/
 
 ## Part I. DL Basics
 
