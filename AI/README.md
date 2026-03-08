@@ -6,6 +6,6 @@
 - https://huyenchip.com/books/
 - Author: https://huyenchip.com/
 
-## Blogs
+# Blogs
 
 - Lilian Weng, LLM Powered Autonomous Agents: https://lilianweng.github.io/posts/2023-06-23-agent/
