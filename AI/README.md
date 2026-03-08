@@ -6,6 +6,7 @@
 - https://huyenchip.com/books/
 - Author: https://huyenchip.com/
 
-# Blogs
+# Links
 
 - Lilian Weng, LLM Powered Autonomous Agents: https://lilianweng.github.io/posts/2023-06-23-agent/
+- 2023, Stanford, Generative Agents: Interactive Simulacra of Human Behavior: https://github.com/joonspk-research/generative_agents
