@@ -29,3 +29,27 @@ Other performance optimization methods:
 - Prod packaging: Webpack is more mature; Vite uses Rollup
 - Ecosystem: Webpack has a mature ecosystem
 
+Webpack and Vite approach building web applications differently. 
+- Webpack is a "bundle-first" tool that reads your entire project and builds it before launching the dev server. 
+- Vite is a "run-first" tool that uses native browser ES modules to serve files on demand, instantly launching the server and only bundling during production
+
+### Development Commands
+
+| Task | Webpack Command | Vite Command |
+|------|----------------|-------------|
+| Start Development Server | `npx webpack serve` | `npx vite` |
+| Start Server with Custom Config | `npx webpack serve --config webpack.config.js` | `npx vite --config vite.config.js` |
+| Run in Development Mode | `npx webpack --mode development` | `npx vite` *(default is dev mode)* |
+
+### Production Commands
+
+| Task | Webpack Command | Vite Command |
+|------|----------------|-------------|
+| Build for Production | `npx webpack` | `npx vite build` |
+| Preview Production Build Locally | `npx serve dist` *(requires `serve`)* | `npx vite preview` |
+| Build with Custom Config | `npx webpack --config webpack.config.js` | `npx vite build --config vite.config.js` |
+
+Behind the Scenes
+- Webpack: Crawls the entire dependency graph and glues it all together upfront. When a file changes in development, it reconstructs the bundles, which can be sluggish for larger applications.
+- -Vite: Pre-bundles dependencies (using esbuild) and serves raw source files to the browser instantly. When you save, it only updates the single changed module. For production builds, Vite uses Rollup.
+
