@@ -51,5 +51,5 @@ Webpack and Vite approach building web applications differently.
 
 Behind the Scenes
 - Webpack: Crawls the entire dependency graph and glues it all together upfront. When a file changes in development, it reconstructs the bundles, which can be sluggish for larger applications.
-- -Vite: Pre-bundles dependencies (using esbuild) and serves raw source files to the browser instantly. When you save, it only updates the single changed module. For production builds, Vite uses Rollup.
+- Vite: Pre-bundles dependencies (using esbuild) and serves raw source files to the browser instantly. When you save, it only updates the single changed module. For production builds, Vite uses Rollup.
 
