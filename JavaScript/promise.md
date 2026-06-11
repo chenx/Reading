@@ -117,6 +117,19 @@ Utility Methods
     Promise.resolve(value) : Creates a resolved promise
     Promise.reject(reason) : Creates a rejected promise
 
+## Create a function that waits for 1 sec
+```
+async function waitOneSec() {
+  await new Promise(resolve => { setTimeout(resolve, 1000); });
+  // Or: await new Promise(resolve => setTimeout(resolve, 1000));
+}
+
+async function f() {
+  console.log("f starts");
+  await waitOneSec();
+  console.log("f ends");
+}
+```
 
 # References
 
