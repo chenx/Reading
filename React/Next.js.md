@@ -81,7 +81,7 @@ You can completely separate them to the outside world by assigning them distinct
 *   **Requirement:** You must enable and configure CORS on your backend server. If you don't, the user's browser will block React from making requests to the API for security reasons.
 
 
-## fundamental structural differences between React and Next.js
+## Fundamental structural differences between React and Next.js
 
 That is one of the most fundamental structural differences between a standard React project and a Next.js project. Here is a direct comparison of how they operate under the hood:
 
