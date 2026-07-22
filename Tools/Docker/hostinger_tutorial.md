@@ -269,7 +269,7 @@ docker push my-registry.example.com/my-repo/my-local-image:latest
 You need to go beyond the basics of using a single container and simple commands. 
 
 In addition to Docker Compose, learning advanced orchestration tools like 
-`<a href="https://www.hostinger.com/tutorials/how-to-create-docker-swarm/">Docker Swarm</a>` or `Kubernetes` 
+<a href="https://www.hostinger.com/tutorials/how-to-create-docker-swarm/">`Docker Swarm`</a> or `Kubernetes` 
 is crucial for managing and scaling multiple containers across a cluster of machines.
 
 Also, deepen your knowledge of network drivers, such as the `Overlay Network Driver` used in 
