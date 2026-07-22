@@ -98,6 +98,51 @@ docker version  # 29.6.1
 
 ### Docker layers
 
+```
+docker build -t docker-layers:0.1.0 .
+docker images
+docker history docker-layers:0.1.0
+```
+
+History are shown in reverse order of being added. Layers created prevously can be reused and not run again in the next build, if no change happens before the layer in the Dockerfile.
+
+### Pushing and tagging Docker images
+
+- You need to be logged in to the registry to push the Docker images. 
+- You can login to the registry through the Docker Desktop or use the docker login command from the terminal.
+- To push to the registry, the repository name is required. 
+
+```
+docker tag docker-layers:0.1.0 txchen2017/docker-layers:0.1.0
+docker push txchen2017/docker-layers:0.1.0
+```
+
+### Pulling Docker images and running containers
+
+```
+docker pull alpine
+docker run alpine
+
+# -i and -t flags to make the container interactive and to allocate a pseudo TTY.
+# also need to provide a command we want to run when the container starts, here it is: "/bin/sh"
+# To exit from the container, use "exit"
+docker run -it alpine /bin/sh  
+```
+
+### Mapping the ports
+
+```
+docker run -p 8080:3000 learncloudnative/helloworld:0.1.0
+```
+
+The Dockerfile for the helloworld image should have an EXPOSE 3000 instruction, as that's the port the application listens on.
+
+You can use a different flag (-P) and in that case, Docker maps the port from the EXPOSE instruction to a random port on the host.
+
+```
+docker run -P learncloudnative/helloworld:0.1.0
+docker ps  # list runing containers
+```
 
 
 <br/>
