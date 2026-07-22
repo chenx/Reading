@@ -13,7 +13,7 @@
     - Many tutorials
 - [reviewed] https://www.hostinger.com/tutorials/docker-tutorial/
 - [reviewed] https://www.geeksforgeeks.org/devops/docker-tutorial/
-  - <span style="color: red;"><strong>A very thorough and detailed doc</strong></span>
+  - <span style="color:red"><strong>A very thorough and detailed doc</strong></span>
   - <a href="https://www.geeksforgeeks.org/linux-unix/how-to-install-and-configure-docker-in-ubuntu/">How to Install and Configure Docker in Ubuntu?</a>
   - <a href="https://www.geeksforgeeks.org/devops/how-to-build-a-web-server-docker-file/">How to Build a Web Server Docker File?</a>
 - [reviewed] https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
