@@ -86,3 +86,34 @@ docker stop static-site
 
 To deploy this on a real server you would just need to install Docker, and run the above Docker command.
 
+
+#### Docker Images
+
+```
+docker images  # show list of images that are available locally
+docker rmi ${image_id(s)}  # removes image(s)
+docker image prune -a      # remove all images completely idle (i.e., no containers are built from it)
+```
+
+An image is similar to a git repository. Images can be committed with changes and have multiple versions.
+
+```
+docker pull ubuntu:18.04
+```
+
+To get a new Docker image you can either get it from a registry (such as the Docker Hub) or create your own.
+
+You can also search for images directly from the command line using `docker search`.
+
+Base and Child images:
+- Base images are images that have no parent image, usually images with an OS like ubuntu, busybox or debian.
+- Child images are images that build on base images and add additional functionality.
+
+Official and user images:
+- Official images: e.g., python, ubuntu, busybox and hello-world
+- User images: e.g., user/image-name
+
+#### Dockerfile
+
+A Dockerfile is a simple text file that contains a list of commands that the Docker client calls while creating an image. 
+
