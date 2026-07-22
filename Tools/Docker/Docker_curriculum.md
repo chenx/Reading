@@ -2,7 +2,7 @@
 
 https://docker-curriculum.com/
 
-### Commands
+## Commands
 
 ```
 docker run hello-world
@@ -35,7 +35,7 @@ docker container prune  # remove all stopped containers
 
 Lastly, you can also delete images that you no longer need by running `docker rmi`.
 
-#### Terminology that is used frequently in the Docker ecosystem.
+### Terminology that is used frequently in the Docker ecosystem.
 
 - Images - The blueprints of our application which form the basis of containers. In the demo above, we used the docker pull command to download the busybox image.
 - Containers - Created from Docker images and run the actual application. We create a container using docker run which we did using the busybox image that we downloaded. A list of running containers can be seen using the docker ps command.
@@ -45,9 +45,9 @@ Lastly, you can also delete images that you no longer need by running `docker rm
 
 <br/>
 
-### Webapps with Docker
+## Webapps with Docker
 
-#### Static Sites
+### Static Sites
 
 ```
 docker run --rm -it ${registry}/static-site
@@ -75,7 +75,7 @@ docker stop static-site
 To deploy this on a real server you would just need to install Docker, and run the above Docker command.
 
 
-#### Docker Images
+### Docker Images
 
 ```
 docker images  # show list of images that are available locally
@@ -101,7 +101,7 @@ Official and user images:
 - Official images: e.g., python, ubuntu, busybox and hello-world
 - User images: e.g., user/image-name
 
-#### Dockerfile
+### Dockerfile
 
 A Dockerfile is a simple text file that contains a list of commands that the Docker client calls while creating an image. 
 
