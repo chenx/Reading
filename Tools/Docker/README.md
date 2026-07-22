@@ -6,8 +6,11 @@
 - [reviewed] https://www.docker.com/play-with-docker/
   - [reviewed] https://www.docker.com/101-tutorial/
     - docker run -dp 80:80 docker/getting-started
+    - tutorial at localhost
+  - [reviewed] https://docs.docker.com/get-started/
+    - tutorial online
   - https://docs.docker.com/guides/
-  - https://docs.docker.com/get-started/
+    - Many tutorials
 - [reviewed] https://www.hostinger.com/tutorials/docker-tutorial/
 - https://www.geeksforgeeks.org/devops/docker-tutorial/
 - [reviewed] https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
