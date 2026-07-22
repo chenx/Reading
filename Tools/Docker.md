@@ -11,9 +11,10 @@
 - https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
 - https://medium.com/@nomannayeem/the-one-docker-tutorial-every-beginner-developer-actually-needs-f94a5774da27
 
-## Commands
 
-### https://docker-curriculum.com/
+## https://docker-curriculum.com/
+
+### Commands
 
 ```
 docker run hello-world
@@ -46,11 +47,42 @@ docker container prune  # remove all stopped containers
 
 Lastly, you can also delete images that you no longer need by running `docker rmi`.
 
-### Terminology that is used frequently in the Docker ecosystem.
+#### Terminology that is used frequently in the Docker ecosystem.
 
 - Images - The blueprints of our application which form the basis of containers. In the demo above, we used the docker pull command to download the busybox image.
 - Containers - Created from Docker images and run the actual application. We create a container using docker run which we did using the busybox image that we downloaded. A list of running containers can be seen using the docker ps command.
 - Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
 - Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
+
+<br/>
+
+### Webapps with Docker
+
+#### Static Sites
+
+```
+docker run --rm -it ${registry}/static-site
+```
+
+```
+docker run -d -P --name static-site ${registry}/static-site
+docker port static-site  # show the running ports
+```
+
+-d will detach our terminal, -P will publish all exposed ports to random ports and finally --name corresponds to a name we want to give.
+
+You can open http://localhost:32769 in your browser.
+
+You can also specify a custom port to which the client will forward connections to the container:
+```
+docker run -p 8888:80 ${registry}/static-site
+```
+
+To stop a detached container, run docker stop by giving the container ID, or use name:
+```
+docker stop static-site
+```
+
+To deploy this on a real server you would just need to install Docker, and run the above Docker command.
 
