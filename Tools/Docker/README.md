@@ -8,7 +8,7 @@
 - https://docs.docker.com/get-started/
 - https://www.hostinger.com/tutorials/docker-tutorial/
 - https://www.geeksforgeeks.org/devops/docker-tutorial/
-- https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
+- [reviewed] https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
 - https://medium.com/@nomannayeem/the-one-docker-tutorial-every-beginner-developer-actually-needs-f94a5774da27
 
 
