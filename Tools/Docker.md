@@ -12,6 +12,96 @@
 - https://medium.com/@nomannayeem/the-one-docker-tutorial-every-beginner-developer-actually-needs-f94a5774da27
 
 
+## https://learncloudnative.com/blog/2020-04-29-beginners-guide-to-docker
+
+### Difference between VM and Container
+
+Virtual Machines:
+- You can emulate a particular hardware system using a piece of software that runs on physical computers (hypervisor). 
+- A hypervisor is used to create and run virtual machines. 
+- Each virtual machine runs its guest operating system.
+
+Containers:
+- Containers run directly on top of the host operating system. 
+- They share the operating system and kernel and the hardware is not virtualized.
+
+### Containers and Images, and how to create them
+
+A Docker image is a read-only template that contains instructions on how to create or run a container. 
+A Docker image is created from a Dockerfile that looks like this:
+
+```
+CopyFROM ubuntu:18.04
+WORKDIR /app
+COPY hello.sh /app
+RUN chmod +x hello.sh
+RUN apt-get update
+RUN apt-get install curl -y
+CMD ["./hello.sh"]
+```
+
+Using a Dockerfile like the one above, we can create a Docker image. A Docker image is a collection of layers (one command in the Dockerfile = a layer in the image). The layers are stacked one on top of the other and they are all read-only, with the exception of a topmost, writeable layer.
+
+<img width="563" height="721" alt="image" src="https://github.com/user-attachments/assets/9b9842ab-c644-4d76-90a9-14c74fd9f20a" />
+
+You can think of Docker images as templates and containers as instances of those templates. When you run a container you are creating an instance of a Docker image with the writeable layer. Anything modifications you make to the writeable layer when your container is running will get lost once the container is stopped.
+
+Features such as `volumes` can be used to store the data outside of a running container. When running a container you can specify and mount these volumes to use inside the container. In case when container is stopped, the data will remains as it's not part of the container.
+
+### Image naming
+
+All Docker images are referenced by their names. The image name is made up of 3 parts: repository name, image name, and an image tag.
+
+The image tag (or version) can be omitted, however, any image without a tag gets the default tag called the `latest`.
+
+### Docker registry
+
+A Docker registry is a place where you can upload and store Docker images.
+
+A free registry: Docker Hub
+
+### Common scenarios
+
+#### Build and push
+
+Docker build refers to an act of taking the Dockerfile, a build context (folder with your code or files you want to potentially include in the image) and an image name, and using the Docker CLI to build an image. The result of this action is a Docker image.
+
+Pushing is simply uploading the image.
+
+Build an image:
+```
+docker build -t myrepository/imagename:0.1.0 .
+```
+
+Push an image:
+```
+docker push myrepository/imagename:0.1.0
+```
+
+#### Pull and run
+```
+docker pull myrepository/imagename:0.1.0
+
+# If name is not provided, docker comes up with a random name.
+docker run --name mycontainername -p 5000:8080 myrepository/imagename:0.1.0
+```
+
+### Docker in practice
+
+- Installing Docker Desktop
+- Creating a Docker Hub Account
+- Dockerfile and other files
+
+```
+docker version  # 29.6.1
+```
+
+### Docker layers
+
+
+
+<br/>
+
 ## https://docker-curriculum.com/
 
 ### Commands
