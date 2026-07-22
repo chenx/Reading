@@ -235,3 +235,44 @@ docker run -d \
 
 ## Troubleshooting common Docker issues
 
+### Container exits immediately
+
+### Image layer caching issues
+
+The simplest solution for this issue is to force a complete rebuild and ignore the layer cache. 
+Do it by adding the –no-cache option when initiating the build process, like this command:
+
+```
+docker build --no-cache -t my-app:latest .
+```
+
+When installing packages using a Dockerfile, also explicitly include a command that prevents the package manager from reusing old layers with outdated package lists. In Debian-based distributions, you can achieve this by combining apt-get update and apt-get install -y –no-install-recommend in the same RUN statement like so:
+```
+RUN apt-get update && apt-get install -y --no-install-recommends
+```
+
+### Registry authentication failure
+
+```
+docker login my-registry.example.com
+```
+
+```
+docker tag my-local-image:latest my-registry.example.com/my-repo/my-local-image:latest
+docker push my-registry.example.com/my-repo/my-local-image:latest
+```
+
+<br/>
+
+## What are the next steps to master Docker?
+
+You need to go beyond the basics of using a single container and simple commands. 
+
+In addition to Docker Compose, learning advanced orchestration tools like `Docker Swarm` or `Kubernetes` 
+is crucial for managing and scaling multiple containers across a cluster of machines.
+
+Also, deepen your knowledge of network drivers, such as the `Overlay Network Driver` used in 
+Docker Swarm mode for connecting hosts across a cluster.
+
+Finally, explore Docker use cases to gain a deeper understanding of how to utilize this 
+containerization tool for various tasks during development and deployment.
