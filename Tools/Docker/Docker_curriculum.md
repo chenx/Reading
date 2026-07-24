@@ -143,8 +143,66 @@ docker search elasticsearch
 docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 docker run -d --name es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2
 
-docker container ls
+docker container ls  # same as: docker ps
 docker container logs es
 
 curl 0.0.0.0:9200
 ```
+
+Dockerfile for the flask app:
+
+```
+# start from base
+FROM ubuntu:24.04
+
+MAINTAINER name <email>
+
+# install system-wide deps for python and node
+RUN apt-get -yqq update
+RUN apt-get -yqq install python3-pip python3-dev python3.12-venv curl gnupg
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
+RUN apt-get install -yq nodejs
+
+# Create Python virtual environment
+RUN python3 -m venv /opt/venv
+
+# Make virtual environment the default Python environment
+ENV PATH="/opt/venv/bin:$PATH"
+
+# copy our application code
+ADD flask-app /opt/flask-app
+WORKDIR /opt/flask-app
+
+# fetch app specific deps
+RUN npm install
+RUN npm run build
+RUN pip3 install -r requirements.txt
+
+# expose port
+EXPOSE 5000
+
+# start app
+CMD [ "python3", "./app.py" ]
+```
+
+- The yqq flag is used to suppress output and assumes "Yes" to all prompts.
+- The ADD command copies our application into a new volume in the container - /opt/flask-app
+- We also set this as our working directory, so that the following commands will be run here
+
+```
+docker build -t yourusername/foodtrucks-web .
+docker run -P --rm yourusername/foodtrucks-web
+```
+
+
+When docker is installed, it creates three networks automatically.
+```
+$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+c2c695315b3a        bridge              bridge              local
+a875bec5d6fd        host                host                local
+ead0e804a67b        none                null                local
+```
+
+
+
