@@ -133,3 +133,18 @@ docker run -p 8888:5000 yourusername/catnip
 ```
 
 See the app running at: http://localhost:8888
+
+<br/>
+
+## Multi-container environments
+
+```
+docker search elasticsearch
+docker pull docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+docker run -d --name es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+
+docker container ls
+docker container logs es
+
+curl 0.0.0.0:9200
+```
