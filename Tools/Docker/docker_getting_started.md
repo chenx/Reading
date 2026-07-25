@@ -159,6 +159,8 @@ Linux VM
 ```
 
 
+<br/>
+
 ### Using Bind Mounts
 
 Starting a Dev-Mode Container
@@ -174,5 +176,32 @@ docker run -dp 3000:3000 \
 
 ```
 
+
+<br/>
+
 ### Multi-container Apps
+
+#### Starting MySQL
+
+1. Create the network.
+```
+docker network create todo-app
+```
+
+2. Start a MySQL container and attach it to the network. 
+```
+docker run -d \
+    --network todo-app --network-alias mysql \
+    -v todo-mysql-data:/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=secret \
+    -e MYSQL_DATABASE=todos \
+    mysql:8.0
+```
+
+3. To confirm we have the database up and running, connect to the database and verify it connects.
+```
+docker exec -it <mysql-container-id> mysql -p
+```
+
+#### Connecting to MySQL
 
