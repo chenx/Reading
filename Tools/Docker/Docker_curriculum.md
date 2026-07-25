@@ -155,19 +155,20 @@ Dockerfile for the flask app:
 # start from base
 FROM ubuntu:24.04
 
-MAINTAINER name <email>
+LABEL maintainer=""
 
 # install system-wide deps for python and node
 RUN apt-get -yqq update
-RUN apt-get -yqq install python3-pip python3-dev python3.12-venv curl gnupg
+RUN apt-get -yqq install python3.12 python3.12-dev python3.12-venv curl gnupg
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
 RUN apt-get install -yq nodejs
 
 # Create Python virtual environment
-RUN python3 -m venv /opt/venv
+RUN python3.12 -m venv /opt/venv
 
 # Make virtual environment the default Python environment
 ENV PATH="/opt/venv/bin:$PATH"
+
 
 # copy our application code
 ADD flask-app /opt/flask-app
@@ -204,5 +205,50 @@ a875bec5d6fd        host                host                local
 ead0e804a67b        none                null                local
 ```
 
+The bridge network is the network in which containers are run by default. 
+So that means that when I ran the ES container, it was running in this bridge network.
 
+Let's find out by running our flask container and trying to access this IP.
+We see that we can indeed talk to ES on 172.17.0.2:9200.
 
+```
+% docker run -it --rm txchen2017/foodtrucks-web bash
+root@3ae7ff968fbd:/opt/flask-app# 
+root@3ae7ff968fbd:/opt/flask-app# curl 172.17.0.2:9200
+{
+  "name" : "R6kFrS9",
+  "cluster_name" : "docker-cluster",
+  "cluster_uuid" : "TBT3WLm8TdaV-AqPyc3J6A",
+  "version" : {
+    "number" : "6.3.2",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "053779d",
+    "build_date" : "2018-07-20T05:20:23.451332Z",
+    "build_snapshot" : false,
+    "lucene_version" : "7.3.1",
+    "minimum_wire_compatibility_version" : "5.6.0",
+    "minimum_index_compatibility_version" : "5.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+root@3ae7ff968fbd:/opt/flask-app# exit
+```
+
+2 questions:
+- How do we tell the Flask container that es hostname stands for 172.17.0.2 or some other IP since the IP can change?
+- Since the bridge network is shared by every container by default, this method is not secure. How do we isolate our network?
+
+Docker allows us to define our own networks while keeping them isolated using the `docker network` command.
+
+```
+% docker network create foodtrucks-net
+04d95065828395d23dd26402a2c6ef11ddef524a9fb1aad40a5112c5b31d3a91
+% docker network ls
+NETWORK ID     NAME             DRIVER    SCOPE
+faa272ab71a0   bridge           bridge    local
+04d950658283   foodtrucks-net   bridge    local
+83f17a299dda   host             host      local
+3ffde8132057   kind             bridge    local
+91064ce4bd45   none             null      local
+```
