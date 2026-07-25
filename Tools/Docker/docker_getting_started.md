@@ -328,3 +328,28 @@ services:
 volumes:
   todo-mysql-data:
 ```
+
+#### Running our Application Stack
+
+1. Make sure no other copies of the app/db are running first (docker ps and docker rm -f <ids>).
+
+2. Start up the application stack using the docker compose up command. We'll add the -d flag to run everything in the background.
+```
+docker compose up -d
+```
+When we run this, we should see output like this:
+```
+[+] up 4/4
+ ✔ Network app_default        Created      0.1s
+ ✔ Volume app_todo-mysql-data Created      0.0s
+ ✔ Container app-app-1        Started      1.1s
+ ✔ Container app-mysql-1      Started      0.9s
+```
+
+You'll notice that the volume was created as well as a network! By default, Docker Compose automatically creates a network specifically for the application stack (which is why we didn't define one in the compose file).
+
+3. Let's look at the logs using the `docker compose logs -f` command.
+
+
+#### Seeing our App Stack in Docker Dashboard
+
