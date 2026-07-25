@@ -304,7 +304,7 @@ Our complete docker-compose.yml should look like this:
 ```
 services:
   app:
-    image: node:18-alpine
+    image: node:22-alpine
     command: sh -c "yarn install && yarn run dev"
     ports:
       - 3000:3000
@@ -358,3 +358,22 @@ You'll notice that the volume was created as well as a network! By default, Dock
 ```
 docker compose down
 ```
+
+<br/>
+
+### Image Building Best Practices
+
+#### Security Scanning
+
+```
+# Deprecated.
+# docker scan getting-started
+
+# Use this instead:
+docker scout cves getting-started
+```
+
+#### Image Layering
+
+Did you know that you can look at how an image is composed? 
+Using the `docker image history` command, you can see the command that was used to create each layer within an image.
