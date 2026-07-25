@@ -471,4 +471,83 @@ COPY --from=build /app/build /usr/share/nginx/html
 
 Here, we are using a node:18 image to perform the build (maximizing layer caching) and then copying the output into an nginx container. 
 
+<br/>
+
+---
+
+### To build an image to upload to repo, is it the same as without the yml file?
+
+Yes. The actual Docker image build is essentially the same. Docker Compose is just a convenient way to define the build configuration.
+
+#### Without `docker-compose.yml`
+
+If you have:
+```text
+app/
+└── Dockerfile
+```
+
+**Build:**
+```bash
+cd app
+docker build -t myusername/myapp:1.0 .
+```
+
+**Then push:**
+```bash
+docker push myusername/myapp:1.0
+```
+
+#### With `docker-compose.yml`
+
+If you have:
+```yaml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myusername/myapp:1.0
+```
+
+You can build with:
+```bash
+docker compose build
+```
+
+**Then push:**
+```bash
+docker compose push
+```
+
+**Or:**
+```bash
+docker compose build
+docker push myusername/myapp:1.0
+```
+
+#### The Key Distinction
+
+* **Dockerfile**  
+  → Defines **HOW** to build the image
+* **docker-compose.yml**  
+  → Defines **HOW** to build/run/manage one or more containers  
+  → Can reference the Dockerfile  
+  → Can also specify the image name
+
+So if your goal is simply: **Build an image → upload it to Docker Hub / a container registry**, you don't need Compose. You can use:
+
+```bash
+docker build -t username/repository:tag .
+docker push username/repository:tag
+```
+
+If your Compose file has an `image:` field, you can use Compose to automate this:
+
+```bash
+docker compose build
+docker compose push
+```
+
+For example, if you're deploying your Spring Boot backend to a server, I'd typically use the Dockerfile to build the image, push it to a registry, and then have the server pull that image. Compose is useful on the server if you have multiple services (backend + PostgreSQL + Redis, etc.) that need to be started together.
 
