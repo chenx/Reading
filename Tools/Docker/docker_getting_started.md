@@ -73,3 +73,67 @@ docker exec <container-id> cat /data.txt
 
 By default, TODO app's data is at: /etc/todos/todo.db
 
+```
+docker volume create todo-db
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+```
+
+Check where the persisted volumn is:
+
+```
+% docker volume inspect todo-db
+[
+    {
+        "CreatedAt": "2026-07-25T06:12:07Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/todo-db/_data",
+        "Name": "todo-db",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+```
+
+However:
+```
+% sudo ls /var/lib/docker/volumes/todo-db/     
+ls: /var/lib/docker/volumes/todo-db/: No such file or directory
+```
+
+```
+This is expected on Docker Desktop for Mac.
+
+The key point is that your Docker daemon is not running directly on macOS. Docker Desktop runs
+Docker Engine inside a lightweight Linux VM. Therefore:
+
+/var/lib/docker/volumes/todo-db/_data
+
+exists inside the Docker Desktop Linux VM, not directly in your macOS filesystem.
+
+Your output:
+
+Mountpoint: /var/lib/docker/volumes/todo-db/_data
+
+is the mountpoint from the Docker daemon's perspective.
+```
+
+To see what's inside the volume, the easiest way is to mount it into a temporary container:
+```
+docker run --rm -it \
+  -v todo-db:/data \
+  alpine \
+  ls -la /data
+```
+Or interactively:
+```
+docker run --rm -it \
+  -v todo-db:/data \
+  alpine \
+  sh
+```
+Then:
+```
+ls -la /data
+```
+
