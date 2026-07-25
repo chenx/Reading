@@ -13,7 +13,7 @@ Download: http://localhost:8088/assets/app.zip
 
 Dockerfile:
 ```
-FROM node:18-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY . .
 RUN yarn install --production
@@ -171,7 +171,7 @@ cd /path/to/getting-started/app
 # $(pwd -P): expand softlink to physical link. softlink causes problem.
 docker run -dp 3000:3000 \
     -w /app -v "$(pwd -P):/app" \
-    node:18-alpine \
+    node:22-alpine \
     sh -c "yarn install && yarn run dev"
 
 ```
@@ -250,7 +250,7 @@ docker run -dp 3000:3000 \
   -e MYSQL_USER=root \
   -e MYSQL_PASSWORD=secret \
   -e MYSQL_DB=todos \
-  node:18-alpine \
+  node:22-alpine \
   sh -c "yarn install && yarn run dev"
 ```
 
@@ -286,7 +286,7 @@ docker run -dp 3000:3000 \
   -e MYSQL_USER=root \
   -e MYSQL_PASSWORD=secret \
   -e MYSQL_DB=todos \
-  node:18-alpine \
+  node:22-alpine \
   sh -c "yarn install && yarn run dev"
 ```
 
@@ -377,3 +377,98 @@ docker scout cves getting-started
 
 Did you know that you can look at how an image is composed? 
 Using the `docker image history` command, you can see the command that was used to create each layer within an image.
+
+```
+docker image history getting-started
+
+docker image history --no-trunc getting-started
+```
+
+#### Layer Caching
+
+Going back to the image history output, we see that each command in the Dockerfile becomes a new layer in the image. You might remember that when we made a change to the image, the yarn dependencies had to be reinstalled. Is there a way to fix this? It doesn't make much sense to ship around the same dependencies every time we build, right?
+
+To fix this, we need to restructure our Dockerfile to help support the caching of the dependencies. For Node-based applications, those dependencies are defined in the package.json file. So what if we start by copying only that file in first, install the dependencies, and then copy in everything else? Then, we only recreate the yarn dependencies if there was a change to the package.json. 
+
+Change:
+```
+FROM node:22-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+```
+
+to:
+
+1. Update the Dockerfile to copy in the package.json first, install dependencies, and then copy everything else in.
+```
+FROM node:22-alpine
+WORKDIR /app
+COPY package.json yarn.lock ./
+RUN yarn install --production
+COPY . .
+CMD ["node", "src/index.js"]
+```
+
+2. Create a file named `.dockerignore` in the same folder as the Dockerfile with the following contents.
+```
+node_modules
+```
+.dockerignore files are an easy way to selectively copy only image relevant files. 
+
+3. Build a new image using docker build.
+```
+docker build -t getting-started .
+```
+
+4. Now, make a change to the src/static/index.html file (like change the <title> to say "The Awesome Todo App").
+
+5. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
+
+You should notice that the build was MUCH faster! You'll see that several steps are using previously cached layers. We're using the build cache. Pushing and pulling this image and updates to it will be much faster as well. Hooray!
+
+
+#### Multi-Stage Builds
+
+Multi-stage builds are an incredibly powerful tool which help us by using multiple stages to create an image. They offer several advantages including:
+
+    Separate build-time dependencies from runtime dependencies
+    Reduce overall image size by shipping only what your app needs to run
+
+**Maven/Tomcat Example**
+
+When building Java-based applications, a JDK is needed to compile the source code to Java bytecode. However, that JDK isn't needed in production. You might also be using tools such as Maven or Gradle to help build the app. Those also aren't needed in our final image. Multi-stage builds help.
+
+```
+FROM maven AS build
+WORKDIR /app
+COPY . .
+RUN mvn package
+
+FROM tomcat
+COPY --from=build /app/target/file.war /usr/local/tomcat/webapps 
+```
+
+In this example, we use one stage (called build) to perform the actual Java build with Maven. In the second stage (starting at FROM tomcat), we copy in files from the build stage. The final image is only the last stage being created (which can be overridden using the --target flag).
+
+**React Example**
+
+When building React applications, we need a Node environment to compile the JS code (typically JSX), SASS stylesheets, and more into static HTML, JS, and CSS. Although if we aren't performing server-side rendering, we don't even need a Node environment for our production build. Why not ship the static resources in a static nginx container?
+
+```
+FROM node:22 AS build
+WORKDIR /app
+COPY package* yarn.lock ./
+RUN yarn install
+COPY public ./public
+COPY src ./src
+RUN yarn run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+```
+
+Here, we are using a node:18 image to perform the build (maximizing layer caching) and then copying the output into an nginx container. 
+
+
