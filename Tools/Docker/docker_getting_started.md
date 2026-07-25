@@ -159,3 +159,17 @@ Linux VM
 ```
 
 
+### Using Bind Mounts
+
+Starting a Dev-Mode Container
+
+```
+cd /path/to/getting-started/app
+
+# $(pwd -P): expand softlink to physical link. softlink causes problem.
+docker run -dp 3000:3000 \
+    -w /app -v "$(pwd -P):/app" \
+    node:18-alpine \
+    sh -c "yarn install && yarn run dev"
+
+```
