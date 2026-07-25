@@ -260,3 +260,71 @@ docker run -dp 3000:3000 \
 
 4. Connect to the mysql database and prove that the items are being written to the database. Remember, the password is secret.
 
+If you take a quick look at the Docker Dashboard, you'll see that we have two app containers running. But, there's no real indication that they are grouped together in a single app. We'll see how to make that better next.
+
+
+<br/>
+
+### Using Docker Compose
+
+Docker Compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down. 
+
+#### Creating our Compose File
+
+1. Inside of the app folder, create a file named docker-compose.yml (next to the Dockerfile and package.json files).
+
+2. In the compose file, we'll start off by defining a list of services (or containers) we want to run as part of our application.
+
+#### Defining the App Service
+
+To remember, this was the command we were using to define our app container.
+```
+docker run -dp 3000:3000 \
+  -w /app -v "$(pwd):/app" \
+  --network todo-app \
+  -e MYSQL_HOST=mysql \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=secret \
+  -e MYSQL_DB=todos \
+  node:18-alpine \
+  sh -c "yarn install && yarn run dev"
+```
+
+This was the command we used to define the mysql container:
+```
+docker run -d \
+  --network todo-app --network-alias mysql \
+  -v todo-mysql-data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=secret \
+  -e MYSQL_DATABASE=todos \
+  mysql:8.0
+```
+
+Our complete docker-compose.yml should look like this:
+```
+services:
+  app:
+    image: node:18-alpine
+    command: sh -c "yarn install && yarn run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
+
+volumes:
+  todo-mysql-data:
+```
