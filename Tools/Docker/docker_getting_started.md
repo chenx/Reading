@@ -212,3 +212,51 @@ Use the nicolaka/netshoot container, which ships with a lot of tools that are us
 docker run -it --network todo-app nicolaka/netshoot
 ```
 
+2. Inside the container, we're going to use the dig command, which is a useful DNS tool. We're going to look up the IP address for the hostname mysql.
+
+```
+dig mysql
+```
+
+```
+; <<>> DiG 9.20.23 <<>> mysql
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41729
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;mysql.				IN	A
+
+;; ANSWER SECTION:
+mysql.			600	IN	A	172.20.0.2
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11) (UDP)
+;; WHEN: Sat Jul 25 07:11:41 UTC 2026
+;; MSG SIZE  rcvd: 44
+```
+
+#### Running our App with MySQL
+
+Let's start our dev-ready container!
+
+1. We'll specify each of the environment variables above, as well as connect the container to our app network.
+```
+docker run -dp 3000:3000 \
+  -w /app -v "$(pwd):/app" \
+  --network todo-app \
+  -e MYSQL_HOST=mysql \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=secret \
+  -e MYSQL_DB=todos \
+  node:18-alpine \
+  sh -c "yarn install && yarn run dev"
+```
+
+2.  we look at the logs for the container (docker logs <container-id>), we should see a message indicating it's using the mysql database.
+
+3. Open the app in your browser and add a few items to your todo list.
+
+4. Connect to the mysql database and prove that the items are being written to the database. Remember, the password is secret.
+
