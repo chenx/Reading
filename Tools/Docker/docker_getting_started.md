@@ -54,7 +54,22 @@ docker run -dp 3000:3000 getting-started
 Create repo `getting-started` in Docker Hub (https://hub.docker.com)
 
 ```
-docker tag getting-started YOUR-USER-NAME/getting-started
-docker push YOUR-USER-NAME/getting-started
+docker tag getting-started txchen2017/getting-started
+docker push txchen2017/getting-started
 ```
+
+Run on a different device:
+```
+docker run -dp 3000:3000 txchen2017/getting-started
+```
+
+### Persist our DB
+
+```
+docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+# check data.txt in Docker desktop, or from console:
+docker exec <container-id> cat /data.txt
+```
+
+By default, TODO app's data is at: /etc/todos/todo.db
 
