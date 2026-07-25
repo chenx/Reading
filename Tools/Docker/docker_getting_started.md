@@ -173,3 +173,6 @@ docker run -dp 3000:3000 \
     sh -c "yarn install && yarn run dev"
 
 ```
+
+### Multi-container Apps
+
