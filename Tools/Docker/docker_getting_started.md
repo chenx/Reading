@@ -353,3 +353,8 @@ You'll notice that the volume was created as well as a network! By default, Dock
 
 #### Seeing our App Stack in Docker Dashboard
 
+#### Tearing it All Down
+
+```
+docker compose down
+```
