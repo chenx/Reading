@@ -205,3 +205,10 @@ docker exec -it <mysql-container-id> mysql -p
 
 #### Connecting to MySQL
 
+Use the nicolaka/netshoot container, which ships with a lot of tools that are useful for troubleshooting or debugging networking issues.
+
+1. Start a new container using the nicolaka/netshoot image. Make sure to connect it to the same network.
+```
+docker run -it --network todo-app nicolaka/netshoot
+```
+
