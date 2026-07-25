@@ -137,3 +137,25 @@ Then:
 ls -la /data
 ```
 
+You currently have:
+```
+MacBook
+   │
+   │ docker run
+   ▼
+Docker Desktop
+   │
+   ▼
+Linux VM
+   │
+   └── /var/lib/docker/volumes/todo-db/_data
+           │
+           ▼
+       todo-db volume
+           │
+           ▼
+       /etc/todos
+       inside getting-started container
+```
+
+
