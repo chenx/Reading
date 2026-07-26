@@ -1,5 +1,12 @@
 # Reading
+
 Reading notes
+
+## Web Trends
+
+- https://builtwith.com/
+- https://www.tiobe.com/tiobe-index/
+
 
 ## Tools
 
@@ -10,9 +17,4 @@ Reading notes
 ### Create Database schema online
 
 - https://dbdiagram.io/
-
-### Web Trends
-
-- https://builtwith.com/
-- https://www.tiobe.com/tiobe-index/
 
