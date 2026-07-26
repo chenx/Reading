@@ -5,11 +5,11 @@ Reading notes
 
 ### Generate TOC (Table of Contents) for Markdown
 
-https://ecotrust-canada.github.io/markdown-toc/
+- https://ecotrust-canada.github.io/markdown-toc/
 
 ### Create Database schema online
 
-https://dbdiagram.io/
+- https://dbdiagram.io/
 
 ### Web Trends
 
