@@ -1,6 +1,4 @@
-# Reading
-
-Reading notes
+# Reading notes
 
 ## Web Trends
 
