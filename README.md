@@ -11,6 +11,8 @@ https://ecotrust-canada.github.io/markdown-toc/
 
 https://dbdiagram.io/
 
-### Find out what websites are built with
+### Web Trends
 
-https://builtwith.com/
+- https://builtwith.com/
+- https://www.tiobe.com/tiobe-index/
+
