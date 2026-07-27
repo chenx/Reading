@@ -128,3 +128,40 @@ Instead of having the browser talk directly to Spring Boot, you will introduce N
 * **Next.js (The Frontend & Rendering Layer):** Acts as your UI controller. When a user or search crawler requests a page, Next.js catches the request, fetches the JSON data from Spring Boot over a fast internal network, renders the React components into a complete HTML page on the server, and sends that HTML down to the visitor.
 
 
+#### How this Scales with Dynamic Content
+
+Next.js handles high-volume dynamic content perfectly using Incremental Static Regeneration (ISR) or Dynamic SSR:
+
+* **For highly volatile pages (e.g., Live Auctions, Stock Levels):** You can tell Next.js to fetch fresh data from Spring Boot on every single page load.
+* **For semi-dynamic pages (e.g., E-commerce Product Pages, Blogs):** You can cache the HTML page for a specific timeframe (e.g., 60 seconds). Next.js will serve the cached HTML to millions of visitors instantly without hitting your Spring Boot server, and automatically rebuild the page in the background once the timer expires.
+
+#### Deployment Strategy
+
+To run this at scale, you will deploy the two applications independently:
+
+* **Deploy Next.js:** To a platform optimized for frontend rendering like Vercel, Netlify, or inside a lightweight Docker container on AWS/GCP.
+* **Deploy Spring Boot:** To any standard backend hosting environment (e.g., AWS ECS, DigitalOcean, or Heroku) tucked safely behind your firewall, only exposing the API endpoints Next.js needs to talk to.
+
+
+### Spring Boot backend uses JWT and saves it in localstorage. How to configure Next.js for JWT?
+
+Using your existing Spring Boot JWT setup is not a problem, but you will need to tweak how the token is handled.
+
+JWTs (JSON Web Tokens) are actually fundamentally stateless. They hold all user data right inside the token string so your backend doesn't have to look up a session database on every single request. The issue you are anticipating isn't a problem with Spring Boot; it's a structural difference in how Vue (Client-Side) and Next.js (Server-Side) store things.
+
+#### The Token Storage Conflict
+
+* **How Vue did it:** Your Vue app ran completely inside the browser. It called your login API, got a JWT back, and likely saved it inside `localStorage` or a Vuex/Pinia store. It appended that token to the `Authorization: Bearer <token>` header for subsequent requests.
+* **The Next.js Problem:** Next.js runs code on the server before sending it to the user. The server has zero access to the browser's `localStorage` or client-side global states during Server-Side Rendering (SSR). If you keep using `localStorage`, your Next.js server cannot read the token, meaning it can't fetch data from Spring Boot to render SEO-friendly pages.
+* **The Solution:** Shift Token Storage to HttpOnly Cookies. To seamlessly link your existing Spring Boot backend with Next.js while protecting your SEO, you must switch your token storage medium from local storage to **Secure, HttpOnly Cookies**. 
+
+Cookies are unique because they are automatically appended by the browser to every single network request—regardless of whether that request is hitting your client app, your Next.js node server, or your backend.
+
+#### The Updated Authentication Architecture
+
+```text
+[Browser / Client] ───(Sends Credentials)───► [Next.js Route Handler] ───(Forwards)───► [Spring Boot]
+                                                                                           │
+[Browser / Client] ◄───(Sets Secure Cookie)◄── [Next.js Route Handler] ◄──(Returns JWT)◄────┘
+```
+
