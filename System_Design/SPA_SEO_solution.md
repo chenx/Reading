@@ -112,5 +112,19 @@ If your React site is mostly static (e.g., landing pages, corporate sites, blogs
 | **Prerender Filter (Option 2)** | Very Low | Medium (SaaS Cost) | Medium | Existing apps with heavy technical debt |
 | **Thymeleaf Static (Option 3)** | Medium | Low | Low | Smaller marketing/brochure websites |
 
+<br/>
+
+### Use Next.js BFF for new app
+
+For a brand-new application that requires both scalability for dynamic content and excellent SEO, **Option 1 (The Next.js Backend-for-Frontend)** is the absolute best architecture for your project. Setting it up now will save you hundreds of hours of painful refactoring later. 
+
+Here is exactly how to structure your brand-new system to achieve perfect SEO and endless scalability.
+
+#### The Architecture Setup
+
+Instead of having the browser talk directly to Spring Boot, you will introduce Next.js as an intermediary layer. Both servers handle completely different responsibilities:
+
+* **Spring Boot (The Core Backend):** Acts purely as a secure, fast, and scalable stateless REST API. It handles your database, security (JWT/OAuth), business logic, and heavy computations. It returns only clean JSON.
+* **Next.js (The Frontend & Rendering Layer):** Acts as your UI controller. When a user or search crawler requests a page, Next.js catches the request, fetches the JSON data from Spring Boot over a fast internal network, renders the React components into a complete HTML page on the server, and sends that HTML down to the visitor.
 
 
