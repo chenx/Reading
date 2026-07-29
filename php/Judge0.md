@@ -4,7 +4,6 @@ Yes, you can absolutely build an online compiler and execution sandbox using PHP
 
 To achieve this safely, you have two primary options: use an open-source execution API or build your own isolated multi-layer sandbox container.
 
----
 
 ## Option 1: The Easiest Way (Use Judge0 API)
 
@@ -35,7 +34,6 @@ curl_close(\$ch);
 echo base64_decode(\$response['stdout']);
 ```
 
----
 
 ## Option 2: The Custom Way (Docker + PHP `proc_open`)
 
@@ -121,7 +119,6 @@ rmdir(\$sandboxFolder);
 * **No Privilege Escalation**: Ensure the user inside the container does not map to root or have access to the host's `/var/run/docker.sock`.
 * **Strict Memory Limits (`--memory`)**: If omitted, a simple C++ loop continuously pushing to a `std::vector` will trigger an Out-Of-Memory error on your entire host server, crashing your PHP app.
 
----
 
 ## Choosing the Right Approach
 
@@ -174,3 +171,42 @@ function runCodeInSandbox(string \$sourceCode, int languageId, string stdin = ""
     // ... complete implementation logic
 }
 ```
+
+
+## What if the C++ or Java code is malicious?
+
+If a user submits malicious C++ or Java code, Judge0's sandbox layers completely isolate the execution so that your host system and PHP application remain safe. Because Judge0 runs code inside a stateless, heavily restricted container controlled by Linux cgroups and system call filters, the attack vectors are blocked right at the boundary.
+
+Here is exactly how Judge0 handles the most common types of malicious attacks:
+
+### 1. Infinite Loops and Fork Bombs (CPU Exhaustion)
+* **The Attack**: A user runs `while(true){}` or a recursion loop designed to hit 100% CPU usage and freeze your server.
+* **Judge0 Defense**: Every submission has a hard `cpu_time_limit` (defaulting to 5 seconds if not overridden). Once that exact millisecond is breached, the sandbox process is instantly killed, and the API returns a status code of **Time Limit Exceeded**.
+
+### 2. Allocation Floods (Memory Exhaustion / OOM)
+* **The Attack**: A C++ script aggressively pushes data into a vector, or Java continuously spawns objects to consume all system RAM, attempting to crash the host operating system.
+* **Judge0 Defense**: Judge0 enforces a strict process-level `memory_limit` via Linux control groups (cgroups). If the program tries to allocate memory beyond this limit, the process is forcefully terminated by the kernel, returning a **Memory Limit Exceeded** status.
+
+### 3. File System Damage (e.g., `rm -rf /`)
+* **The Attack**: A user tries to run system commands from inside code (like using `std::system("rm -rf /")` in C++ or `Runtime.getRuntime().exec()` in Java) to delete server configuration files.
+* **Judge0 Defense**: The code executes inside an isolated Docker container where the underlying host file system is completely unmapped and inaccessible. Furthermore, Judge0 drops root privileges and runs the process as an unprivileged user. The user can only write to a temporary, space-limited sandbox folder that is completely destroyed the moment execution finishes.
+
+### 4. Network Attacks and Botnets (Data Exfiltration)
+* **The Attack**: A hacker writes a script to scan your local network, attempt to connect to your internal databases, or use your server infrastructure to launch a DDOS attack or mine cryptocurrency.
+* **Judge0 Defense**: Network access is entirely disabled inside the execution environment by default. The isolated code cannot resolve domain names, send HTTP requests, or open network sockets. It will instantly throw a connection error or a network unreachable exception inside the runtime.
+
+## What Your PHP Application Receives
+
+When malicious activity is blocked, your PHP script does not crash. Judge0 safely intercepts the failure and returns a structured JSON response identifying the exact nature of the blocked attack via its status field:
+
+| Attack Outcome | Judge0 Status Code | Description Returned to PHP |
+| :--- | :--- | :--- |
+| Infinite Loop / Lag | 3 | Time Limit Exceeded |
+| RAM Drain | 4 | Memory Limit Exceeded |
+| Compilation Hack | 11 | Compilation Error |
+| Segmentation Fault | 5 | Runtime Error (SIGSEGV) |
+| Illegal System Call | 12 | Runtime Error (SIGXFSZ) or Runtime Error (other) |
+
+
+
+Would you like to look at the security configuration file (`judge0.conf`) to see how to fine-tune these resource walls even further?
