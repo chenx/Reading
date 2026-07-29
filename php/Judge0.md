@@ -259,3 +259,44 @@ Now that your security boundaries and PHP back-end logic are planned out, you ca
 
 * **Designing the database schema** to store user submissions, execution times, and memory logs.
 * **Creating the HTML/JavaScript code editor interface** (using tools like Monaco Editor or CodeMirror) to pass code directly to your PHP script.
+
+
+## Is Judge0 free? What are the limitations? Any competitors?
+
+Yes, Judge0 is free and open-source if you choose to host it yourself. However, if you use their official managed cloud hosting platform instead, it relies on a freemium pricing tier model.
+
+A breakdown of Judge0's costs, structural limitations, and industry competitors reveals how it positions itself in the code execution space:
+
+
+## 1. Cost Options
+
+* **Self-Hosted (Judge0 CE)**: 100% Free under the MIT license. You can run unlimited code submissions on your own server or VPS without paying any execution fees.
+* **Shared Cloud (via RapidAPI)**: Has a Free Tier (usually restricted to around 50 requests per day for basic testing). Scaling past that requires moving onto their tiered monthly subscription plans.
+
+
+## 2. Core Limitations of Judge0
+
+While powerful, the Judge0 framework has specific design boundaries you must plan around:
+
+* **No Network Access**: For security reasons, sandboxed code cannot fetch external APIs, pull libraries via package managers (like npm or pip), or access external databases.
+* **Stateless Execution ("Submissions, Not Workspaces")**: Every API call is completely independent. It boots up a sandbox, runs the code, returns output, and wipes the environment clean. You cannot keep a persistent backend server or state running across separate API calls.
+* **Hardware Bottlenecks**: When self-hosting, your capacity is bounded by your server's RAM and CPU core count. Spawning too many concurrent compilation processes at once can cause memory spikes or queuing delays.
+
+
+## 3. Industry Competitors
+
+Depending on your project's architectural needs, there are several solid alternatives to Judge0:
+
+### For Simple Code Execution (Stateless)
+* **Piston Engine**: The closest direct competitor. It is a very fast, open-source code execution engine maintained by the community. It supports a massive catalog of languages and is easier to set up than Judge0, though it has slightly less granular resource-limiting options.
+* **Rustbox**: A newer, highly optimized cloud runtime designed explicitly for low-latency, secure sandboxed execution. It focuses on speed and deterministic runs for dynamic product features.
+
+### For Full-Environment Sandboxing (Stateful / Multi-File Workspaces)
+* **E2B (Devbook)**: If your application needs long-running processes, complex directory structures, or tools for interactive AI agents, E2B provides persistent, secure Linux virtual machine sandboxes instead of instant one-shot script runners.
+* **Coder / Eclipse Che**: Aimed at building complete cloud development IDEs where users need continuous terminal access, persistent file workspaces, and active network ports.
+
+
+## Direct Comparison Summary
+
+* Choose **Judge0** or **Piston** if you are building an online coding platform like LeetCode, an automated homework grader, or a standard documentation code runner.
+* Choose **E2B** if you are building an advanced AI application where code needs to dynamically read/write multiple local assets or spin up servers.
