@@ -208,5 +208,54 @@ When malicious activity is blocked, your PHP script does not crash. Judge0 safel
 | Illegal System Call | 12 | Runtime Error (SIGXFSZ) or Runtime Error (other) |
 
 
+## Configure Judge0
 
 Would you like to look at the security configuration file (`judge0.conf`) to see how to fine-tune these resource walls even further?
+
+To configure these security walls, you need to edit the `judge0.conf` file, which is located in your Judge0 installation directory on your server. Below are the most critical parameters you should check and adjust to maximize security against malicious code.
+
+### Key Security Options in `judge0.conf`
+
+Open the configuration file and locate or modify the following default settings:
+
+```ini
+# Max CPU time allowed for execution (in seconds)
+# Set this low to stop infinite loops quickly.
+max_cpu_time_limit = 5.0
+
+# Max wall time allowed (in seconds)
+# This includes time spent waiting for I/O. Prevents processes from hanging.
+max_wall_time_limit = 10.0
+
+# Max memory allowed (in kilobytes)
+# 256000 KB is ~250MB. Stops RAM drain attacks completely.
+max_memory_limit = 256000
+
+# Max stack size allowed (in kilobytes)
+# Prevents stack overflow attacks from crashing the environment.
+max_stack_limit = 64000
+
+# Max processes/threads a submission can spawn
+# Crucial for blocking C++ fork bombs (e.g., fork(); fork();)
+max_number_of_processes = 20
+
+# Max file size the submission can create (in kilobytes)
+# Blocks malicious scripts from generating massive files to fill your disk.
+max_file_size = 1024
+```
+
+### Applying Changes
+
+Whenever you modify your `judge0.conf` file, you must restart your Docker containers for the new resource limits to take effect:
+
+```bash
+docker-compose down
+docker-compose up -d
+```
+
+### Next Steps for Your Project
+
+Now that your security boundaries and PHP back-end logic are planned out, you can focus on building the system. If you want, I can help you with:
+
+* **Designing the database schema** to store user submissions, execution times, and memory logs.
+* **Creating the HTML/JavaScript code editor interface** (using tools like Monaco Editor or CodeMirror) to pass code directly to your PHP script.
