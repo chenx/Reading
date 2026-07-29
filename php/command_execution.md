@@ -37,9 +37,11 @@ The PHP `exec` manual explains that this function is ideal when you need to capt
 
 ```php
 <?php
-\(output_lines = [];\)status_code = 0;
+\$output_lines = [];
+\$status_code = 0;
 
-// Populates \(output_lines array and returns the last line\)last_line = exec('mkdir new_folder', \(output_lines,\)status_code);
+// Populates \$output_lines array and returns the last line
+\$last_line = exec('mkdir new_folder', \$output_lines, \$status_code);
 
 if (\$status_code === 0) {
     echo "Command succeeded!";
@@ -67,30 +69,37 @@ Executing external shell commands poses a high remote code execution (RCE) risk 
 ```php
 <?php
 // Safely passing a user-provided username as an argument
-\(user_input =\)_POST['username'];
-\(safe_argument = escapeshellarg(\)user_input);
+\$user_input = \$_POST['username'];
+\$safe_argument = escapeshellarg(\$user_input);
 
 // Final safe command string
-\(output = shell_exec("id " . \)safe_argument);
+\$output = shell_exec("id " . \$safe_argument);
 ```
 
----
+<br/>
 
-## 4. Advanced Process Control with `proc_open`
+# Advanced Process Control with `proc_open`
 
 The `proc_open()` function provides maximum control over command execution in PHP. Unlike `exec()` or `shell_exec()`, it opens persistent, bi-directional input/output streams (pipes) to the running process.
 
-### Basic Syntax and Parameters
+---
+
+## 1. Basic Syntax and Parameters
+
 ```php
-\(process = proc_open(\)command, descriptorspec, pipes, cwd, env_vars);
+\$process = proc_open(\$command, \$descriptorspec, \$pipes, \$cwd, \$env_vars);
 ```
+
 * **`$command`**: The string command or array of arguments to execute.
 * **`$descriptorspec`**: An array defining the file descriptors (0 for stdin, 1 for stdout, 2 for stderr).
 * **`$pipes`**: An empty array populated by PHP with file pointers to the process streams.
 * **`$cwd`**: The initial working directory for the command (optional).
 * **`$env_vars`**: An array of environment variables for the command (optional).
 
-### Implementation Example
+---
+
+## 2. Implementation Example
+
 This script executes a system command, sends data to its standard input, reads the output, and catches any error messages.
 
 ```php
@@ -103,7 +112,7 @@ This script executes a system command, sends data to its standard input, reads t
 ];
 
 // 2. Open the process
-\$process = proc_open('grep "apple"', descriptorspec, pipes);
+\$process = proc_open('grep "apple"', \$descriptorspec, \$pipes);
 
 if (is_resource(\$process)) {
     // 3. Write data to stdin (simulating user input)
@@ -111,15 +120,15 @@ if (is_resource(\$process)) {
     fclose(\$pipes[0]); // Close stdin so grep knows input is done
 
     // 4. Read the output from stdout
-    \(stdout_output = stream_get_contents(\)pipes[1]);
+    \$stdout_output = stream_get_contents(\$pipes[1]);
     fclose(\$pipes[1]);
 
     // 5. Read any errors from stderr
-    \(stderr_output = stream_get_contents(\)pipes[2]);
+    \$stderr_output = stream_get_contents(\$pipes[2]);
     fclose(\$pipes[2]);
 
     // 6. Close the process and get the exit code
-    \(exit_code = proc_close(\)process);
+    \$exit_code = proc_close(\$process);
 
     // 7. Display results
     echo "Exit Code: " . \$exit_code . "\n";
@@ -127,7 +136,10 @@ if (is_resource(\$process)) {
 }
 ```
 
-### Non-Blocking Streams (Asynchronous Execution)
+---
+
+## 3. Non-Blocking Streams (Asynchronous Execution)
+
 By default, reading from `$pipes[1]` blocks your PHP script until data is ready. You can turn on non-blocking mode to keep your script running while waiting for the process to respond.
 
 ```php
@@ -136,13 +148,15 @@ By default, reading from `$pipes[1]` blocks your PHP script until data is ready.
 stream_set_blocking(\$pipes[1], false);
 
 // Check if the process is still running without waiting
-\(status = proc_get_status(\)process);
+\$status = proc_get_status(\$process);
 if (\$status['running']) {
     // Process is still active in the background
 }
 ```
 
-### Process Management Functions Summary
+---
+
+## 4. Process Management Functions
 
 | Function | Practical Purpose |
 | :--- | :--- |
@@ -150,34 +164,40 @@ if (\$status['running']) {
 | `proc_terminate()` | Sends a termination signal (SIGTERM) to stop the process. |
 | `proc_close()` | Closes pipes and returns the termination exit code. |
 
----
 
-## 5. Handling Timeouts and Memory Limits in `proc_open`
+<br/>
+
+# Handling Timeouts and Memory Limits in `proc_open`
 
 No, you cannot directly specify timeout or memory limits as parameters inside the native PHP `proc_open()` function. Instead, you must actively manage these constraints using PHP's process status functions or prefixing your shell commands with system-level utilities.
 
-### Enforcing Timeouts in PHP
+---
+
+## 1. Enforcing Timeouts in PHP
+
 To handle timeouts, you set your communication pipes to non-blocking mode. You then loop and track the elapsed time using a micro-timer, terminating the process if it runs too long.
 
 ```php
 <?php
-\(timeout = 5.0; // Timeout in seconds\)descriptorspec = [
+\$timeout = 5.0; // Timeout in seconds
+\$descriptorspec = [
     0 => ["pipe", "r"], // stdin
     1 => ["pipe", "w"], // stdout
     2 => ["pipe", "w"]  // stderr
 ];
 
-\$process = proc_open('sleep 10', descriptorspec, pipes);
+\$process = proc_open('sleep 10', \$descriptorspec, \$pipes);
 
 if (is_resource(\$process)) {
     // Make stdout and stderr non-blocking to prevent the loop from freezing
     stream_set_blocking(\$pipes[1], false);
     stream_set_blocking(\$pipes[2], false);
 
-    \(start_time = microtime(true);\)output = '';
+    \$start_time = microtime(true);
+    \$output = '';
 
     while (true) {
-        \(status = proc_get_status(\)process);
+        \$status = proc_get_status(\$process);
 
         // Break if the process finished on its own
         if (!\$status['running']) {
@@ -185,17 +205,69 @@ if (is_resource(\$process)) {
         }
 
         // Check if the process has exceeded the timeout limit
-        if ((microtime(true) - \(start_time) >\)timeout) {
+        if ((microtime(true) - \$start_time) > \$timeout) {
             // Forcefully terminate the process
             proc_terminate(\$process, 9); // 9 is SIGKILL
             throw new Exception("Process timed out after {\$timeout} seconds.");
         }
 
         // Read available chunks of data without blocking execution
-        \(output .= stream_get_contents(\)pipes[1]);
+        \$output .= stream_get_contents(\$pipes[1]);
         
-        // Pause briefly to reduce CPU utilization in the monitoring loop
-        usleep(50000); 
+        // Sleep briefly to prevent 100% CPU usage in the loop
+        usleep(10000); 
     }
+
+    fclose(\$pipes[0]);
+    fclose(\$pipes[1]);
+    fclose(\$pipes[2]);
+    proc_close(\$process);
 }
 ```
+
+---
+
+## 2. Enforcing Memory and Timeout Limits via Linux Utilities
+
+If you are running on a Linux system, the cleanest approach is to offload memory and execution constraints directly to the operating system shell using the `timeout` and `ulimit` utilities.
+
+* **`timeout <seconds>`**: Automatically kills the command if it runs past the time limit.
+* **`ulimit -v <kilobytes>`**: Limits the maximum virtual memory available to the process shell.
+
+```php
+<?php
+// Limit the process to 5 seconds and 128MB (131072 KB) of memory
+\$memory_limit_kb = 128 * 1024; 
+\$raw_command = 'php -r "loop_forever_and_consume_memory();"';
+
+// Combine commands into a single string
+\$constrained_command = "ulimit -v {\$memory_limit_kb}; timeout 5 {\$raw_command}";
+
+\$process = proc_open(\$constrained_command, \$descriptorspec, \$pipes);
+```
+
+---
+
+## 3. Alternative: Using Symfony Process Component
+
+If you are working on a professional application, it is highly recommended to use the Symfony Process Component rather than writing raw `proc_open` logic. It abstracts `proc_open` and includes native support for timeouts.
+
+```bash
+composer require symfony/process
+```
+
+```php
+<?php
+use Symfony\Component\Process\Process;
+
+\$process = new Process(['php', 'script.php']);
+\$process->setTimeout(5); // Sets timeout to 5 seconds
+
+try {
+    \$process->mustRun();
+    echo \$process->getOutput();
+} catch (\Symfony\Component\Process\Exception\ProcessTimedOutException \$e) {
+    echo "The process timed out.";
+}
+```
+
